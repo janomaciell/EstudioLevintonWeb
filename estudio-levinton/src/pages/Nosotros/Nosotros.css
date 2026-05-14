@@ -1,0 +1,118 @@
+.nos-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 14vw, 14rem);
+  color: var(--text-main);
+  line-height: 0.88;
+  letter-spacing: 0.01em;
+}
+
+/* INTRO */
+.nos-intro { padding: clamp(80px, 12vw, 160px) 0; background: var(--bg-main); }
+.nos-intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 0 var(--gutter);
+  max-width: var(--container);
+  margin: 0 auto;
+}
+.nos-intro__word {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 9vw, 10rem);
+  color: var(--text-main);
+  line-height: 0.88;
+}
+.nos-intro__body {
+  display: flex; flex-direction: column; gap: 20px;
+  border-left: 1px solid var(--opacity-08);
+  padding-left: 60px;
+}
+.nos-intro__body p { font-size: 0.88rem; color: var(--opacity-45); line-height: 1.85; }
+
+/* TEAM */
+.nos-team { padding: clamp(80px, 12vw, 160px) 0; background: var(--bg-alt); overflow: hidden; }
+.nos-team__label {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 60px; overflow: hidden;
+}
+.nos-team__bg-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 9rem);
+  color: var(--opacity-03);
+  white-space: nowrap; will-change: transform;
+}
+.nos-team__grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+}
+.nos-team__member { display: flex; flex-direction: column; gap: 28px; }
+.nos-team__img { overflow: hidden; will-change: clip-path; aspect-ratio: 3/4; }
+.nos-team__img img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.nos-team__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  color: var(--text-main); line-height: 0.9; letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.nos-team__bio {
+  font-size: 0.82rem; color: var(--opacity-40); line-height: 1.85;
+  max-width: 420px; margin-bottom: 20px;
+}
+.nos-team__contact {
+  font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); border-bottom: 1px solid rgba(196,168,130,0.3);
+  padding-bottom: 3px; width: fit-content; transition: color 0.3s;
+}
+.nos-team__contact:hover { color: var(--text-main); }
+
+/* TIMELINE */
+.nos-timeline { padding: clamp(80px, 12vw, 160px) 0; background: var(--bg-main); }
+.nos-tl-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 11rem);
+  color: var(--text-main); line-height: 0.88;
+}
+.nos-t-item {
+  display: grid; grid-template-columns: 120px 1px 1fr;
+  gap: 32px; align-items: start;
+  padding: 32px 0; border-bottom: 1px solid var(--opacity-06);
+}
+.nos-t-item:first-of-type { border-top: 1px solid var(--opacity-06); }
+.nos-t-year {
+  font-family: var(--font-display);
+  font-size: 1.6rem; color: var(--accent); line-height: 1;
+}
+.nos-t-line { height: 24px; background: var(--opacity-10); margin-top: 8px; }
+.nos-t-event {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+  color: var(--text-main); letter-spacing: 0.02em;
+  display: block; margin-bottom: 8px;
+}
+.nos-t-desc {
+  font-size: 0.78rem; color: var(--opacity-35);
+  line-height: 1.75; max-width: 520px;
+}
+
+/* CTA */
+.nos-cta { padding: clamp(80px, 12vw, 160px) 0; background: var(--bg-alt); }
+.nos-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 11vw, 12rem);
+  color: var(--text-main); line-height: 0.88;
+}
+.nos-cta-title--dim { color: var(--opacity-15); }
+.nos-cta-btn {
+  display: inline-block; margin-top: 56px;
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-main); border-bottom: 1px solid var(--opacity-30);
+  padding-bottom: 3px; transition: color 0.3s, border-color 0.3s;
+}
+.nos-cta-btn:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 900px) {
+  .nos-intro__inner { grid-template-columns: 1fr; }
+  .nos-intro__body { padding-left: 0; border-left: none; border-top: 1px solid var(--opacity-08); padding-top: 40px; }
+  .nos-team__grid { grid-template-columns: 1fr; }
+  .nos-t-item { grid-template-columns: 80px 1px 1fr; gap: 20px; }
+}

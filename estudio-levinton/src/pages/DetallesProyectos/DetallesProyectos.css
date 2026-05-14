@@ -1,0 +1,350 @@
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ DP PAGE WRAPPER ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+.dp-page {
+  background: var(--bg-main);
+  min-height: 100vh;
+  padding-top: 0;
+}
+
+.dp-nav-back {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--opacity-30);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--opacity-10);
+  border-radius: 50%;
+  color: var(--text-main);
+  z-index: 99999;
+  cursor: pointer;
+  outline: none;
+  pointer-events: auto;
+  transition: all 0.4s var(--ease-out, ease);
+  text-decoration: none;
+}
+
+.dp-nav-back:hover {
+  background: var(--text-main);
+  color: var(--bg-main);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .dp-nav-back {
+    top: 20px;
+    left: 20px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.dp-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.dp-not-found h2 {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.dp-btn-back {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.dp-btn-back:hover {
+  background: var(--accent);
+  color: var(--bg-main);
+}
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ HERO SECTION ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+.dp-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  
+  /* FORZAR TEXTO NEGRO CONSTANTE */
+  --text-main: #0c0b0a;
+  --text-alt: #0c0b0a;
+  --warm-gray: #5e5955;
+  --mid-gray: #3b3834;
+  --opacity-02: rgba(12, 11, 10, 0.02);
+  --opacity-03: rgba(12, 11, 10, 0.03);
+  --opacity-04: rgba(12, 11, 10, 0.04);
+  --opacity-05: rgba(12, 11, 10, 0.05);
+  --opacity-06: rgba(12, 11, 10, 0.06);
+  --opacity-07: rgba(12, 11, 10, 0.07);
+  --opacity-08: rgba(12, 11, 10, 0.08);
+  --opacity-10: rgba(12, 11, 10, 0.1);
+  --opacity-12: rgba(12, 11, 10, 0.12);
+  --opacity-15: rgba(12, 11, 10, 0.15);
+  --opacity-18: rgba(12, 11, 10, 0.18);
+  --opacity-20: rgba(12, 11, 10, 0.5);
+  --opacity-22: rgba(12, 11, 10, 0.5);
+  --opacity-25: rgba(12, 11, 10, 0.55);
+  --opacity-30: rgba(12, 11, 10, 0.6);
+  --opacity-35: rgba(12, 11, 10, 0.65);
+  --opacity-40: rgba(12, 11, 10, 0.7);
+  --opacity-45: rgba(12, 11, 10, 0.75);
+  --opacity-50: rgba(12, 11, 10, 0.8);
+  --opacity-90: rgba(12, 11, 10, 0.9);
+}
+
+.dp-hero__bg {
+  position: absolute;
+  inset: -10%;
+  will-change: transform;
+}
+
+.dp-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dp-hero__overlay {
+  display: none; /* Eliminada la opacidad */
+}
+
+.dp-hero__content {
+  position: relative;
+  z-index: 2;
+  padding-bottom: clamp(60px, 10vh, 100px);
+}
+
+.dp-line {
+  overflow: hidden;
+  display: block;
+}
+
+.dp-line-inner {
+  display: block;
+  will-change: transform;
+}
+
+.dp-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 12rem);
+  color: var(--text-main);
+  line-height: 0.88;
+  margin-bottom: 20px;
+}
+
+.dp-sub {
+  color: var(--opacity-40);
+}
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ INFO SECTION (SPECS) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+.dp-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: clamp(80px, 12vw, 140px) var(--gutter);
+  background: var(--bg-main);
+}
+
+.dp-info__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  color: var(--text-main);
+  line-height: 0.88;
+}
+
+.dp-info__title--accent {
+  color: var(--opacity-18);
+}
+
+.dp-info__desc {
+  margin-top: 40px;
+  font-size: 0.95rem;
+  color: var(--opacity-30);
+  line-height: 1.85;
+  max-width: 500px;
+}
+
+.dp-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 30px;
+  padding-top: 20px;
+}
+
+.dp-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid var(--opacity-10);
+  padding-left: 20px;
+}
+
+.dp-stat__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.dp-stat__val {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ GALLERY SECTION ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+.dp-gallery {
+  padding-bottom: clamp(80px, 12vw, 140px);
+  background: var(--bg-main);
+}
+
+.dp-section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--text-main);
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--opacity-10);
+  padding-bottom: 20px;
+}
+
+.dp-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+}
+
+.dp-gallery__item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.dp-gallery__item--large {
+  grid-column: span 2;
+  aspect-ratio: 21/9;
+}
+
+.dp-gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-out, ease);
+}
+
+.dp-gallery__item:hover img {
+  transform: scale(1.05);
+}
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ CONTACT CTA SECTION ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+.dp-contact {
+  background: var(--text-main);
+  padding: clamp(80px, 12vw, 140px) 0;
+}
+
+.dp-contact__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.dp-contact__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  color: var(--bg-main);
+  line-height: 0.92;
+  margin-bottom: 20px;
+}
+
+.dp-contact__sub {
+  font-size: 1rem;
+  color: var(--opacity-30);
+  line-height: 1.6;
+}
+
+.dp-contact__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dp-contact__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  border: 1px solid var(--bg-main);
+  color: var(--bg-main);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: all 0.35s ease;
+  font-family: inherit;
+}
+
+.dp-contact__btn:hover {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.dp-contact__btn--wa {
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+}
+
+.dp-contact__btn--wa:hover {
+  background: #1ebe5a;
+  border-color: #1ebe5a;
+  color: #fff;
+}
+
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ RESPONSIVE ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+@media (max-width: 1024px) {
+  .dp-info {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .dp-contact__content {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dp-stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dp-gallery__item--large {
+    grid-column: span 1;
+    aspect-ratio: 4/3;
+  }
+  .dp-gallery__grid {
+    grid-template-columns: 1fr;
+  }
+  .dp-form__row {
+    grid-template-columns: 1fr;
+  }
+  .dp-form {
+    padding: 30px 20px;
+  }
+}

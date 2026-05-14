@@ -1,0 +1,75 @@
+/* No padding-top ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â nav is overlay */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Page hero ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â inner pages */
+.page-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--bg-main);
+  
+  /* FORZAR TEXTO A NEGRO CONSTANTE */
+  --text-main: #0c0b0a;
+  --text-alt: #0c0b0a;
+  --warm-gray: #5e5955;
+  --mid-gray: #3b3834;
+  --opacity-02: rgba(12, 11, 10, 0.02);
+  --opacity-03: rgba(12, 11, 10, 0.03);
+  --opacity-04: rgba(12, 11, 10, 0.04);
+  --opacity-05: rgba(12, 11, 10, 0.05);
+  --opacity-06: rgba(12, 11, 10, 0.06);
+  --opacity-07: rgba(12, 11, 10, 0.07);
+  --opacity-08: rgba(12, 11, 10, 0.08);
+  --opacity-10: rgba(12, 11, 10, 0.1);
+  --opacity-12: rgba(12, 11, 10, 0.12);
+  --opacity-15: rgba(12, 11, 10, 0.15);
+  --opacity-18: rgba(12, 11, 10, 0.18);
+  --opacity-20: rgba(12, 11, 10, 0.5);
+  --opacity-22: rgba(12, 11, 10, 0.5);
+  --opacity-25: rgba(12, 11, 10, 0.55);
+  --opacity-30: rgba(12, 11, 10, 0.6);
+  --opacity-35: rgba(12, 11, 10, 0.65);
+  --opacity-40: rgba(12, 11, 10, 0.7);
+  --opacity-45: rgba(12, 11, 10, 0.75);
+  --opacity-50: rgba(12, 11, 10, 0.8);
+}
+.page-hero__bg {
+  position: absolute;
+  inset: -15% 0;
+  will-change: transform;
+}
+.page-hero__bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 1; /* Eliminada la opacidad para mostrar imagen original */
+}
+.page-hero__overlay {
+  display: none; /* Eliminado el gradiente negro */
+}
+.page-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--gutter) clamp(60px, 10vh, 120px);
+  width: 100%;
+}
+/* Line mask for title reveals */
+.ph-line { display: block; overflow: hidden; }
+.ph-line-inner {
+  display: block;
+  will-change: transform;
+  transform: translateY(105%);
+}
+.ph-sub {
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  color: var(--opacity-45);
+  max-width: 480px;
+  line-height: 1.8;
+  margin-top: 28px;
+  opacity: 0;
+}
