@@ -8,13 +8,9 @@ import './Nosotros.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const TIMELINE = [
-  { year: '1977', event: 'Raíces en PRENOVA',
-    desc: 'Ricardo Levinton inicia la investigación biomimetéica inspirada en la estructura del fémur humano. El sistema PRENOVA de losas aligeradas llegaría a construir más de 1.000.000 m² globales.' },
   { year: '1974', event: 'Fundación del Estudio',
     desc: 'Sergio Levinton inicia su trayectoria en CABA con propiedad horizontal de alta densidad: torres de 14–15 pisos en Av. Santa Fe, Av. Córdoba y Malabia — más de 30.000 m² construidos.' },
-  { year: '1992', event: 'Incorporación de Adriana Napoleone',
-    desc: 'Arquitecta (UBA) y Licenciada en Artes Plásticas — Grabado (UNLP). Su manifiesto "La Multiplicación de los Planos" define la identidad visual del estudio. Premio Adquisición Bancor 2022.' },
-  { year: '2001', event: 'Expansión a Zona Norte',
+  { year: '2001', event: 'Incorporación de Adriana Napoleone',
     desc: 'Nordelta, EIDICO El Encuentro, Puertos del Lago, El Lauquen, Villanueva, Hyland Park, Campos de Roca, La Martona. El estudio se convierte en referente indiscutido del segmento premium.' },
   { year: '2012', event: 'Pioneros en Sustentabilidad',
     desc: 'Termotanques solares como estándar absoluto — una década antes que el mercado. Etiquetado energético, paneles fotovoltaicos y domótica integrada desde el diseño.' },

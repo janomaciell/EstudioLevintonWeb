@@ -103,7 +103,7 @@ export default function Contacto() {
 
           <div className="ct-person">
             <h3 className="ct-person__name">ARQ. ADRIANA NAPOLEONE</h3>
-            <span className="ct-person__role">Directora Artística · Diseño e Identidad</span>
+            <span className="ct-person__role">Directora de Proyectos · Diseño e Identidad</span>
             <div className="ct-person__links">
               <a href="tel:+5491144227758" className="ct-link">011 4422-7758</a>
               <a href="mailto:adrianapoleone@gmail.com" className="ct-link">adrianapoleone@gmail.com</a>

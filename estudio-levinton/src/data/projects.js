@@ -474,7 +474,7 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '360',
     year: '2013',
-    img: media('img/portadas/Santa Catalina techo verde.jpg'),
+    img: media('img/portadas/santa-catalina-techo-verde.jpg'),
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
     specs: {
       habitaciones: 4,
@@ -498,7 +498,7 @@ export const ALL_PROJECTS = [
     loc: 'Tigre',
     m2: '320',
     year: '2013',
-    img: media('img/portadas/SIL 20.jpg'),
+    img: media('img/portadas/sil-20.jpg'),
     description: 'Vivienda unifamiliar desarrollada en 3 niveles y el uso del agua que conecta los dos volúmenes de la casa. El empleo de la piedra crea un equilibrio perfecto entre lo rústico y lo moderno.',
     specs: {
       habitaciones: 4,
@@ -523,7 +523,7 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '360',
     year: '2013',
-    img: media('img/portadas/Santa Catalina 577.jpg'),
+    img: media('img/portadas/santa-catalina-577.jpg'),
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
     specs: {
       habitaciones: 4,
