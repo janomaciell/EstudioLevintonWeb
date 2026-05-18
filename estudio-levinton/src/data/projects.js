@@ -461,7 +461,9 @@ export const ALL_PROJECTS = [
     gallery: [
       media('img/Obras-estudio-Levinton/Sustentabilidad/40201fd2-0b06-46cc-b688-548f848f4704.JPG'),
       media('img/Obras-estudio-Levinton/Sustentabilidad/5c8a4eb9-a56b-4631-9aff-8bcf7eea87f5.JPG'),
-      media('img/Obras-estudio-Levinton/Sustentabilidad/69c393e6-0ab5-4c20-8ce1-a4c054eb597f.JPG'),
+      media('img/Obras-estudio-Levinton/Sustentabilidad/69c393e6-0ab5-4c20-8ce1-a4c054eb597f.JPG'), 
+      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/IMG_3502.JPG'),
+      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/IMG_3524.JPG'),
       media('img/Obras-estudio-Levinton/Sustentabilidad/IMG_4002.JPG'),
       media('img/Obras-estudio-Levinton/Sustentabilidad/IMG_4005.JPG')
     ]
@@ -488,31 +490,6 @@ export const ALL_PROJECTS = [
       media('img/Obras-estudio-Levinton/Santa-cata-382/santa cata 382.JPG'),
       media('img/Obras-estudio-Levinton/Santa-cata-382/Ver fotos recientes(1).png'),
       media('img/Obras-estudio-Levinton/Santa-cata-382/Ver fotos recientes.png')
-    ]
-  },
-  {
-    slug: 'sil-lote-20',
-    country: 'Argentina',
-    label: 'Obra Terminada',
-    title: 'San Isidro Labrador 20',
-    loc: 'Tigre',
-    m2: '320',
-    year: '2013',
-    img: media('img/portadas/sil-20.jpg'),
-    description: 'Vivienda unifamiliar desarrollada en 3 niveles y el uso del agua que conecta los dos volúmenes de la casa. El empleo de la piedra crea un equilibrio perfecto entre lo rústico y lo moderno.',
-    specs: {
-      habitaciones: 4,
-      banos: 4,
-      cocheras: 2,
-      plantas: 3,
-      lote: '900 m²',
-      piscina: 'Sí'
-    },
-    gallery: [
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/5c8a4eb9-a56b-4631-9aff-8bcf7eea87f5.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/IMG_3502.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/IMG_3524.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-20/IMG_4002.JPG')
     ]
   },
   {

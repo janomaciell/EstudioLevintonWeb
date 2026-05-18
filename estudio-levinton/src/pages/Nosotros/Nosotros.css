@@ -39,8 +39,11 @@
 .nos-team__bg-text {
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 9rem);
-  color: var(--opacity-03);
+  color: var(--opacity-04);
   white-space: nowrap; will-change: transform;
+}
+[data-theme="light"] .nos-team__bg-text {
+  color: rgba(255, 255, 255, 0.6);
 }
 .nos-team__grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
