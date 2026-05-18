@@ -540,29 +540,6 @@ export const ALL_PROJECTS = [
       media('img/Obras-estudio-Levinton/Santa-Catalina-577/IMG-20221201-WA0012.jpg'),
       media('img/Obras-estudio-Levinton/Santa-Catalina-577/IMG-20221223-WA0007.jpg')
     ]
-  },
-  {
-    slug: 'jardin-botanico-bariloche',
-    country: 'Argentina',
-    label: 'Obra Terminada',
-    title: 'Jardín Botánico',
-    loc: 'Bariloche',
-    m2: '250',
-    year: '2010',
-    img: media('img/Obras-estudio-Levinton/Jardin-BOTANICO-BARILOCHE/3.jpg'),
-    description: 'Residencia de montaña en Bariloche, integrada al entorno natural del Jardín Botánico.',
-    specs: {
-      habitaciones: 3,
-      banos: 2,
-      cocheras: 1,
-      plantas: 2,
-      lote: '1000 m²',
-      piscina: null
-    },
-    gallery: [
-      media('img/Obras-estudio-Levinton/Jardin-BOTANICO-BARILOCHE/3.jpg'),
-      media('img/Obras-estudio-Levinton/Jardin-BOTANICO-BARILOCHE/scanner03.jpg')
-    ]
   }
 ];
 
