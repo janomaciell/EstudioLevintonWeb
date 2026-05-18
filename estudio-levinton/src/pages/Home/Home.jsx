@@ -15,7 +15,7 @@ const IMGS = {
   proj3:   media('img/portadas/Marinas.png'),
   proj4:   media('img/portadas/SIL 71.png'),
   proj5:   media('img/portadas/SIL 645.png'),
-  detail2: media('img/portadas/SIL 645.png'),
+  detail2: media('img/Obras-estudio-Levinton/DSC_0592.JPG'),
   detail3: media('img/portadas/SIL 645.png'),
   team1:   media('img/Obras-estudio-Levinton/sergio.JPG'),
   team2:   media('img/Obras-estudio-Levinton/adriana.JPG'),
@@ -502,7 +502,7 @@ export default function Home() {
               <img src={IMGS.team2} alt="Arq. Adriana Napoleone" />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Adriana Napoleone</strong>
-                <span>Directora Artística</span>
+                <span>Directora de Proyectos · Diseño e Identidad</span>
               </div>
             </div>
           </div>

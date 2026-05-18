@@ -73,7 +73,7 @@ function getAllFiles(dir, base = dir) {
     if (entry.isDirectory()) {
       results = results.concat(getAllFiles(fullPath, base));
     } else {
-      const key = 'img/' + path.relative(base, fullPath);
+      const key = ('img/' + path.relative(base, fullPath)).replace(/\\/g, '/');
       results.push({ fullPath, key });
     }
   }

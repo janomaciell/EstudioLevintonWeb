@@ -243,13 +243,14 @@
 .s2-words__phrase--accent { color: var(--accent, #c9a96e); }
 .s2-words__meta {
   display: flex;
-  gap: 24px;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
   margin-top: 60px;
 }
 .s2-words__img {
-  width: 140px;
-  aspect-ratio: 3/4;
+  width: 100%;
+  aspect-ratio: 16/10;
   overflow: hidden;
   will-change: clip-path;
   flex-shrink: 0;
