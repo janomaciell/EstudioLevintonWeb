@@ -109,16 +109,12 @@ export const ALL_PROJECTS = [
       piscina: 'Sí, borde infinito'
     },
     gallery: [
-      media('img/Obras-estudio-Levinton/Marinas/0ef10a33-3778-4ae8-9a3d-7094116e89bb.JPG'),
       media('img/Obras-estudio-Levinton/Marinas/279afa43-4326-4a31-a61a-eb33d8e32854.JPG'),
       media('img/Obras-estudio-Levinton/Marinas/819e8703-7b94-4204-88ec-bb542b63373f.JPG'),
-      media('img/Obras-estudio-Levinton/Marinas/97d6ed14-7503-49e7-a8c2-ecbaf8b9a665.JPG'),
       media('img/Obras-estudio-Levinton/Marinas/c321c0ac-2b04-4b5c-9859-449af5021abd.JPG'),
       media('img/Obras-estudio-Levinton/Marinas/c32ed786-9865-4eb7-8bc0-690678f445d8.JPG'),
       media('img/Obras-estudio-Levinton/Marinas/c0ff668f-1e66-4fd7-92d1-2f3c5a7a7687.JPG'),
-      media('img/Obras-estudio-Levinton/Marinas/IMG_2112.jpg'),
       media('img/Obras-estudio-Levinton/Marinas/IMG_2116.jpg'),
-      media('img/Obras-estudio-Levinton/Marinas/IMG_2117.jpg'),
       media('img/Obras-estudio-Levinton/Marinas/IMG_2123.jpg')
     ]
   },
@@ -126,7 +122,7 @@ export const ALL_PROJECTS = [
     slug: 'sil-cabecera-laguna',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'San Isidro Labrador 328',
+    title: 'San Isidro Labrador',
     loc: 'Cabecera laguna, Tigre',
     m2: '320',
     year: '2013',
@@ -147,15 +143,12 @@ export const ALL_PROJECTS = [
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2354.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2356.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2355.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2357.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2368.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2369.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2370.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2371.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2372.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/IMG_2373.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/P1020196.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-328/P1020197.JPG')
     ]
   },
   {
