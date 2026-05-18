@@ -20,10 +20,6 @@ export const ALL_PROJECTS = [
       piscina: null
     },
     gallery: [
-      media('img/Obras-estudio-Levinton/Azzurra/IMG_0041.jpg'),
-      media('img/Obras-estudio-Levinton/Azzurra/IMG_0042.jpg'),
-      media('img/Obras-estudio-Levinton/Azzurra/IMG_2282.jpg'),
-      media('img/Obras-estudio-Levinton/Azzurra/IMG_2283.jpg'),
       media('img/Obras-estudio-Levinton/Azzurra/IMG_2284.jpg'),
       media('img/Obras-estudio-Levinton/Azzurra/IMG_2285.jpg'),
       media('img/Obras-estudio-Levinton/Azzurra/IMG_2286.jpg'),
