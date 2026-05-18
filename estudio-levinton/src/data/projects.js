@@ -155,7 +155,7 @@ export const ALL_PROJECTS = [
     slug: 'sil-rio',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'San Isidro Labrador 71',
+    title: 'San Isidro Labrador',
     loc: 'Río, Tigre',
     m2: '370',
     year: '2015',
@@ -172,7 +172,6 @@ export const ALL_PROJECTS = [
     gallery: [
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-71/IMG_3240.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-71/IMG_3358.JPG'),
-      media('img/Obras-estudio-Levinton/San-Isidro-labrador-71/IMG_3359.JPG'),
       media('img/Obras-estudio-Levinton/San-Isidro-labrador-71/IMG_3360.jpg')
     ]
   },
@@ -180,7 +179,7 @@ export const ALL_PROJECTS = [
     slug: 'sil-laguna-1',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'San Isidro Labrador 577',
+    title: 'San Isidro Labrador',
     loc: 'Laguna, Tigre',
     m2: '280',
     year: '2018',
@@ -208,7 +207,7 @@ export const ALL_PROJECTS = [
     slug: 'sil-laguna-2',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'San Isidro Labrador 645',
+    title: 'San Isidro Labrador',
     loc: 'Laguna, Tigre',
     m2: '320',
     year: '2016',
@@ -225,7 +224,6 @@ export const ALL_PROJECTS = [
     gallery: [
       media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/contrafrente.jpg'),
       media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/cocina.jpg'),
-      media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/DSC_0345.JPG'),
       media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/DSC_0348.JPG'),
       media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/CSC_0581.JPG'),
       media('img/Obras-estudio-Levinton/san-Isidro-labrador-645/DSC_0455-001.JPG')
@@ -235,7 +233,7 @@ export const ALL_PROJECTS = [
     slug: 'sil-interno',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'San Isidro Labrador 202',
+    title: 'San Isidro Labrador',
     loc: 'Lote interno, Tigre',
     m2: '200',
     year: '2010',
@@ -252,7 +250,6 @@ export const ALL_PROJECTS = [
     gallery: [
       media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2375.jpg'),
       media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2377.jpg'),
-      media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2378.jpg'),
       media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2384.jpg'),
       media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2390.jpg'),
       media('img/Obras-estudio-Levinton/san-isidro-labrador-202/IMG_2393.jpg'),
@@ -264,7 +261,7 @@ export const ALL_PROJECTS = [
     slug: 'santa-catalina-laguna',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'Santa Catalina 304',
+    title: 'Santa Catalina',
     loc: 'Laguna, Tigre',
     m2: '300',
     year: '2018',
@@ -290,7 +287,7 @@ export const ALL_PROJECTS = [
     slug: 'santa-catalina-rio',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'Santa Catalina 382',
+    title: 'Santa Catalina',
     loc: 'Río, Tigre',
     m2: '310',
     year: '2022',
