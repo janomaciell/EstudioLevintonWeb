@@ -419,7 +419,7 @@ export const ALL_PROJECTS = [
     slug: 'santa-catalina-techo-verde',
     country: 'Argentina',
     label: 'Obra Terminada',
-    title: 'Santa Catalina Techo Verde',
+    title: 'Santa Catalina',
     loc: 'Laguna, Tigre',
     m2: '360',
     year: '2013',
