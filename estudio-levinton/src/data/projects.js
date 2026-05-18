@@ -438,30 +438,6 @@ export const ALL_PROJECTS = [
       media('img/Obras-estudio-Levinton/Santa-cata-382/Ver fotos recientes(1).png'),
       media('img/Obras-estudio-Levinton/Santa-cata-382/Ver fotos recientes.png')
     ]
-  },
-  {
-    slug: 'santa-catalina-577',
-    country: 'Argentina',
-    label: 'Obra Terminada',
-    title: 'Santa Catalina 577',
-    loc: 'Laguna, Tigre',
-    m2: '360',
-    year: '2013',
-    img: media('img/portadas/santa-catalina-577.jpg'),
-    description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
-    specs: {
-      habitaciones: 4,
-      banos: 5,
-      cocheras: 3,
-      plantas: 2,
-      lote: '1000 m²',
-      piscina: 'Sí'
-    },
-    gallery: [
-      media('img/Obras-estudio-Levinton/Santa-Catalina-577/6c45fdbc-3839-43f5-9baa-880569e19fa4.jpg'),
-      media('img/Obras-estudio-Levinton/Santa-Catalina-577/IMG-20221201-WA0012.jpg'),
-      media('img/Obras-estudio-Levinton/Santa-Catalina-577/IMG-20221223-WA0007.jpg')
-    ]
   }
 ];
 
