@@ -166,7 +166,7 @@ export default function DetallesProyectos() {
         </div>
         <div className="dp-gallery__grid">
           {project.gallery.map((imgSrc, i) => (
-            <div key={i} className={`dp-gallery__item ${i % 3 === 0 ? 'dp-gallery__item--large' : ''}`}>
+            <div key={i} className="dp-gallery__item">
               <img src={imgSrc} alt={`${project.title} - imagen ${i + 1}`} loading="lazy" />
             </div>
           ))}
