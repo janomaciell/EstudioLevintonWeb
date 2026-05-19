@@ -420,7 +420,7 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '360',
     year: '2013',
-    img: media('img/portadas/SantaCatalina382.png'),
+    img: media('img/portadas/Santacatalina382.png'),
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
     specs: {
       habitaciones: 4,
