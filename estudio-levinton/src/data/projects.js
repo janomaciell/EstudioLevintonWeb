@@ -291,7 +291,7 @@ export const ALL_PROJECTS = [
     loc: 'Río, Tigre',
     m2: '310',
     year: '2022',
-    img: media('img/portadas/Santa Catalina 382.png'),
+    img: media('img/portadas/SantaCatalina577.png'),
     description: 'Armonía y balance definen esta obra. Desde el paisajismo hasta la distribución interior, todo ha sido cuidadosamente articulado para brindar una experiencia de vida excepcional.',
     specs: {
       habitaciones: 5,
@@ -314,7 +314,7 @@ export const ALL_PROJECTS = [
     loc: 'Puertos, Escobar',
     m2: '220',
     year: '2019',
-    img: media('img/portadas/vistas226.jpeg'),
+    img: media('img/portadas/vistas226.png'),
     description: 'Esta casa construida con ladrillos de hormigón alveolar y con estándares de sustentabilidad para lograr eficiencia energética sin costos elevados.',
     specs: {
       habitaciones: 4,
@@ -420,7 +420,7 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '360',
     year: '2013',
-    img: media('img/portadas/santa-catalina-techo-verde.jpg'),
+    img: media('img/portadas/SantaCatalina382.png'),
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
     specs: {
       habitaciones: 4,
