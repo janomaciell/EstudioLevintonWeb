@@ -16,7 +16,7 @@ const SERVICES = [
   },
   {
     num: '02', title: 'Diseño y\nMateriales',
-    desc: 'La Arq. Adriana Napoleone (UBA + Licenciada en Artes Plásticas UNLP) lidera el proceso con su manifiesto "La Multiplicación de los Planos". Premio Adquisición Bancor 2022. Visualización 3D avanzada antes de cualquier decisión.',
+    desc: 'Adriana Napoleone lidera el proceso con su manifiesto "La Multiplicación de los Planos". Premio Adquisición Bancor 2022. Visualización 3D avanzada antes de cualquier decisión.',
     detail: 'Selección de terminaciones, paleta material, paisajismo y experiencia integral del habitar.',
     img: media('img/portadas/SIL 645.png'),
   },
@@ -34,7 +34,7 @@ const SERVICES = [
   },
   {
     num: '05', title: 'Flipping / \nReciclado',
-    desc: 'Hoy construir una casa sale más caro que comprar algo hecho. El Flipping es uno de los nichos que más está funcionando: compramos propiedades con potencial, las reciclamos integralmente con nuestro estándar de diseño y las reintroducimos al mercado con un valor significativamente mayor.',
+    desc: 'El Flipping es uno de los nichos que más está funcionando: compramos propiedades con potencial, las reciclamos integralmente con nuestro estándar de diseño y las reintroducimos al mercado con un valor significativamente mayor.',
     detail: 'Detección de oportunidades + Proyecto de transformación + Ejecución de obra express.',
     img: media('img/portadas/SIL 71.png'),
   },

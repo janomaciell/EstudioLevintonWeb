@@ -15,7 +15,7 @@ const IMGS = {
   proj3:   media('img/portadas/Marinas.png'),
   proj4:   media('img/portadas/SIL 71.png'),
   proj5:   media('img/portadas/SIL 645.png'),
-  detail2: media('img/Obras-estudio-Levinton/DSC_0592.JPG'),
+  detail2: media('img/Obras-estudio-Levinton/jardin-botanico.png'),
   detail3: media('img/portadas/SIL 645.png'),
   team1:   media('img/Obras-estudio-Levinton/sergio.JPG'),
   team2:   media('img/Obras-estudio-Levinton/adriana.JPG'),
@@ -480,9 +480,9 @@ export default function Home() {
           <div className="s5-approach__body">
             <span className="label" style={{ marginBottom: '1.5rem', display: 'block' }}>Nuestra Filosofía</span>
             <p className="s5-approach__p word-reveal">
-              Fundado en 1974 por los Arqs. Sergio Levinton y Adriana Napoleone,
+              Fundado en 1974 por el Arquitecto Sergio Levinton ,
               el estudio une la solidez técnica con una sensibilidad artística única.
-              Más de 300 obras entregadas en los barrios cerrados más exclusivos de Argentina.
+              Más de 300 obras entregadas en los barrios más exclusivos de Argentina.
             </p>
             <p className="s5-approach__p word-reveal" style={{ marginTop: '1.5rem' }}>
               Cada proyecto es único. Cada hogar refleja la forma en que su dueño vive.
@@ -531,7 +531,7 @@ export default function Home() {
             { num: '02', title: 'Diseño y Selección de Materiales', desc: 'Terminaciones que perduran. Sensibilidad artística única de la Arq. Napoleone.' },
             { num: '03', title: 'Eficiencia Energética',            desc: 'Pioneros en termotanques solares y etiquetado energético residencial.' },
             { num: '04', title: 'Grupos de Inversión',              desc: 'Casas terminadas como Showrooms. Alta rentabilidad, respaldo real.' },
-            { num: '05', title: 'Flipping / Reciclado',             desc: 'Hoy construir es costoso; el reciclado es tendencia. Compramos, transformamos y revalorizamos.' },
+            { num: '05', title: 'Flipping / Reciclado',             desc: 'Reciclamos propiedades con potencial y las reintroducimos al mercado con valor agregado.' },
           ].map((s, i) => (
             <div key={i} className="s7-serv-row proj-item">
               <span className="s7-serv-row__num">{s.num}</span>

@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   // Inicializar leyendo localStorage o por defecto 'dark' (que es el default del plan)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('app-theme') || 'dark';
+    return localStorage.getItem('app-theme') || 'light';
   });
 
   useEffect(() => {

@@ -108,8 +108,8 @@ export default function Nosotros() {
             ))}
           </div>
           <div className="nos-intro__body">
-            <p>Estudio Levinton Napoleone: boutique de arquitectura y construcción en Buenos Aires desde 1974. Cinco décadas, más de 300 viviendas en los barrios más exclusivos del país — Nordelta, Puertos del Lago, EIDICO, Villanueva, El Lauquen, Hyland Park, Campos de Roca — y una huella urbana de 30.000 m² en CABA y 645 ha en Bariloche.</p>
-            <p>No somos solo un estudio de diseño. No somos solo una empresa constructora. Somos ambas cosas en una sola entidad cohesiva: la solidez técnica del Arq. Levinton fusionada con la sensibilidad artística premiada de la Arq. Napoleone.</p>
+            <p>Estudio Levinton Napoleone: Arquitectura y construcción en Buenos Aires desde 1974. Cinco décadas, más de 300 viviendas en los barrios más exclusivos del país — Nordelta, Puertos, EIDICO, Villanueva, El Lauquen, Hyland Park, Campos de Roca — y una huella urbana de 30.000 m² en CABA y 645 ha en Bariloche.</p>
+            <p>No somos solo un estudio de diseño. No somos solo una empresa constructora. Somos ambas cosas en una sola entidad cohesiva: la solidez técnica del Arq. Levinton fusionada con la Arq. Napoleone.</p>
           </div>
         </div>
       </section>

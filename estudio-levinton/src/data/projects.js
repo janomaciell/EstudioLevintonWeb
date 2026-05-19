@@ -325,7 +325,6 @@ export const ALL_PROJECTS = [
       piscina: 'Sí'
     },
     gallery: [
-      media('img/Obras-estudio-Levinton/Vistas-226/ffe19cb2-fac8-478a-a219-86ab64ae382c.JPG'),
       media('img/Obras-estudio-Levinton/Vistas-226/image00002.jpeg'),
       media('img/Obras-estudio-Levinton/Vistas-226/image00005.jpeg'),
       media('img/Obras-estudio-Levinton/Vistas-226/image00008.jpeg'),
@@ -334,8 +333,6 @@ export const ALL_PROJECTS = [
       media('img/Obras-estudio-Levinton/Vistas-226/image00014.jpeg'),
       media('img/Obras-estudio-Levinton/Vistas-226/image00018.jpeg'),
       media('img/Obras-estudio-Levinton/Vistas-226/image00028.jpeg'),
-      media('img/Obras-estudio-Levinton/Vistas-226/IMG_9118.JPG'),
-      media('img/Obras-estudio-Levinton/Vistas-226/IMG_9119.JPG'),
       media('img/Obras-estudio-Levinton/Vistas-226/IMG_E6875.JPG')
     ]
   },
