@@ -99,8 +99,8 @@ export default function Navbar() {
         </div>
         <div className="nav-overlay__footer">
           <div className="nav-overlay__phones">
-            <a href="tel:+5491158098681" className="nav-overlay__social">011 5809-8681</a>
-            <a href="tel:+5491144227758" className="nav-overlay__social">011 4422-7758</a>
+            <a href="tel:+5491158098681" className="nav-overlay__social">+54 011 5809-8681</a>
+            <a href="tel:+5491144227758" className="nav-overlay__social">+54 011 4422-7758</a>
           </div>
           <a href="https://instagram.com/estudio_levinton" target="_blank" rel="noreferrer" className="nav-overlay__social">Instagram</a>
         </div>
