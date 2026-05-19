@@ -1,7 +1,7 @@
 .nos-hero-title {
   font-family: var(--font-display);
   font-size: clamp(5rem, 14vw, 14rem);
-  color: var(--text-main);
+  color: var(--title-beige);
   line-height: 0.88;
   letter-spacing: 0.01em;
 }
@@ -20,7 +20,7 @@
 .nos-intro__word {
   font-family: var(--font-display);
   font-size: clamp(4rem, 9vw, 10rem);
-  color: var(--text-main);
+  color: var(--title-beige);
   line-height: 0.88;
 }
 .nos-intro__body {
@@ -73,7 +73,7 @@
 .nos-tl-title {
   font-family: var(--font-display);
   font-size: clamp(4rem, 10vw, 11rem);
-  color: var(--text-main); line-height: 0.88;
+  color: var(--title-beige); line-height: 0.88;
 }
 .nos-t-item {
   display: grid; grid-template-columns: 120px 1px 1fr;

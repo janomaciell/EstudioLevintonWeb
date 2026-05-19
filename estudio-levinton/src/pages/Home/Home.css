@@ -67,10 +67,11 @@
 .hero-img-overlay {
   position: absolute;
   inset: 0;
-  background: var(--opacity-52);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 2;
   will-change: opacity;
-  display: none; /* User requested removal */
+  display: block;
+  pointer-events: none;
 }
 
 /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ Texto 1: DISEÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¹Ã…â€œAMOS / CONSTRUIMOS / Arquitectura ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ */
@@ -93,14 +94,13 @@
   display: block;
   font-family: var(--font-display, 'Bebas Neue', sans-serif);
   font-size: clamp(5rem, 14vw, 15rem);
-  color: var(--text-main);
+  color: var(--title-beige);
   letter-spacing: 0.01em;
   line-height: 0.88;
   will-change: transform;
 }
 .ht-inner--ghost {
-  /* "Arquitectura" ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â semitransparente */
-  color: var(--opacity-50);
+  color: var(--title-beige);
   font-size: clamp(4rem, 11vw, 12rem);
 }
 
@@ -337,9 +337,12 @@
 .s4-projects__title {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 7vw, 8rem);
-  color: var(--opacity-90);
+  color: var(--title-beige);
   will-change: transform;
   line-height: 1;
+}
+.s4-projects__title, .s4-grid__title {
+  color: var(--title-beige);
 }
 .s4-projects__cta {
   display: flex;
@@ -407,7 +410,7 @@
 .s4-grid__title {
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.2vw, 2rem);
-  color: var(--text-main);
+  color: var(--title-beige);
   line-height: 1;
   margin-bottom: 10px;
 }

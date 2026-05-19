@@ -50,7 +50,11 @@
   opacity: 1; /* Eliminada la opacidad para mostrar imagen original */
 }
 .page-hero__overlay {
-  display: none; /* Eliminado el gradiente negro */
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  z-index: 1;
 }
 .page-hero__content {
   position: relative;

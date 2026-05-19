@@ -57,6 +57,11 @@
   color: var(--text-main); line-height: 0.9;
   letter-spacing: 0.01em; margin-bottom: 28px;
 }
+.sv-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 13rem);
+  color: var(--title-beige); line-height: 0.88;
+}
 .sv-row__desc {
   font-size: 0.86rem; color: var(--opacity-40);
   line-height: 1.85; max-width: 440px; margin-bottom: 14px;
