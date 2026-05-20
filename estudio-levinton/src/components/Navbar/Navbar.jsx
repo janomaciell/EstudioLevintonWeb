@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useTheme } from '../../context/ThemeContext'
+import { LOGO } from '../../config/media'
 import './Navbar.css'
 
 export default function Navbar() {
@@ -57,9 +58,8 @@ export default function Navbar() {
     <>
       <nav ref={navRef} className="nav" style={{ opacity: 0 }}>
         <div className="nav__inner container">
-          <Link to="/" className="nav__logo">
-            <span className="nav__logo-name">Levinton Napoleone</span>
-            <span className="nav__logo-sub">Arquitectos</span>
+          <Link to="/" className="nav__logo" aria-label="Estudio Levinton Napoleone — Inicio">
+            <img src={LOGO} alt="Estudio Levinton Napoleone" className="nav__logo-img" />
           </Link>
           <div className="nav__actions">
             <button className="nav__theme-toggle" onClick={toggleTheme} aria-label="Alternar tema">

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { LOGO } from '../../config/media'
 
 export default function Loader() {
   const loaderRef  = useRef(null)
@@ -49,7 +50,12 @@ export default function Loader() {
     >
       <span className="page-loader__counter" ref={counterRef}>0</span>
       <div className="page-loader__row">
-        <span className="page-loader__name" ref={nameRef}>Estudio Levinton</span>
+        <img
+          src={LOGO}
+          alt="Estudio Levinton Napoleone"
+          className="page-loader__logo"
+          ref={nameRef}
+        />
         <div className="page-loader__bar-wrap">
           <div className="page-loader__bar" ref={barRef} />
         </div>

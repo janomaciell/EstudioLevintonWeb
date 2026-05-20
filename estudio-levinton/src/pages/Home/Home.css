@@ -592,6 +592,27 @@
 .s8-cta__link:hover { color: var(--text-main); border-color: var(--text-main); }
 
 /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ RESPONSIVE ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ */
+/* Notebook / laptop (no aplica en mobile) */
+@media (min-width: 769px) and (max-width: 1440px),
+       (min-width: 769px) and (max-height: 900px) {
+  .hero-txt1 {
+    top: 88px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .ht-inner {
+    font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  }
+  .ht-inner--ghost {
+    font-size: clamp(2.4rem, 6.5vw, 5.5rem);
+  }
+  .ht-line {
+    line-height: 0.92;
+  }
+}
+
 @media (max-width: 1100px) {
   .s2-words__grid { grid-template-columns: 1fr; }
   .s2-words__right { padding-left: 0; border-left: none; border-top: 1px solid var(--opacity-08); padding-top: 48px; }
@@ -604,8 +625,14 @@
   .s7-serv-row__desc, .s7-serv-row__arrow { display: none; }
 }
 @media (max-width: 768px) {
-  .ht-inner { font-size: clamp(3.2rem, 14vw, 6rem); }
-  .ht2-inner { font-size: clamp(3.2rem, 14vw, 6rem); }
+  .hero-txt1 {
+    top: auto;
+    bottom: 88px;
+    display: block;
+  }
+  .ht-inner { font-size: clamp(3.5rem, 15.5vw, 6.5rem); }
+  .ht-inner--ghost { font-size: clamp(3rem, 13.5vw, 5.75rem); }
+  .ht2-inner { font-size: clamp(3.5rem, 15.5vw, 6.5rem); }
   .s3-stats__grid { grid-template-columns: 1fr 1fr; }
   .s-stat + .s-stat::before { display: none; }
   .s4-grid { grid-template-columns: repeat(2, 1fr); }
@@ -628,8 +655,9 @@
   .s4-grid { grid-template-columns: 1fr; }
   .s4-grid__item { aspect-ratio: 16/9; }
   .s4-projects__title { font-size: 7.8vw; margin-left: 10px; }
-  .ht-inner { font-size: 11vw; }
-  .ht2-inner { font-size: 11vw; }
+  .ht-inner { font-size: clamp(3.25rem, 14.5vw, 5.75rem); }
+  .ht-inner--ghost { font-size: clamp(2.85rem, 12.5vw, 5.25rem); }
+  .ht2-inner { font-size: clamp(3.25rem, 14.5vw, 5.75rem); }
   .s7-services__title { font-size: clamp(2rem, 14vw, 4rem); }
   .s8-cta__line { font-size: clamp(3rem, 16vw, 6rem); }
 }

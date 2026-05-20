@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { LOGO } from '../../config/media'
 import './Footer.css'
 
 export default function Footer() {
@@ -6,7 +7,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__top container">
         <div className="footer__brand">
-          <span className="footer__logo">LEVINTON NAPOLEONE</span>
+          <Link to="/" className="footer__logo-link">
+            <img src={LOGO} alt="Estudio Levinton Napoleone" className="footer__logo-img" />
+          </Link>
           <p className="footer__tagline">
             Diseño, construcción y supervisión integral de residencias. Desde 1974.
           </p>

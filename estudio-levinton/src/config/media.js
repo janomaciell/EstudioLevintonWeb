@@ -30,3 +30,6 @@ export function media(path) {
  * URL base de R2 (para debug o uso directo)
  */
 export const R2_URL = R2_BASE;
+
+/** Logo del estudio (public/) */
+export const LOGO = '/logo-estudio-levinton.png';

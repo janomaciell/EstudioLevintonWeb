@@ -196,11 +196,12 @@ ul { list-style: none; }
   padding-top: 1rem;
   border-top: 1px solid var(--opacity-08);
 }
-.page-loader__name {
-  font-size: 0.6rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--opacity-55);
+.page-loader__logo {
+  display: block;
+  height: clamp(24px, 5vw, 36px);
+  width: auto;
+  max-width: min(200px, 50vw);
+  object-fit: contain;
   opacity: 0;
 }
 .page-loader__bar-wrap {
