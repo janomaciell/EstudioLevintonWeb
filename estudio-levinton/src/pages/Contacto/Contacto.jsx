@@ -191,7 +191,32 @@ export default function Contacto() {
             <span className="word-reveal ct-barrios__title">DÓNDE CONSTRUIMOS</span>
           </div>
           <div className="ct-barrios__list">
-            {['Nordelta', 'Puertos', 'EIDICO', 'Hyland Park', 'Villanueva', 'El Lauquen', 'Campos de Roca', 'La Martona', 'Talar de Pacheco', 'Bahía Grande', 'San Carlos de Bariloche'].map(b => (
+            {[
+              'San Isidro Labrador',
+              'Santa Catalina',
+              'Nordelta Carpinchos',
+              'Nordelta Glorietas',
+              'Vistas Puertos',
+              'El Lauquen',
+              'La Martona',
+              'Highland Park',
+              'Pilar del Este',
+              'San Diego',
+              'Marinas Puertos',
+              'Santa Clara',
+              'Nordelta Los Sauces',
+              'Puertos Muelles',
+              'Campos de Roca',
+              'San Andrés',
+              'San Matías',
+              'Santa Bárbara',
+              'Santa Maria de Tigre',
+              'Talar de Pacheco',
+              'El Naudir',
+              'Talar del Lago',
+              'Azzurra',
+              'Maschwitz Privado',
+            ].map(b => (
               <span key={b} className="ct-barrio">{b}</span>
             ))}
           </div>

@@ -24,6 +24,7 @@ export default function Footer() {
           <a href="tel:+5491144227758" className="footer__link">+54 011 4422-7758</a>
           <a href="mailto:levintonnapoleone@gmail.com" className="footer__link">levintonnapoleone@gmail.com</a>
           <a href="https://instagram.com/estudio_levinton" target="_blank" rel="noreferrer" className="footer__link">Instagram</a>
+          <a href="https://www.instagram.com/galeriapueblogarzon?igsh=MTZnNnI5NGl2aXdhdw==" target="_blank" rel="noreferrer" className="footer__link">Galeriapueblogarzon</a>
         </div>
       </div>
 

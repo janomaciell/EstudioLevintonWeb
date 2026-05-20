@@ -15,9 +15,8 @@ const SERVICES = [
     img: media('img/portadas/Azurra.png'),
   },
   {
-    num: '02', title: 'Diseño y\nMateriales',
-    desc: 'Adriana Napoleone lidera el proceso con su manifiesto "La Multiplicación de los Planos". Premio Adquisición Bancor 2022. Visualización 3D avanzada antes de cualquier decisión.',
-    detail: 'Selección de terminaciones, paleta material, paisajismo y experiencia integral del habitar.',
+    num: '02', title: 'Diseño y\nmateriales',
+    desc: 'Nos enfocamos en dar respuesta a las necesidades de cada comitente, diseñamos teniendo en cuenta parámetros bioclimáticos y materiales que ahorren consumo de energía.',
     img: media('img/portadas/SIL 645.png'),
   },
   {
@@ -156,7 +155,7 @@ export default function Servicios() {
                 <span key={j} style={{ display: 'block' }}>{line}</span>
               ))}</h2>
               <p className="sv-row__desc sv-row__fade">{s.desc}</p>
-              <p className="sv-row__detail sv-row__fade">{s.detail}</p>
+              {s.detail && <p className="sv-row__detail sv-row__fade">{s.detail}</p>}
               <Link to="/contacto" className="sv-row__link sv-row__fade">Consultar →</Link>
             </div>
           </div>
