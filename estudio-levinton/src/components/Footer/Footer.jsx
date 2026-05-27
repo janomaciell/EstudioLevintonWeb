@@ -23,11 +23,11 @@ export default function Footer() {
         </div>
 
         <div className="footer__contact">
-          <a href="tel:+5491158098681" className="footer__link">+54 011 5809-8681</a>
-          <a href="tel:+5491144227758" className="footer__link">+54 011 4422-7758</a>
+          <a href="tel:+5491158098681" className="footer__link">+54 9 11 5809 8681</a>
+          <a href="tel:+5491144227758" className="footer__link">+54 9 11 4422 7758</a>
           <a href="mailto:levintonnapoleone@gmail.com" className="footer__link">levintonnapoleone@gmail.com</a>
-          <a href="https://instagram.com/estudio_levinton" target="_blank" rel="noreferrer" className="footer__link">Instagram</a>
-          <a href="https://www.instagram.com/galeriapueblogarzon?igsh=MTZnNnI5NGl2aXdhdw==" target="_blank" rel="noreferrer" className="footer__link">Galeriapueblogarzon</a>
+          <a href="https://instagram.com/estudio_levinton" target="_blank" rel="noreferrer" className="footer__link">@estudio_levinton</a>
+          <a href="https://www.instagram.com/galeriapueblogarzon?igsh=MTZnNnI5NGl2aXdhdw==" target="_blank" rel="noreferrer" className="footer__link">@galeriapueblogarzon</a>
         </div>
       </div>
 

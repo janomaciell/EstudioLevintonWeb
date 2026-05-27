@@ -131,7 +131,7 @@ export default function Nosotros() {
               <h2 className="nos-team__name word-reveal">ARQ. SERGIO<br/>LEVINTON</h2>
               <p className="nos-team__bio">Arquitecto egresado de la UBA. Más de 40 años de trayectoria: desde torres de 14 pisos en CABA (Av. Santa Fe, Av. Córdoba, Malabia) hasta el masterplan de 645 ha en Cerro Carbón, Bariloche, y más de 300 viviendas premium en Nordelta, Puertos, EIDICO y Hyland Park.</p>
               <p className="nos-team__bio">Pionero en eficiencia energética residencial. Disertante en Reporte Inmobiliario 2020 junto a Mercado Libre Inmuebles sobre etiquetado energético y valorización de propiedades.</p>
-              <a href="tel:+5491158098681" className="nos-team__contact">+54 011 5809-8681</a>
+              <a href="tel:+5491158098681" className="nos-team__contact">+54 9 11 5809 8681</a>
             </div>
           </div>
 
@@ -144,7 +144,7 @@ export default function Nosotros() {
               <h2 className="nos-team__name word-reveal">ARQ. ADRIANA<br/>NAPOLEONE</h2>
               <p className="nos-team__bio">Arquitecta (UBA) y artista visual. Directora de la Galeria Pueblo Garzon, en Garzon, Uruguay.</p>
               <p className="nos-team__bio">Seleccionada Premio Bancor 2022 (Museo Tamburini, Córdoba). Programa de Artistas Torcuato Di Tella 2011. Exposiciones en Nordelta, Museo Villa Carmen, Casa de las Culturas, Municipio de Tigre y Bahía Grande — el mismo territorio donde construye.</p>
-              <a href="tel:+5491144227758" className="nos-team__contact">+54 011 4422-7758</a>
+              <a href="tel:+5491144227758" className="nos-team__contact">+54 9 11 4422 7758</a>
             </div>
           </div>
         </div>
