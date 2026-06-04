@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
+import SEO from '../../components/SEO/SEO'
 import './Nosotros.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -81,6 +82,11 @@ export default function Nosotros() {
 
   return (
     <main className="nos-page">
+      <SEO 
+        title="Nosotros | Estudio Levinton — Arquitectos" 
+        description="Conoce al Estudio Levinton Napoleone. Más de 40 años proyectando hogares que trascienden generaciones en Buenos Aires y Bariloche."
+        url="https://estudiolevinton.com/nosotros"
+      />
 
       <div className="page-hero">
         <div className="page-hero__bg">

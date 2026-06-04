@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SEO from '../../components/SEO/SEO'
 import './Contacto.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -58,6 +59,11 @@ export default function Contacto() {
 
   return (
     <main className="ct-page">
+      <SEO 
+        title="Contacto | Estudio Levinton — Arquitectos" 
+        description="Contáctanos para proyectar tu hogar en barrios cerrados o explorar oportunidades de inversión inmobiliaria. En 48 horas te respondemos."
+        url="https://estudiolevinton.com/contacto"
+      />
 
       <div className="page-hero">
         <div className="page-hero__bg">

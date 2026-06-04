@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ALL_PROJECTS } from '../../data/projects'
+import SEO from '../../components/SEO/SEO'
 import './Proyectos.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -41,6 +42,11 @@ export default function Proyectos() {
 
   return (
     <main className="pj-page">
+      <SEO 
+        title="Proyectos | Estudio Levinton — Arquitectos" 
+        description="Explora nuestro portfolio de arquitectura. Más de 300 obras construidas en los barrios cerrados más exclusivos de Argentina."
+        url="https://estudiolevinton.com/proyectos"
+      />
       <div className="page-hero">
         <div className="page-hero__bg">
           <img src="/img/portadas/Carpinchos.png" alt="Obra Estudio Levinton" />

@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
 import { ALL_PROJECTS } from '../../data/projects'
+import SEO from '../../components/SEO/SEO'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -311,6 +312,11 @@ export default function Home() {
 
   return (
     <main className="home">
+      <SEO 
+        title="Estudio Levinton — Arquitectos" 
+        description="Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte."
+        url="https://estudiolevinton.com/"
+      />
 
       {/* ═══════════════════════════════════════════════════
           HERO — 400vh wrapper + sticky panel

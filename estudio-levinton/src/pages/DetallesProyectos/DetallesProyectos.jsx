@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getProjectBySlug } from '../../data/projects';
+import SEO from '../../components/SEO/SEO';
 import './DetallesProyectos.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -79,6 +80,11 @@ export default function DetallesProyectos() {
 
   return (
     <main className="dp-page">
+      <SEO 
+        title={`${project.title} | Estudio Levinton — Arquitectos`}
+        description={project.description || `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`}
+        url={`https://estudiolevinton.com/proyectos/${slug}`}
+      />
       <button 
         onClick={() => {
           console.log('Back button clicked');

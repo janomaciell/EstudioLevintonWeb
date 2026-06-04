@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
+import SEO from '../../components/SEO/SEO'
 import './Servicios.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -110,6 +111,11 @@ export default function Servicios() {
 
   return (
     <main className="sv-page">
+      <SEO 
+        title="Servicios | Estudio Levinton — Arquitectos" 
+        description="Construcción llave en mano, diseño, eficiencia energética e inversiones inmobiliarias en barrios cerrados de Zona Norte."
+        url="https://estudiolevinton.com/servicios"
+      />
 
       <div className="page-hero">
         <div className="page-hero__bg">
