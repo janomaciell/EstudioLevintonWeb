@@ -10,14 +10,14 @@ export const ALL_PROJECTS = [
     m2: '340',
     year: '2025',
     img: media('img/portadas/Azurra.png'),
-    description: 'Residencia de diseño toscano ubicada en el barrio Azzurra, en Tortugas. Destaca por sus amplios ventanales que integran el paisaje exterior con los cálidos y sus detalles de resolución artesanal y de estilo. Construida con estándares de alta eficiencia energética y terminaciones premium.',
+    description: 'Residencia de diseño toscano ubicada en el barrio Azzurra, en Tortugas. Destaca por sus amplios ventanales que integran el paisaje exterior con los cálidos y sus detalles de resolución artesanal y de estilo. Construida con estándares de alta eficiencia energética como bomba de calor, tanto para agua sanitaria como para calefacción.',
     specs: {
-      habitaciones: null,
-      banos: null,
-      cocheras: null,
-      plantas: null,
-      lote: '900 m²',
-      piscina: null
+      habitaciones: "4",
+      banos: "6",
+      cocheras: "2",
+      plantas: "2",
+      lote: "1000 m²",
+      piscina: "Sí"
     },
     gallery: [
       media('img/Obras-estudio-Levinton/Azzurra/IMG_2284.jpg'),
