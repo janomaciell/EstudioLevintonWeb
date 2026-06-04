@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { useTheme } from '../../context/ThemeContext'
+import { useLanguage } from '../../context/LanguageContext'
+import { translations } from '../../data/translations'
 import { LOGO } from '../../config/media'
 import './Navbar.css'
 
@@ -12,6 +14,8 @@ export default function Navbar() {
   const linksRef    = useRef([])
   const { pathname } = useLocation()
   const { theme, toggleTheme } = useTheme()
+  const { lang, toggleLang } = useLanguage()
+  const t = translations[lang].nav
 
   useEffect(() => { setOpen(false) }, [pathname])
 
@@ -48,10 +52,10 @@ export default function Navbar() {
   }, [open])
 
   const links = [
-    { label: 'Proyectos', to: '/proyectos' },
-    { label: 'Servicios', to: '/servicios' },
-    { label: 'Nosotros',  to: '/nosotros'  },
-    { label: 'Contacto',  to: '/contacto'  },
+    { label: t.proyectos, to: '/proyectos' },
+    { label: t.servicios, to: '/servicios' },
+    { label: t.nosotros,  to: '/nosotros'  },
+    { label: t.contacto,  to: '/contacto'  },
   ]
 
   return (
@@ -62,7 +66,7 @@ export default function Navbar() {
             <img src={LOGO} alt="Estudio Levinton Napoleone" className="nav__logo-img" />
           </Link>
           <div className="nav__actions">
-            <button className="nav__theme-toggle" onClick={toggleTheme} aria-label="Alternar tema">
+            <button className="nav__theme-toggle" onClick={toggleTheme} aria-label={t.toggleTheme}>
               {theme === 'dark' ? (
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
               ) : (
@@ -70,9 +74,17 @@ export default function Navbar() {
               )}
             </button>
             <button
+              className="nav__lang-toggle"
+              onClick={toggleLang}
+              aria-label={t.toggleLang}
+              title={t.toggleLang}
+            >
+              {lang === 'es' ? 'EN' : 'ES'}
+            </button>
+            <button
               className={`nav__burger${open ? ' is-open' : ''}`}
               onClick={() => setOpen(v => !v)}
-              aria-label="Menú"
+              aria-label={t.menu}
             >
               <span /><span />
             </button>

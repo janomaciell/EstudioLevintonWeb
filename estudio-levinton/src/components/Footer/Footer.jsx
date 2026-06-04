@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom'
 import { LOGO } from '../../config/media'
+import { useLanguage } from '../../context/LanguageContext'
+import { translations } from '../../data/translations'
 import './Footer.css'
 
 export default function Footer() {
+  const { lang } = useLanguage()
+  const t = translations[lang]
+
   return (
     <footer className="footer">
       <div className="footer__top container">
@@ -11,15 +16,15 @@ export default function Footer() {
             <img src={LOGO} alt="Estudio Levinton Napoleone" className="footer__logo-img" />
           </Link>
           <p className="footer__tagline">
-            Diseño, construcción y supervisión integral de residencias. Desde 1974.
+            {t.footer.tagline}
           </p>
         </div>
 
         <div className="footer__nav">
-          <Link to="/proyectos" className="footer__link">Proyectos</Link>
-          <Link to="/servicios" className="footer__link">Servicios</Link>
-          <Link to="/nosotros"  className="footer__link">Nosotros</Link>
-          <Link to="/contacto"  className="footer__link">Contacto</Link>
+          <Link to="/proyectos" className="footer__link">{t.nav.proyectos}</Link>
+          <Link to="/servicios" className="footer__link">{t.nav.servicios}</Link>
+          <Link to="/nosotros"  className="footer__link">{t.nav.nosotros}</Link>
+          <Link to="/contacto"  className="footer__link">{t.nav.contacto}</Link>
         </div>
 
         <div className="footer__contact">
@@ -33,7 +38,7 @@ export default function Footer() {
 
       <div className="footer__bottom container">
         <span className="footer__copy">© {new Date().getFullYear()} Estudio Levinton Napoleone</span>
-        <span className="footer__copy">Buenos Aires, Argentina · Desde 1974</span>
+        <span className="footer__copy">{t.footer.copyright}</span>
       </div>
     </footer>
   )

@@ -4,6 +4,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getProjectBySlug } from '../../data/projects';
 import SEO from '../../components/SEO/SEO';
+import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../data/translations';
 import './DetallesProyectos.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,11 +15,12 @@ export default function DetallesProyectos() {
   const navigate = useNavigate();
   const [project, setProject] = useState(null);
 
+  const { lang } = useLanguage();
+  const t = translations[lang].detalles;
+
   useEffect(() => {
     const proj = getProjectBySlug(slug);
     setProject(proj);
-    
-    // Scroll to top on load
     window.scrollTo(0, 0);
   }, [slug]);
 
@@ -25,26 +28,24 @@ export default function DetallesProyectos() {
     if (!project) return;
 
     const ctx = gsap.context(() => {
-      // Hero reveal with delay for loader
       const lines = document.querySelectorAll('.dp-line-inner');
-      gsap.fromTo(lines, 
+      gsap.fromTo(lines,
         { y: '110%' },
         { y: '0%', stagger: 0.1, duration: 1.0, ease: 'power4.out', delay: 0.4 }
       );
-      
+
       const sub = document.querySelector('.dp-sub');
-      if (sub) gsap.fromTo(sub, 
+      if (sub) gsap.fromTo(sub,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.6 }
       );
-      
+
       const bg = document.querySelector('.dp-hero__bg');
       if (bg) gsap.to(bg, {
         yPercent: 22, ease: 'none',
         scrollTrigger: { trigger: '.dp-hero', start: 'top top', end: 'bottom top', scrub: true }
       });
 
-      // Stats reveal
       gsap.utils.toArray('.dp-stat').forEach((stat, i) => {
         gsap.fromTo(stat, { opacity: 0, y: 30 }, {
           opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
@@ -52,9 +53,8 @@ export default function DetallesProyectos() {
         });
       });
 
-      // Gallery reveal
       gsap.utils.toArray('.dp-gallery__item').forEach(item => {
-        gsap.fromTo(item, 
+        gsap.fromTo(item,
           { opacity: 0, y: 40 },
           {
             opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
@@ -63,7 +63,7 @@ export default function DetallesProyectos() {
         );
       });
     });
-    
+
     return () => ctx.revert();
   }, [project]);
 
@@ -71,8 +71,8 @@ export default function DetallesProyectos() {
     return (
       <main className="dp-page dp-not-found">
         <div className="container">
-          <h2>Proyecto no encontrado</h2>
-          <Link to="/proyectos" className="dp-btn-back">Volver a Proyectos</Link>
+          <h2>{t.notFound}</h2>
+          <Link to="/proyectos" className="dp-btn-back">{t.backBtn}</Link>
         </div>
       </main>
     );
@@ -80,29 +80,29 @@ export default function DetallesProyectos() {
 
   return (
     <main className="dp-page">
-      <SEO 
+      <SEO
         title={`${project.title} | Estudio Levinton — Arquitectos`}
         description={project.description || `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`}
         url={`https://estudiolevinton.com/proyectos/${slug}`}
       />
-      <button 
+      <button
         onClick={() => {
-          console.log('Back button clicked');
           if (window.history.length > 1) {
             navigate(-1);
           } else {
             navigate('/proyectos');
           }
-        }} 
-        className="dp-nav-back" 
-        aria-label="Volver atrás"
+        }}
+        className="dp-nav-back"
+        aria-label={t.backAria}
         type="button"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       </button>
-      {/* ─── HERO SECTION ─── */}
+
+      {/* HERO */}
       <div className="dp-hero">
         <div className="dp-hero__bg">
           <img src={project.img} alt={project.title} />
@@ -119,66 +119,65 @@ export default function DetallesProyectos() {
         </div>
       </div>
 
-      {/* ─── SPECS & DESCRIPTION SECTION ─── */}
+      {/* SPECS */}
       <section className="dp-info container">
         <div className="dp-info__left">
-          <div className="word-line"><span className="word-reveal dp-info__title">EL</span></div>
-          <div className="word-line"><span className="word-reveal dp-info__title dp-info__title--accent">PROYECTO</span></div>
-          <p className="dp-info__desc">{project.description}</p>
+          <div className="word-line"><span className="word-reveal dp-info__title">{t.elProyecto1}</span></div>
+          <div className="word-line"><span className="word-reveal dp-info__title dp-info__title--accent">{t.elProyecto2}</span></div>
+          <p className="dp-info__desc">{lang === 'en' && project.descriptionEn ? project.descriptionEn : project.description}</p>
         </div>
-        
+
         <div className="dp-info__right">
           <div className="dp-stats-grid">
             <div className="dp-stat">
-              <span className="dp-stat__label">Superficie</span>
+              <span className="dp-stat__label">{t.labelSuperficie}</span>
               <span className="dp-stat__val">{project.specs.lote}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Metros Construidos</span>
+              <span className="dp-stat__label">{t.labelM2}</span>
               <span className="dp-stat__val">{project.m2} m²</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Habitaciones</span>
+              <span className="dp-stat__label">{t.labelHab}</span>
               <span className="dp-stat__val">{project.specs.habitaciones}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Baños</span>
+              <span className="dp-stat__label">{t.labelBanos}</span>
               <span className="dp-stat__val">{project.specs.banos}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Cocheras</span>
+              <span className="dp-stat__label">{t.labelCocheras}</span>
               <span className="dp-stat__val">{project.specs.cocheras}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Plantas</span>
+              <span className="dp-stat__label">{t.labelPlantas}</span>
               <span className="dp-stat__val">{project.specs.plantas}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Piscina</span>
+              <span className="dp-stat__label">{t.labelPiscina}</span>
               <span className="dp-stat__val">{project.specs.piscina}</span>
             </div>
             <div className="dp-stat">
-              <span className="dp-stat__label">Año</span>
+              <span className="dp-stat__label">{t.labelAnio}</span>
               <span className="dp-stat__val">{project.year}</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── GALLERY SECTION ─── */}
+      {/* GALLERY */}
       <section className="dp-gallery">
         <div className="container">
-          <h2 className="dp-section-title">Galería</h2>
+          <h2 className="dp-section-title">{t.galeria}</h2>
         </div>
         <div className="dp-gallery__grid">
           {project.gallery.map((imgSrc, i) => (
             <div key={i} className="dp-gallery__item">
-              <img src={imgSrc} alt={`${project.title} - imagen ${i + 1}`} loading="lazy" />
+              <img src={imgSrc} alt={t.imgAlt(project.title, i)} loading="lazy" />
             </div>
           ))}
         </div>
       </section>
-
 
     </main>
   );

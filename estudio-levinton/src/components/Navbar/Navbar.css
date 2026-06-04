@@ -45,6 +45,34 @@
   opacity: 1;
 }
 
+/* Language toggle — same base as theme toggle */
+.nav__lang-toggle {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  cursor: none;
+  color: var(--text-main);
+  opacity: 0.6;
+  transition: opacity 0.3s, background 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  position: relative;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  padding: 4px 7px;
+  line-height: 1;
+}
+.nav__lang-toggle:hover {
+  opacity: 1;
+  background: var(--text-main);
+  color: var(--bg-main);
+}
+
+
 .nav__burger {
   display: flex;
   flex-direction: column;

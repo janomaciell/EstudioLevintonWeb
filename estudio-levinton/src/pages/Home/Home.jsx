@@ -5,6 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
 import { ALL_PROJECTS } from '../../data/projects'
 import SEO from '../../components/SEO/SEO'
+import { useLanguage } from '../../context/LanguageContext'
+import { translations } from '../../data/translations'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -23,29 +25,25 @@ const IMGS = {
   cta:     media('img/portadas/Talar de Pacheco.png'),
 }
 
-const FEATURED_PROJECTS = ALL_PROJECTS.slice(0, 6);
-
+const FEATURED_PROJECTS = ALL_PROJECTS.slice(0, 6)
 
 export default function Home() {
-  const wrapRef    = useRef(null)   // div 400vh — scroll space
-  const stickyRef  = useRef(null)   // panel sticky 100vh
+  const { lang } = useLanguage()
+  const t = translations[lang].home
 
-  // Imagen full-screen
+  const wrapRef    = useRef(null)
+  const stickyRef  = useRef(null)
   const imgWrapRef = useRef(null)
   const imgRef     = useRef(null)
-
   const line1Ref   = useRef(null)
   const line2Ref   = useRef(null)
   const line3Ref   = useRef(null)
   const l1Wrap     = useRef(null)
   const l2Wrap     = useRef(null)
   const l3Wrap     = useRef(null)
-
-  // Texto secundario (aparece con scroll, sobre fondo blanco)
   const txt2Ref    = useRef(null)
   const t2L1Ref    = useRef(null)
   const t2L2Ref    = useRef(null)
-
   const botRef     = useRef(null)
   const botWrap    = useRef(null)
   const marRef     = useRef(null)
@@ -66,9 +64,7 @@ export default function Home() {
       /* ══════════════════════════════════════
          ENTRANCE (después del loader ~2.9s)
       ══════════════════════════════════════ */
-      const entrance = gsap.timeline({ 
-        delay: 2.9
-      })
+      const entrance = gsap.timeline({ delay: 2.9 })
       entrance
         .to(imgWrapRef.current, { autoAlpha: 1, duration: 1, ease: 'power2.out' })
         .to(
@@ -77,11 +73,6 @@ export default function Home() {
           '-=0.4'
         )
         .to(botRef.current, { autoAlpha: 1, duration: 0.6 }, '-=0.5')
-
-      /* ══════════════════════════════════════
-         SCROLL EFFECT — Yurdaer
-         ...
-      ══════════════════════════════════════ */
 
       const TRIGGER = wrapRef.current
 
@@ -101,10 +92,8 @@ export default function Home() {
             scrub,
             invalidateOnRefresh: true,
             onUpdate: self => {
-              // Si el usuario scrollea aunque sea un poquito, terminamos la animación de entrada
-              // Esto evita que el sitio se sienta "tildado" durante el delay inicial
               if (self.progress > 0.01) {
-                entrance.progress(1);
+                entrance.progress(1)
               }
             }
           },
@@ -118,7 +107,7 @@ export default function Home() {
         scrollTrigger: { trigger: TRIGGER, start: 'top top', end: '8% top', scrub: 0.3 },
       })
 
-      // ── FASE A: overlay negro desaparece ─────────
+      // overlay negro desaparece
       gsap.to('.hero-img-overlay', {
         opacity: 0,
         ease: 'none',
@@ -133,16 +122,9 @@ export default function Home() {
       })
 
       // ── FASE B: imagen se achica con Scale ─────
-      // Reemplazamos clipPath (pesado) por Scale (GPU-friendly)
-      // 100% - (13% * 2) = 0.74
-      // 100% - (7% * 2) = 0.86
       gsap.fromTo(
         imgWrapRef.current,
-        { 
-          scaleX: 1, 
-          scaleY: 1, 
-          borderRadius: 0 
-        },
+        { scaleX: 1, scaleY: 1, borderRadius: 0 },
         {
           scaleX: 0.74,
           scaleY: 0.86,
@@ -158,15 +140,11 @@ export default function Home() {
         }
       )
 
-      // La imagen interior: escala inversa para mantener el tamaño visual del contenido (CROP effect)
-      // Queremos una escala visual uniforme de aprox 1.25 al final
-      // Sx_img = 1.25 / 0.74 ≈ 1.69
-      // Sy_img = 1.25 / 0.86 ≈ 1.45
       gsap.fromTo(
         imgRef.current,
         { scaleX: 1.15, scaleY: 1.15 },
         {
-          scaleX: 1.69, 
+          scaleX: 1.69,
           scaleY: 1.45,
           ease: 'none',
           force3D: true,
@@ -179,7 +157,7 @@ export default function Home() {
         }
       )
 
-      // ── FASE C: txt2 aparece (palabras grandes negro/blanco) ──
+      // ── FASE C: txt2 aparece ──
       gsap.to(txt2Ref.current, {
         autoAlpha: 1,
         ease: 'none',
@@ -201,14 +179,13 @@ export default function Home() {
       ══════════════════════════════════════ */
       const track = marRef.current
       if (track) {
-        // Aseguramos que las fuentes estén cargadas para medir correctamente
         document.fonts.ready.then(() => {
           const repetitions = 6
           const totalW = track.scrollWidth / repetitions
           gsap.to(track, {
-            x: -totalW, 
-            ease: 'none', 
-            duration: 25, 
+            x: -totalW,
+            ease: 'none',
+            duration: 25,
             repeat: -1,
             modifiers: {
               x: gsap.utils.unitize(x => {
@@ -221,7 +198,7 @@ export default function Home() {
       }
 
       /* ══════════════════════════════════════
-         WORD-BY-WORD (secciones inferiores)
+         WORD-BY-WORD
       ══════════════════════════════════════ */
       gsap.utils.toArray('.word-reveal').forEach(word => {
         gsap.fromTo(word,
@@ -308,12 +285,12 @@ export default function Home() {
 
     })
     return () => ctx.revert()
-  }, [])
+  }, [lang])
 
   return (
     <main className="home">
-      <SEO 
-        title="Estudio Levinton — Arquitectos" 
+      <SEO
+        title="Estudio Levinton — Arquitectos"
         description="Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte."
         url="https://estudiolevinton.com/"
       />
@@ -324,48 +301,46 @@ export default function Home() {
       <div className="hero-wrap" ref={wrapRef}>
         <div className="hero-sticky" ref={stickyRef}>
 
-          {/* IMAGEN full-screen — protagonista del efecto */}
-          {/* position: fixed dentro del sticky para que cubra todo */}
           <div className="hero-img-wrap" ref={imgWrapRef}>
             <img src={IMGS.hero} alt="Arquitectura Levinton" ref={imgRef} />
             <div className="hero-img-overlay" />
           </div>
 
-          {/* TEXTO 1 — cae al hacer scroll */}
+          {/* TEXTO 1 */}
           <div className="hero-txt1">
             <div className="ht-line">
               <span className="ht-scroll-wrap" ref={l1Wrap} style={{ display: 'block' }}>
-                <span className="ht-inner" ref={line1Ref}>PROYECTAMOS</span>
+                <span className="ht-inner" ref={line1Ref}>{t.line1}</span>
               </span>
             </div>
             <div className="ht-line">
               <span className="ht-scroll-wrap" ref={l2Wrap} style={{ display: 'block' }}>
-                <span className="ht-inner" ref={line2Ref}>CONSTRUIMOS</span>
+                <span className="ht-inner" ref={line2Ref}>{t.line2}</span>
               </span>
             </div>
             <div className="ht-line">
               <span className="ht-scroll-wrap" ref={l3Wrap} style={{ display: 'block' }}>
-                <span className="ht-inner ht-inner--ghost" ref={line3Ref}>Arquitectura</span>
+                <span className="ht-inner ht-inner--ghost" ref={line3Ref}>{t.line3}</span>
               </span>
             </div>
           </div>
 
-          {/* TEXTO 2 — aparece en negro sobre blanco cuando imagen se achicó */}
+          {/* TEXTO 2 */}
           <div className="hero-txt2" ref={txt2Ref}>
             <div className="ht2-line">
-              <span className="ht2-inner" ref={t2L1Ref}>CREAMOS</span>
+              <span className="ht2-inner" ref={t2L1Ref}>{t.creamos}</span>
             </div>
             <div className="ht2-line">
-              <span className="ht2-inner" ref={t2L2Ref}>ESPACIOS</span>
+              <span className="ht2-inner" ref={t2L2Ref}>{t.espacios}</span>
             </div>
           </div>
 
           {/* BOTTOM STRIP */}
           <div className="hero-bot" ref={botWrap}>
             <div ref={botRef} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-              <span className="label">Estudio Levinton · Desde 1974</span>
+              <span className="label">{t.desde}</span>
               <div className="hero-bot__scroll">
-                <span className="label">Scroll</span>
+                <span className="label">{t.scroll}</span>
                 <div className="hero-bot__line"><div className="hero-bot__fill" /></div>
               </div>
             </div>
@@ -375,7 +350,7 @@ export default function Home() {
       </div>
 
       {/* ═══════════════════════════════════════════════════
-          MARQUEE
+          MARQUEE (texto fijo — marca)
       ═══════════════════════════════════════════════════ */}
       <div className="s-marquee">
         <div className="s-marquee__track" ref={marRef}>
@@ -393,7 +368,7 @@ export default function Home() {
       <section className="s2-words">
         <div className="s2-words__grid">
           <div className="s2-words__left">
-            {['UNIMOS','TODO','EL','PROCESO','EN','UNO'].map((w, i) => (
+            {t.s2Words.map((w, i) => (
               <div key={i} className="word-line">
                 <span className="word-reveal s2-words__word">{w}</span>
               </div>
@@ -401,10 +376,10 @@ export default function Home() {
           </div>
           <div className="s2-words__right">
             <div className="s2-words__sub">
-              <div className="word-line"><span className="word-reveal s2-words__phrase">CREANDO</span></div>
-              <div className="word-line"><span className="word-reveal s2-words__phrase s2-words__phrase--accent">EFICIENCIA</span></div>
-              <div className="word-line"><span className="word-reveal s2-words__phrase">&amp;</span></div>
-              <div className="word-line"><span className="word-reveal s2-words__phrase">PRECISIÓN</span></div>
+              <div className="word-line"><span className="word-reveal s2-words__phrase">{t.s2Phrase1}</span></div>
+              <div className="word-line"><span className="word-reveal s2-words__phrase s2-words__phrase--accent">{t.s2Phrase2}</span></div>
+              <div className="word-line"><span className="word-reveal s2-words__phrase">{t.s2Phrase3}</span></div>
+              <div className="word-line"><span className="word-reveal s2-words__phrase">{t.s2Phrase4}</span></div>
             </div>
             <div className="s2-words__meta">
               <div className="img-reveal s2-words__img">
@@ -412,7 +387,7 @@ export default function Home() {
               </div>
               <div className="s2-words__since">
                 <span className="s2-words__since-num">1974</span>
-                <span className="label">Fundado en</span>
+                <span className="label">{t.s2Since}</span>
               </div>
             </div>
           </div>
@@ -425,12 +400,7 @@ export default function Home() {
       <section className="s3-stats" ref={statsRef}>
         <div className="s3-stats__bg-text scrub-x" data-dir="left">LEVINTON ARQUITECTOS</div>
         <div className="s3-stats__grid container">
-          {[
-            { num: 300,   suffix: '+',  label: 'Obras construidas' },
-            { num: 50,    suffix: '',   label: 'Años de trayectoria ininterrumpida' },
-            { num: 30000, suffix: 'm²', label: 'Desarrollados en prop. horizontal' },
-            { num: 12,    suffix: '',   label: 'Barrios cerrados activos' },
-          ].map((s, i) => (
+          {t.stats.map((s, i) => (
             <div key={i} className="s-stat">
               <div className="s-stat__value">
                 <span className="s-stat__num" data-target={s.num}>0</span>
@@ -447,7 +417,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════ */}
       <section className="s4-projects">
         <div className="s4-projects__header container">
-          <h2 className="s4-projects__title scrub-x" data-dir="right">PROYECTOS SELECCIONADOS</h2>
+          <h2 className="s4-projects__title scrub-x" data-dir="right">{t.proyectosTitle}</h2>
         </div>
         <div className="s4-grid">
           {FEATURED_PROJECTS.map((p, i) => (
@@ -462,7 +432,7 @@ export default function Home() {
           ))}
         </div>
         <div className="s4-projects__cta">
-          <Link to="/proyectos" className="s4-projects__all-btn">Ver todos los proyectos →</Link>
+          <Link to="/proyectos" className="s4-projects__all-btn">{t.verTodos}</Link>
         </div>
       </section>
 
@@ -472,9 +442,9 @@ export default function Home() {
       <section className="s5-approach">
         <div className="s5-approach__row">
           <div className="s5-approach__text-col">
-            <div className="word-line"><span className="word-reveal s5-approach__big">AMAMOS</span></div>
-            <div className="word-line"><span className="word-reveal s5-approach__big">LO QUE</span></div>
-            <div className="word-line"><span className="word-reveal s5-approach__big s5-approach__big--italic">HACEMOS</span></div>
+            <div className="word-line"><span className="word-reveal s5-approach__big">{t.approachBig1}</span></div>
+            <div className="word-line"><span className="word-reveal s5-approach__big">{t.approachBig2}</span></div>
+            <div className="word-line"><span className="word-reveal s5-approach__big s5-approach__big--italic">{t.approachBig3}</span></div>
           </div>
           <div className="s5-approach__img-col">
             <div className="img-reveal s5-approach__img">
@@ -484,31 +454,24 @@ export default function Home() {
         </div>
         <div className="s5-approach__row s5-approach__row--b container">
           <div className="s5-approach__body">
-            <span className="label" style={{ marginBottom: '1.5rem', display: 'block' }}>Nuestra Filosofía</span>
-            <p className="s5-approach__p word-reveal">
-              Fundado en 1974 por el Arquitecto Sergio Levinton ,
-              el estudio une la solidez técnica con una sensibilidad artística única.
-              Más de 300 obras entregadas en los barrios más exclusivos de Argentina.
-            </p>
-            <p className="s5-approach__p word-reveal" style={{ marginTop: '1.5rem' }}>
-              Cada proyecto es único. Cada hogar refleja la forma en que su dueño vive.
-              Presupuesto cerrado, supervisión diaria, acompañamiento permanente.
-            </p>
-            <Link to="/nosotros" className="s5-approach__link word-reveal">Conocer el estudio →</Link>
+            <span className="label" style={{ marginBottom: '1.5rem', display: 'block' }}>{t.filosofia}</span>
+            <p className="s5-approach__p word-reveal">{t.approachP1}</p>
+            <p className="s5-approach__p word-reveal" style={{ marginTop: '1.5rem' }}>{t.approachP2}</p>
+            <Link to="/nosotros" className="s5-approach__link word-reveal">{t.conocerEstudio}</Link>
           </div>
           <div className="s5-approach__team">
             <div className="img-reveal s5-approach__img-b">
               <img src={IMGS.team1} alt="Arq. Sergio Levinton" />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Sergio Levinton</strong>
-                <span>Director · Co-fundador</span>
+                <span>{t.director}</span>
               </div>
             </div>
             <div className="img-reveal s5-approach__img-b">
               <img src={IMGS.team2} alt="Arq. Adriana Napoleone" />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Adriana Napoleone</strong>
-                <span>Directora de Proyectos · Diseño e Identidad</span>
+                <span>{t.directoraProyectos}</span>
               </div>
             </div>
           </div>
@@ -519,8 +482,8 @@ export default function Home() {
           SCRUBBING TEXT
       ═══════════════════════════════════════════════════ */}
       <section className="s6-marquee-scroll">
-        <div className="s6-marquee-scroll__line scrub-x" data-dir="left">PROYECTAMOS · CONSTRUIMOS · SUPERVISAMOS</div>
-        <div className="s6-marquee-scroll__line scrub-x" data-dir="right">EN TODO LO QUE HACEMOS · CALIDAD SIN CONCESIONES</div>
+        <div className="s6-marquee-scroll__line scrub-x" data-dir="left">{t.scrub1}</div>
+        <div className="s6-marquee-scroll__line scrub-x" data-dir="right">{t.scrub2}</div>
       </section>
 
       {/* ═══════════════════════════════════════════════════
@@ -528,17 +491,11 @@ export default function Home() {
       ═══════════════════════════════════════════════════ */}
       <section className="s7-services container">
         <div className="s7-services__header">
-          <div className="word-line"><span className="word-reveal s7-services__title">NUESTROS</span></div>
-          <div className="word-line"><span className="word-reveal s7-services__title s7-services__title--accent">SERVICIOS</span></div>
+          <div className="word-line"><span className="word-reveal s7-services__title">{t.nuestrosServicios1}</span></div>
+          <div className="word-line"><span className="word-reveal s7-services__title s7-services__title--accent">{t.nuestrosServicios2}</span></div>
         </div>
         <div className="s7-services__list">
-          {[
-            { num: '01', title: 'Construcción Llave en Mano',       desc: 'Proyecto, trámites, materiales y obra. Presupuesto cerrado, sin sorpresas.' },
-            { num: '02', title: 'Diseño y Selección de Materiales', desc: 'Terminaciones que perduran. Sensibilidad artística única de la Arq. Napoleone.' },
-            { num: '03', title: 'Eficiencia Energética',            desc: 'Pioneros en termotanques solares y etiquetado energético residencial.' },
-            { num: '04', title: 'Grupos de Inversión',              desc: 'Casas terminadas como Showrooms. Alta rentabilidad, respaldo real.' },
-            { num: '05', title: 'Flipping / Reciclado',             desc: 'Reciclamos propiedades con potencial y las reintroducimos al mercado con valor agregado.' },
-          ].map((s, i) => (
+          {t.services.map((s, i) => (
             <div key={i} className="s7-serv-row proj-item">
               <span className="s7-serv-row__num">{s.num}</span>
               <h3 className="s7-serv-row__title">{s.title}</h3>
@@ -558,12 +515,12 @@ export default function Home() {
           <div className="s8-cta__overlay" />
         </div>
         <div className="s8-cta__content container">
-          <div className="word-line"><span className="word-reveal s8-cta__line">¿TENÉS UN</span></div>
-          <div className="word-line"><span className="word-reveal s8-cta__line s8-cta__line--italic">LOTE EN</span></div>
-          <div className="word-line"><span className="word-reveal s8-cta__line">BARRIOS CERRADOS?</span></div>
+          <div className="word-line"><span className="word-reveal s8-cta__line">{t.ctaLine1}</span></div>
+          <div className="word-line"><span className="word-reveal s8-cta__line s8-cta__line--italic">{t.ctaLine2}</span></div>
+          <div className="word-line"><span className="word-reveal s8-cta__line">{t.ctaLine3}</span></div>
           <div className="s8-cta__actions word-reveal">
-            <Link to="/contacto" className="s8-cta__btn">Proyectá tu hogar</Link>
-            <Link to="/proyectos" className="s8-cta__link">Ver inversiones →</Link>
+            <Link to="/contacto" className="s8-cta__btn">{t.ctaBtn}</Link>
+            <Link to="/proyectos" className="s8-cta__link">{t.ctaLink}</Link>
           </div>
         </div>
       </section>

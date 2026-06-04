@@ -1,0 +1,449 @@
+// ─────────────────────────────────────────────────────────────
+// translations.js — All UI strings for ES / EN
+// ─────────────────────────────────────────────────────────────
+
+export const translations = {
+  es: {
+    // ── NAVBAR ─────────────────────────────────────────────────
+    nav: {
+      proyectos: 'Proyectos',
+      servicios:  'Servicios',
+      nosotros:   'Nosotros',
+      contacto:   'Contacto',
+      toggleTheme: 'Alternar tema',
+      toggleLang:  'Switch to English',
+      menu:        'Menú',
+    },
+
+    // ── FOOTER ─────────────────────────────────────────────────
+    footer: {
+      tagline:   'Diseño, construcción y supervisión integral de residencias. Desde 1974.',
+      copyright: 'Buenos Aires, Argentina · Desde 1974',
+    },
+
+    // ── HOME ───────────────────────────────────────────────────
+    home: {
+      // Hero text 1
+      line1: 'PROYECTAMOS',
+      line2: 'CONSTRUIMOS',
+      line3: 'Arquitectura',
+      // Hero text 2
+      creamos:  'CREAMOS',
+      espacios: 'ESPACIOS',
+      // Bottom strip
+      desde: 'Estudio Levinton · Desde 1974',
+      scroll: 'Scroll',
+      // s2 words left
+      s2Words: ['UNIMOS','TODO','EL','PROCESO','EN','UNO'],
+      // s2 words right
+      s2Phrase1: 'CREANDO',
+      s2Phrase2: 'EFICIENCIA',
+      s2Phrase3: '&',
+      s2Phrase4: 'PRECISIÓN',
+      s2Since: 'Fundado en',
+      // Stats
+      stats: [
+        { num: 300,   suffix: '+',  label: 'Obras construidas' },
+        { num: 50,    suffix: '',   label: 'Años de trayectoria ininterrumpida' },
+        { num: 30000, suffix: 'm²', label: 'Desarrollados en prop. horizontal' },
+        { num: 12,    suffix: '',   label: 'Barrios cerrados activos' },
+      ],
+      // Projects section
+      proyectosTitle: 'PROYECTOS SELECCIONADOS',
+      verTodos: 'Ver todos los proyectos →',
+      // Approach
+      approachBig1: 'AMAMOS',
+      approachBig2: 'LO QUE',
+      approachBig3: 'HACEMOS',
+      filosofia: 'Nuestra Filosofía',
+      approachP1: 'Fundado en 1974 por el Arquitecto Sergio Levinton, el estudio une la solidez técnica con una sensibilidad artística única. Más de 300 obras entregadas en los barrios más exclusivos de Argentina.',
+      approachP2: 'Cada proyecto es único. Cada hogar refleja la forma en que su dueño vive. Presupuesto cerrado, supervisión diaria, acompañamiento permanente.',
+      conocerEstudio: 'Conocer el estudio →',
+      director: 'Director · Co-fundador',
+      directoraProyectos: 'Directora de Proyectos · Diseño e Identidad',
+      // s6 scrub
+      scrub1: 'PROYECTAMOS · CONSTRUIMOS · SUPERVISAMOS',
+      scrub2: 'EN TODO LO QUE HACEMOS · CALIDAD SIN CONCESIONES',
+      // Services
+      nuestrosServicios1: 'NUESTROS',
+      nuestrosServicios2: 'SERVICIOS',
+      services: [
+        { num: '01', title: 'Construcción Llave en Mano',       desc: 'Proyecto, trámites, materiales y obra. Presupuesto cerrado, sin sorpresas.' },
+        { num: '02', title: 'Diseño y Selección de Materiales', desc: 'Terminaciones que perduran. Sensibilidad artística única de la Arq. Napoleone.' },
+        { num: '03', title: 'Eficiencia Energética',            desc: 'Pioneros en termotanques solares y etiquetado energético residencial.' },
+        { num: '04', title: 'Grupos de Inversión',              desc: 'Casas terminadas como Showrooms. Alta rentabilidad, respaldo real.' },
+        { num: '05', title: 'Flipping / Reciclado',             desc: 'Reciclamos propiedades con potencial y las reintroducimos al mercado con valor agregado.' },
+      ],
+      // CTA
+      ctaLine1: '¿TENÉS UN',
+      ctaLine2: 'LOTE EN',
+      ctaLine3: 'BARRIOS CERRADOS?',
+      ctaBtn:  'Proyectá tu hogar',
+      ctaLink: 'Ver inversiones →',
+    },
+
+    // ── SERVICIOS ──────────────────────────────────────────────
+    servicios: {
+      seoTitle: 'Servicios | Estudio Levinton — Arquitectos',
+      seoDesc:  'Construcción llave en mano, diseño, eficiencia energética e inversiones inmobiliarias en barrios cerrados de Zona Norte.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: 'NUESTROS',
+      heroLine2: 'SERVICIOS',
+      heroSub:   'Residencias unifamiliares de alta gama con servicio integral y acompañamiento en cada etapa.',
+      introWords: ['TODO', 'BAJO', 'UN MISMO', 'TECHO'],
+      introBody: 'El modelo dual de Estudio Levinton atiende simultáneamente al comitente particular que sueña con proyectar su hogar, y al inversor de capital inmobiliario que busca oportunidades curadas de alto valor. En ambos casos, la solidez constructiva y la excelencia estética son innegociables.',
+      services: [
+        {
+          num: '01', title: 'Construcción\nLlave en Mano',
+          desc: 'Asumimos responsabilidad total: proyecto arquitectónico, tramitaciones municipales, compra de materiales y dirección de obra. Presupuesto predefinido y cerrado — sin sorpresas en el contexto argentino.',
+          detail: '3 meses de diseño + trámites · 10–12 meses de construcción · Plazo total: 15 meses.',
+        },
+        {
+          num: '02', title: 'Diseño y\nmateriales',
+          desc: 'Nos enfocamos en dar respuesta a las necesidades de cada comitente, diseñamos teniendo en cuenta parámetros bioclimáticos y materiales que ahorren consumo de energía.',
+          detail: null,
+        },
+        {
+          num: '03', title: 'Eficiencia\nEnergética',
+          desc: 'Termotanques solares como estándar desde 2012 — una década antes que el mercado premium. Paneles fotovoltaicos opcionales y domótica para control automatizado de climatización, cortinas y consumo.',
+          detail: 'Disertantes en Reporte Inmobiliario 2020 sobre "Casas Eficientes y Etiquetado Energético" junto a Mercado Libre Inmuebles.',
+        },
+        {
+          num: '04', title: 'Grupos de\nInversión',
+          desc: 'Organizamos grupos de inversión cerrados para adquirir lotes estratégicos y construir residencias premium. Las casas se comercializan como Showrooms habitables, completamente ambientadas por nuestra red de diseñadores e interioristas.',
+          detail: 'Ideal para inversores de capital o compradores que necesitan ocupación inmediata con garantía de diseño.',
+        },
+        {
+          num: '05', title: 'Flipping / \nReciclado',
+          desc: 'El Flipping es uno de los nichos que más está funcionando: compramos propiedades con potencial, las reciclamos integralmente con nuestro estándar de diseño y las reintroducimos al mercado con un valor significativamente mayor.',
+          detail: 'Detección de oportunidades + Proyecto de transformación + Ejecución de obra express.',
+        },
+      ],
+      consultarLink: 'Consultar →',
+      procesoTitle: 'CÓMO TRABAJAMOS',
+      proceso: [
+        { step: '01', dur: '1 mes',      title: 'Encuentro y Brief',         desc: 'Reunión para entender tu proyecto de vida, lote, presupuesto y expectativas.' },
+        { step: '02', dur: '2 meses',    title: 'Diseño y Visualización 3D', desc: 'Anteproyecto y renderizados 3D para recorrer tu hogar virtualmente.' },
+        { step: '03', dur: '1 mes',      title: 'Trámites Municipales',      desc: 'Gestionamos todos los permisos. Sin burocracia de tu parte.' },
+        { step: '04', dur: '10–12 meses',title: 'Construcción y Entrega',    desc: 'Dirección de obra con presupuesto cerrado y supervisión diaria.' },
+      ],
+    },
+
+    // ── PROYECTOS ──────────────────────────────────────────────
+    proyectos: {
+      seoTitle: 'Proyectos | Estudio Levinton — Arquitectos',
+      seoDesc:  'Explora nuestro portfolio de arquitectura. Más de 300 obras construidas en los barrios cerrados más exclusivos de Argentina.',
+      heroLabel: 'Portfolio',
+      heroLine1: 'PROYECTOS',
+      heroLine2: 'SELECCIONADOS',
+      heroSub:   '300+ obras construidas en los barrios cerrados más exclusivos de Argentina.',
+      filterLabel: 'Proyectos:',
+      filterAll:   'Todos',
+      filterDev:   'En Desarrollo',
+      filterDone:  'Obra Terminada',
+      filterM2:    'm²↓',
+      filterM2Title: 'Ordenar por superficie',
+      comingSoonTitle: 'Uruguay',
+      comingSoonText:  'Próximamente.\nEstamos expandiendo nuestra presencia al otro lado del río.',
+    },
+
+    // ── NOSOTROS ───────────────────────────────────────────────
+    nosotros: {
+      seoTitle: 'Nosotros | Estudio Levinton — Arquitectos',
+      seoDesc:  'Conoce al Estudio Levinton Napoleone. Más de 40 años proyectando hogares que trascienden generaciones en Buenos Aires y Bariloche.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: 'QUIÉNES',
+      heroLine2: 'SOMOS',
+      heroSub:   'Cuatro décadas proyectando hogares que trascienden generaciones, con solidez constructiva y visión sustentable.',
+      introWords: ['UNA', 'VISIÓN', 'COMPARTIDA'],
+      introP1: 'Estudio Levinton Napoleone: Arquitectura y construcción en Buenos Aires desde 1974. Cinco décadas, más de 300 viviendas en los barrios más exclusivos del país — Nordelta, Puertos, EIDICO, Villanueva, El Lauquen, Hyland Park, Campos de Roca — y una huella urbana de 30.000 m² en CABA y 645 ha en Bariloche.',
+      introP2: 'No somos solo un estudio de diseño. No somos solo una empresa constructora. Somos ambas cosas en una sola entidad cohesiva: la solidez técnica del Arq. Levinton fusionada con la Arq. Napoleone.',
+      teamLabel: 'Fundadores',
+      sergioRole: 'Director Técnico · Co-fundador',
+      sergioName: 'ARQ. SERGIO\nLEVINTON',
+      sergioBio1: 'Arquitecto egresado de la UBA. Más de 40 años de trayectoria: desde torres de 14 pisos en CABA (Av. Santa Fe, Av. Córdoba, Malabia) hasta el masterplan de 645 ha en Cerro Carbón, Bariloche, y más de 300 viviendas premium en Nordelta, Puertos, EIDICO y Hyland Park.',
+      sergioBio2: 'Pionero en eficiencia energética residencial. Disertante en Reporte Inmobiliario 2020 junto a Mercado Libre Inmuebles sobre etiquetado energético y valorización de propiedades.',
+      adrianaRole: 'Directora Artística · Co-fundadora',
+      adrianaName: 'ARQ. ADRIANA\nNAPOLEONE',
+      adrianaBio1: 'Arquitecta (UBA) y artista visual. Directora de la Galeria Pueblo Garzon, en Garzon, Uruguay.',
+      adrianaBio2: 'Seleccionada Premio Bancor 2022 (Museo Tamburini, Córdoba). Programa de Artistas Torcuato Di Tella 2011. Exposiciones en Nordelta, Museo Villa Carmen, Casa de las Culturas, Municipio de Tigre y Bahía Grande — el mismo territorio donde construye.',
+      timelineTitle: 'TRAYECTORIA',
+      timeline: [
+        { year: '1974', event: 'Fundación del Estudio', desc: 'Sergio Levinton inicia su trayectoria en CABA con propiedad horizontal de alta densidad: torres de 14–15 pisos en Av. Santa Fe, Av. Córdoba y Malabia — más de 30.000 m² construidos.' },
+        { year: '2000', event: 'Incorporación de Adriana Napoleone', desc: 'Nordelta, EIDICO El Encuentro, Puertos del Lago, El Lauquen, Villanueva, Hyland Park, Campos de Roca, La Martona. El estudio se convierte en referente indiscutido del segmento premium.' },
+        { year: '2012', event: 'Pioneros en Sustentabilidad', desc: 'Termotanques solares como estándar absoluto — una década antes que el mercado. Etiquetado energético, paneles fotovoltaicos y domótica integrada desde el diseño.' },
+        { year: '2020', event: 'Líderes de Opinión', desc: 'Disertación en Reporte Inmobiliario junto a Mercado Libre Inmuebles sobre "Casas Eficientes y Etiquetado Energético". Referentes del impacto de la sustentabilidad en la tasación.' },
+        { year: 'Hoy',  event: '+300 Obras Entregadas', desc: 'Cinco décadas sin pausa. 300+ viviendas en los barrios más exclusivos, 30.000 m² en CABA, 645 hectáreas en Bariloche. Una obra que trasciende generaciones.' },
+      ],
+    },
+
+    // ── CONTACTO ───────────────────────────────────────────────
+    contacto: {
+      seoTitle: 'Contacto | Estudio Levinton — Arquitectos',
+      seoDesc:  'Contáctanos para proyectar tu hogar en barrios cerrados o explorar oportunidades de inversión inmobiliaria. En 48 horas te respondemos.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: 'HABLEMOS',
+      heroLine2: 'DE TU HOGAR',
+      heroSub:   'En 48 horas te respondemos con claridad, sin compromiso.',
+      introWords: ['PROYECTAMOS', 'HOGARES', 'QUE', 'TRASCIENDEN', 'GENERACIONES'],
+      directContact: 'Contacto directo',
+      sergioRole: 'Director Técnico · Proyectos y Construcción',
+      adrianaRole: 'Directora de Proyectos · Diseño e Identidad',
+      whatsapp: 'Escribinos por WhatsApp',
+      successTitle: 'MENSAJE ENVIADO',
+      successMsg:   'Te respondemos dentro de las próximas 48 horas.',
+      tipo: [
+        { val: 'comitente', label: 'Proyectá tu hogar' },
+        { val: 'inversion', label: 'Inversión' },
+      ],
+      fieldNombre:  'Nombre y apellido *',
+      placeholderNombre: 'Tu nombre',
+      fieldEmail:   'Email *',
+      fieldTel:     'Teléfono',
+      fieldBarrio:  'Barrio cerrado',
+      placeholderBarrio: 'Nordelta, Puertos...',
+      fieldM2:      'Superficie estimada',
+      placeholderM2: 'Ej. 250 m²',
+      fieldMensaje: 'Tu proyecto',
+      placeholderMensaje: '¿En qué etapa estás? ¿Tenés lote? ¿Qué tipo de casa imaginás?',
+      submitBtn: 'Enviar consulta',
+      barriosTitle: 'DÓNDE CONSTRUIMOS',
+    },
+
+    // ── DETALLES PROYECTOS ─────────────────────────────────────
+    detalles: {
+      notFound: 'Proyecto no encontrado',
+      backBtn:  'Volver a Proyectos',
+      backAria:  'Volver atrás',
+      elProyecto1: 'EL',
+      elProyecto2: 'PROYECTO',
+      labelSuperficie: 'Superficie',
+      labelM2: 'Metros Construidos',
+      labelHab: 'Habitaciones',
+      labelBanos: 'Baños',
+      labelCocheras: 'Cocheras',
+      labelPlantas: 'Plantas',
+      labelPiscina: 'Piscina',
+      labelAnio: 'Año',
+      galeria: 'Galería',
+      imgAlt: (title, i) => `${title} - imagen ${i + 1}`,
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  en: {
+    // ── NAVBAR ─────────────────────────────────────────────────
+    nav: {
+      proyectos: 'Projects',
+      servicios:  'Services',
+      nosotros:   'About',
+      contacto:   'Contact',
+      toggleTheme: 'Toggle theme',
+      toggleLang:  'Cambiar a Español',
+      menu:        'Menu',
+    },
+
+    // ── FOOTER ─────────────────────────────────────────────────
+    footer: {
+      tagline:   'Design, construction and full supervision of residences. Since 1974.',
+      copyright: 'Buenos Aires, Argentina · Since 1974',
+    },
+
+    // ── HOME ───────────────────────────────────────────────────
+    home: {
+      line1: 'WE DESIGN',
+      line2: 'WE BUILD',
+      line3: 'Architecture',
+      creamos:  'WE CREATE',
+      espacios: 'SPACES',
+      desde: 'Estudio Levinton · Since 1974',
+      scroll: 'Scroll',
+      s2Words: ['WE UNITE','ALL','THE','PROCESS','IN','ONE'],
+      s2Phrase1: 'CREATING',
+      s2Phrase2: 'EFFICIENCY',
+      s2Phrase3: '&',
+      s2Phrase4: 'PRECISION',
+      s2Since: 'Founded in',
+      stats: [
+        { num: 300,   suffix: '+',  label: 'Built projects' },
+        { num: 50,    suffix: '',   label: 'Years of uninterrupted work' },
+        { num: 30000, suffix: 'm²', label: 'Developed in condominiums' },
+        { num: 12,    suffix: '',   label: 'Active gated communities' },
+      ],
+      proyectosTitle: 'SELECTED PROJECTS',
+      verTodos: 'View all projects →',
+      approachBig1: 'WE LOVE',
+      approachBig2: 'WHAT WE',
+      approachBig3: 'DO',
+      filosofia: 'Our Philosophy',
+      approachP1: 'Founded in 1974 by Architect Sergio Levinton, the studio merges technical expertise with a unique artistic sensibility. Over 300 homes delivered in Argentina\'s most exclusive neighbourhoods.',
+      approachP2: 'Each project is unique. Every home reflects its owner\'s way of living. Fixed budget, daily supervision, permanent support.',
+      conocerEstudio: 'About the studio →',
+      director: 'Director · Co-founder',
+      directoraProyectos: 'Project Director · Design & Identity',
+      scrub1: 'WE DESIGN · WE BUILD · WE SUPERVISE',
+      scrub2: 'IN EVERYTHING WE DO · QUALITY WITHOUT COMPROMISE',
+      nuestrosServicios1: 'OUR',
+      nuestrosServicios2: 'SERVICES',
+      services: [
+        { num: '01', title: 'Turnkey Construction',           desc: 'Design, permits, materials and construction. Fixed budget, no surprises.' },
+        { num: '02', title: 'Design & Material Selection',    desc: 'Lasting finishes. Arq. Napoleone\'s unique artistic sensibility.' },
+        { num: '03', title: 'Energy Efficiency',              desc: 'Pioneers in solar water heaters and residential energy labelling.' },
+        { num: '04', title: 'Investment Groups',              desc: 'Homes finished as Showrooms. High returns, real backing.' },
+        { num: '05', title: 'Flipping / Renovation',         desc: 'We renovate properties with potential and re-introduce them to the market with added value.' },
+      ],
+      ctaLine1: 'DO YOU HAVE A',
+      ctaLine2: 'LOT IN A',
+      ctaLine3: 'GATED COMMUNITY?',
+      ctaBtn:  'Design your home',
+      ctaLink: 'View investments →',
+    },
+
+    // ── SERVICIOS ──────────────────────────────────────────────
+    servicios: {
+      seoTitle: 'Services | Estudio Levinton — Architects',
+      seoDesc:  'Turnkey construction, design, energy efficiency and real estate investments in gated communities of Zona Norte.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: 'OUR',
+      heroLine2: 'SERVICES',
+      heroSub:   'High-end single-family residences with comprehensive service and guidance at every stage.',
+      introWords: ['ALL', 'UNDER', 'ONE', 'ROOF'],
+      introBody: 'The dual model of Estudio Levinton serves both the individual client who dreams of designing their home and the real estate investor looking for curated high-value opportunities. In both cases, construction quality and aesthetic excellence are non-negotiable.',
+      services: [
+        {
+          num: '01', title: 'Turnkey\nConstruction',
+          desc: 'We take full responsibility: architectural design, municipal permits, material procurement and construction management. Pre-defined fixed budget — no surprises.',
+          detail: '3 months of design + permits · 10–12 months of construction · Total timeline: 15 months.',
+        },
+        {
+          num: '02', title: 'Design &\nMaterials',
+          desc: 'We focus on meeting each client\'s needs, designing with bioclimatic parameters and energy-saving materials in mind.',
+          detail: null,
+        },
+        {
+          num: '03', title: 'Energy\nEfficiency',
+          desc: 'Solar water heaters as standard since 2012 — a decade ahead of the premium market. Optional photovoltaic panels and home automation for climate control, blinds and energy monitoring.',
+          detail: 'Speakers at Reporte Inmobiliario 2020 on "Efficient Homes and Energy Labelling" alongside Mercado Libre Inmuebles.',
+        },
+        {
+          num: '04', title: 'Investment\nGroups',
+          desc: 'We organise closed investment groups to acquire strategic plots and build premium residences. Homes are sold as fully furnished, liveable Showrooms through our network of designers and interior decorators.',
+          detail: 'Ideal for capital investors or buyers who need immediate occupancy with a design guarantee.',
+        },
+        {
+          num: '05', title: 'Flipping /\nRenovation',
+          desc: 'Flipping is one of the most active niches: we buy properties with potential, fully renovate them to our design standard and re-introduce them to the market at significantly higher value.',
+          detail: 'Opportunity identification + Transformation project + Express construction execution.',
+        },
+      ],
+      consultarLink: 'Enquire →',
+      procesoTitle: 'HOW WE WORK',
+      proceso: [
+        { step: '01', dur: '1 month',      title: 'Meeting & Brief',          desc: 'A conversation to understand your vision, plot, budget and expectations.' },
+        { step: '02', dur: '2 months',     title: 'Design & 3D Visualisation', desc: 'Preliminary design and 3D renders so you can walk through your future home.' },
+        { step: '03', dur: '1 month',      title: 'Municipal Permits',         desc: 'We handle all paperwork. No bureaucracy on your end.' },
+        { step: '04', dur: '10–12 months', title: 'Construction & Handover',   desc: 'Construction management with a fixed budget and daily supervision.' },
+      ],
+    },
+
+    // ── PROYECTOS ──────────────────────────────────────────────
+    proyectos: {
+      seoTitle: 'Projects | Estudio Levinton — Architects',
+      seoDesc:  'Explore our architecture portfolio. Over 300 homes built in Argentina\'s most exclusive gated communities.',
+      heroLabel: 'Portfolio',
+      heroLine1: 'SELECTED',
+      heroLine2: 'PROJECTS',
+      heroSub:   '300+ homes built in Argentina\'s most exclusive gated communities.',
+      filterLabel: 'Projects:',
+      filterAll:   'All',
+      filterDev:   'En Desarrollo',
+      filterDone:  'Obra Terminada',
+      filterM2:    'm²↓',
+      filterM2Title: 'Sort by area',
+      comingSoonTitle: 'Uruguay',
+      comingSoonText:  'Coming soon.\nWe are expanding our presence across the river.',
+    },
+
+    // ── NOSOTROS ───────────────────────────────────────────────
+    nosotros: {
+      seoTitle: 'About | Estudio Levinton — Architects',
+      seoDesc:  'Meet Estudio Levinton Napoleone. Over 40 years designing homes that transcend generations in Buenos Aires and Bariloche.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: 'WHO',
+      heroLine2: 'WE ARE',
+      heroSub:   'Four decades designing homes that transcend generations, with structural integrity and a sustainable vision.',
+      introWords: ['A', 'SHARED', 'VISION'],
+      introP1: 'Estudio Levinton Napoleone: Architecture and construction in Buenos Aires since 1974. Five decades, over 300 homes in the country\'s most exclusive neighbourhoods — Nordelta, Puertos, EIDICO, Villanueva, El Lauquen, Hyland Park, Campos de Roca — and an urban footprint of 30,000 m² in CABA and 645 ha in Bariloche.',
+      introP2: 'We are not just a design studio. We are not just a construction company. We are both in one cohesive entity: the technical strength of Arq. Levinton fused with the creative vision of Arq. Napoleone.',
+      teamLabel: 'Founders',
+      sergioRole: 'Technical Director · Co-founder',
+      sergioName: 'ARQ. SERGIO\nLEVINTON',
+      sergioBio1: 'Architect (UBA). Over 40 years of experience: from 14-storey towers in CABA (Av. Santa Fe, Av. Córdoba, Malabia) to the 645 ha masterplan in Cerro Carbón, Bariloche, and over 300 premium homes in Nordelta, Puertos, EIDICO and Hyland Park.',
+      sergioBio2: 'Pioneer in residential energy efficiency. Speaker at Reporte Inmobiliario 2020 alongside Mercado Libre Inmuebles on energy labelling and property value.',
+      adrianaRole: 'Creative Director · Co-founder',
+      adrianaName: 'ARQ. ADRIANA\nNAPOLEONE',
+      adrianaBio1: 'Architect (UBA) and visual artist. Director of Galeria Pueblo Garzon, in Garzon, Uruguay.',
+      adrianaBio2: 'Selected for Premio Bancor 2022 (Museo Tamburini, Córdoba). Torcuato Di Tella Artists Programme 2011. Exhibitions in Nordelta, Museo Villa Carmen, Casa de las Culturas, Municipio de Tigre and Bahía Grande — the very territory where she builds.',
+      timelineTitle: 'MILESTONES',
+      timeline: [
+        { year: '1974', event: 'Studio Founded',      desc: 'Sergio Levinton begins his career in CABA with high-density condominiums: 14–15-storey towers on Av. Santa Fe, Av. Córdoba and Malabia — over 30,000 m² built.' },
+        { year: '2000', event: 'Adriana Napoleone Joins', desc: 'Nordelta, EIDICO El Encuentro, Puertos del Lago, El Lauquen, Villanueva, Hyland Park, Campos de Roca, La Martona. The studio becomes the undisputed benchmark in the premium segment.' },
+        { year: '2012', event: 'Pioneers in Sustainability', desc: 'Solar water heaters as an absolute standard — a decade ahead of the market. Energy labelling, photovoltaic panels and integrated home automation from the design stage.' },
+        { year: '2020', event: 'Thought Leaders',    desc: 'Presentation at Reporte Inmobiliario alongside Mercado Libre Inmuebles on "Efficient Homes and Energy Labelling". Reference voices on the impact of sustainability on property valuation.' },
+        { year: 'Today', event: '+300 Homes Delivered', desc: 'Five uninterrupted decades. 300+ homes in the most exclusive neighbourhoods, 30,000 m² in CABA, 645 hectares in Bariloche. A body of work that transcends generations.' },
+      ],
+    },
+
+    // ── CONTACTO ───────────────────────────────────────────────
+    contacto: {
+      seoTitle: 'Contact | Estudio Levinton — Architects',
+      seoDesc:  'Contact us to design your home in gated communities or explore real estate investment opportunities. We reply within 48 hours.',
+      heroLabel: 'Estudio Levinton',
+      heroLine1: "LET'S TALK",
+      heroLine2: 'ABOUT YOUR HOME',
+      heroSub:   'We reply within 48 hours, clearly and without obligation.',
+      introWords: ['WE DESIGN', 'HOMES', 'THAT', 'TRANSCEND', 'GENERATIONS'],
+      directContact: 'Direct contact',
+      sergioRole: 'Technical Director · Projects & Construction',
+      adrianaRole: 'Project Director · Design & Identity',
+      whatsapp: 'Message us on WhatsApp',
+      successTitle: 'MESSAGE SENT',
+      successMsg:   'We will get back to you within the next 48 hours.',
+      tipo: [
+        { val: 'comitente', label: 'Design your home' },
+        { val: 'inversion', label: 'Investment' },
+      ],
+      fieldNombre:  'Full name *',
+      placeholderNombre: 'Your name',
+      fieldEmail:   'Email *',
+      fieldTel:     'Phone',
+      fieldBarrio:  'Gated community',
+      placeholderBarrio: 'Nordelta, Puertos...',
+      fieldM2:      'Estimated area',
+      placeholderM2: 'e.g. 250 m²',
+      fieldMensaje: 'Your project',
+      placeholderMensaje: 'What stage are you at? Do you have a plot? What kind of home do you have in mind?',
+      submitBtn: 'Send enquiry',
+      barriosTitle: 'WHERE WE BUILD',
+    },
+
+    // ── DETALLES PROYECTOS ─────────────────────────────────────
+    detalles: {
+      notFound: 'Project not found',
+      backBtn:  'Back to Projects',
+      backAria:  'Go back',
+      elProyecto1: 'THE',
+      elProyecto2: 'PROJECT',
+      labelSuperficie: 'Plot Area',
+      labelM2: 'Built Area',
+      labelHab: 'Bedrooms',
+      labelBanos: 'Bathrooms',
+      labelCocheras: 'Garage',
+      labelPlantas: 'Floors',
+      labelPiscina: 'Pool',
+      labelAnio: 'Year',
+      galeria: 'Gallery',
+      imgAlt: (title, i) => `${title} - image ${i + 1}`,
+    },
+  },
+}

@@ -11,6 +11,7 @@ export const ALL_PROJECTS = [
     year: '2025',
     img: media('img/portadas/Azurra.png'),
     description: 'Residencia de diseño toscano ubicada en el barrio Azzurra, en Tortugas. Destaca por sus amplios ventanales que integran el paisaje exterior con los cálidos y sus detalles de resolución artesanal y de estilo. Construida con estándares de alta eficiencia energética como bomba de calor, tanto para agua sanitaria como para calefacción.',
+    descriptionEn: 'Tuscan design residence located in the Azzurra neighbourhood, Tortugas. It stands out for its large windows that integrate the exterior landscape with its warm interiors and its artisanal and stylish details. Built with high energy efficiency standards such as a heat pump, for both sanitary water and heating.',
     specs: {
       habitaciones: "4",
       banos: "6",
@@ -38,6 +39,7 @@ export const ALL_PROJECTS = [
     year: '2023',
     img: media('img/portadas/Carpinchos.png'),
     description: 'Casa de estilo racionalista con volúmenes puros y materiales que aportan textura y elegancia. El diseño prioriza la luz natural y la conexión fluida del espacio en la doble altura del living comedor, la escalera y el área de trabajo superior.',
+    descriptionEn: 'Rationalist style house with pure volumes and materials that bring texture and elegance. The design prioritises natural light and the fluid connection of space in the double height of the living room, the staircase and the upper workspace.',
     specs: {
       habitaciones: 4,
       banos: 4,
@@ -74,6 +76,7 @@ export const ALL_PROJECTS = [
     year: '2022',
     img: media('img/portadas/Marinas.png'),
     description: 'Imponente propiedad con vistas panorámicas a la laguna. Un proyecto donde cada detalle fue pensado para maximizar el confort y la elegancia. Aporte de color y estructuras que flexibilizan las diferentes áreas de la planta.',
+    descriptionEn: 'Imposing property with panoramic views of the lagoon. A project where every detail was thought out to maximise comfort and elegance. A touch of colour and structures that make the different areas of the floor plan flexible.',
     specs: {
       habitaciones: 6,
       banos: 5,
@@ -102,6 +105,7 @@ export const ALL_PROJECTS = [
     year: '2013',
     img: media('img/portadas/SIL 328.png'),
     description: 'Vivienda unifamiliar desarrollada en 3 niveles y el uso del agua que conecta los dos volúmenes de la casa. El empleo de la piedra crea un equilibrio perfecto entre lo rústico y lo moderno. Orientación estratégica para aprovechar el sol de la tarde en la zona de esparcimiento exterior.',
+    descriptionEn: 'Single-family home developed on 3 levels with the use of water connecting the two volumes of the house. The use of stone creates a perfect balance between the rustic and the modern. Strategic orientation to take advantage of the afternoon sun in the outdoor recreation area.',
     specs: {
       habitaciones: 4,
       banos: 4,
@@ -135,6 +139,7 @@ export const ALL_PROJECTS = [
     year: '2015',
     img: media('img/portadas/SIL 71.png'),
     description: 'Un refugio de diseño exclusivo y líneas geométricas, con detalles de madera que aportan texturas. Pensada con detalles constructivos que mejoran la eficiencia energética como revoques termoaislantes, techo ventilado, recolección de agua de lluvia, agua sanitaria calefaccionada por energía solar.',
+    descriptionEn: 'An exclusive design refuge with geometric lines, featuring wooden details that add textures. Designed with constructive details that improve energy efficiency such as thermal insulating plasters, ventilated roof, rainwater harvesting, and sanitary water heated by solar energy.',
     specs: {
       habitaciones: 4,
       banos: 5,
@@ -159,6 +164,7 @@ export const ALL_PROJECTS = [
     year: '2018',
     img: media('img/portadas/SIL 577.jpg'),
     description: 'Empleo de la espacialidad en la doble altura, las áreas de usos múltiples, los ventanales en ángulo que priorizan las vistas y el uso de materiales nobles que caracterizan nuestro compromiso con la calidad y la belleza atemporal.',
+    descriptionEn: 'Use of spatiality in the double height, multi-purpose areas, angled windows that prioritise the views, and the use of noble materials that characterise our commitment to quality and timeless beauty.',
     specs: {
       habitaciones: 4,
       banos: 5,
@@ -187,6 +193,7 @@ export const ALL_PROJECTS = [
     year: '2016',
     img: media('img/portadas/SIL 645.png'),
     description: 'Juego de volúmenes y texturas en esta casa se interrelacionan para generar los espacios necesarios de una familia ensamblada donde es posible tanto la privacidad como la vida en común.',
+    descriptionEn: 'A play of volumes and textures in this house interrelate to generate the necessary spaces for a blended family where both privacy and communal life are possible.',
     specs: {
       habitaciones: 5,
       banos: 5,
@@ -213,6 +220,7 @@ export const ALL_PROJECTS = [
     year: '2010',
     img: media('img/portadas/SIL 202.png'),
     description: 'Diseño racional con una alta presencia de la doble altura, donde el bosque del entorno se filtra en el interior de la casa. Hormigón, piedra y madera conviven equilibradamente.',
+    descriptionEn: 'Rational design with a strong presence of double height, where the surrounding forest filters into the interior of the house. Concrete, stone, and wood coexist in perfect balance.',
     specs: {
       habitaciones: 4,
       banos: 4,
@@ -249,6 +257,7 @@ export const ALL_PROJECTS = [
     year: '2018',
     img: media('img/portadas/Santa Catalina 304.png'),
     description: 'Proyecto donde confluyen las paletas cálidas y la espacialidad. Se buscó un diseño especial a ciertas áreas de confort distintivas y la selección de acabados nobles confieren a esta casa una elegancia indiscutible.',
+    descriptionEn: 'A project where warm palettes and spatiality converge. A special design was sought for certain distinctive comfort areas, and the selection of noble finishes gives this house indisputable elegance.',
     specs: {
       habitaciones: 4,
       banos: 5,
@@ -275,6 +284,7 @@ export const ALL_PROJECTS = [
     year: '2022',
     img: media('img/portadas/SantaCatalina577.png'),
     description: 'Armonía y balance definen esta obra. Desde el paisajismo hasta la distribución interior, todo ha sido cuidadosamente articulado para brindar una experiencia de vida excepcional.',
+    descriptionEn: 'Harmony and balance define this work. From the landscaping to the interior layout, everything has been carefully articulated to provide an exceptional living experience.',
     specs: {
       habitaciones: 5,
       banos: 5,
@@ -298,6 +308,7 @@ export const ALL_PROJECTS = [
     year: '2019',
     img: media('img/portadas/vistas226.png'),
     description: 'Esta casa construida con ladrillos de hormigón alveolar y con estándares de sustentabilidad para lograr eficiencia energética sin costos elevados.',
+    descriptionEn: 'This house is built with aerated concrete blocks and sustainability standards to achieve energy efficiency without high costs.',
     specs: {
       habitaciones: 4,
       banos: 4,
@@ -328,6 +339,7 @@ export const ALL_PROJECTS = [
     year: '2015',
     img: media('img/portadas/Talar de Pacheco.png'),
     description: 'Clásica y majestuosa. Esta residencia combina elementos tradicionales de la arquitectura francesa con las necesidades modernas de la familia actual. Excelente carpintería y detalles de herrería forjada.',
+    descriptionEn: 'Classic and majestic. This residence combines traditional elements of French architecture with the modern needs of today\'s family. Excellent carpentry and forged ironwork details.',
     specs: {
       habitaciones: 5,
       banos: 4,
@@ -353,6 +365,7 @@ export const ALL_PROJECTS = [
     year: '2024',
     img: media('img/portadas/Reforma SIL.png'),
     description: 'Renovación completa de una propiedad existente, adaptándola a un lenguaje arquitectónico más limpio y luminoso. Se maximizaron los espacios abiertos y se modernizaron todas las instalaciones, además de generar otra suite principal.',
+    descriptionEn: 'Complete renovation of an existing property, adapting it to a cleaner and brighter architectural language. Open spaces were maximised and all facilities were modernised, in addition to creating another master suite.',
     specs: {
       habitaciones: 5,
       banos: 5,
@@ -376,6 +389,7 @@ export const ALL_PROJECTS = [
     year: '2021',
     img: media('img/portadas/Sustentabilidad 01.png'),
     description: 'Una respuesta innovadora a la arquitectura sustentable. Incorpora paneles solares, aislación térmica y orientación bioclimática, logrando máxima eficiencia, además de detalles personalizados.',
+    descriptionEn: 'An innovative response to sustainable architecture. It incorporates solar panels, thermal insulation, and bioclimatic orientation, achieving maximum efficiency, in addition to personalised details.',
     specs: {
       habitaciones: 4,
       banos: 5,
@@ -404,6 +418,7 @@ export const ALL_PROJECTS = [
     year: '2013',
     img: media('img/portadas/Santacatalina382.png'),
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
+    descriptionEn: 'A house where the concrete, the green roof, and the interior spaces unify with the surrounding exterior.',
     specs: {
       habitaciones: 4,
       banos: 5,
