@@ -132,7 +132,9 @@ export default function Proyectos() {
               <Link to={`/proyectos/${p.slug}`} key={`${p.title}-${i}`} className="pj-grid__item">
                 <img src={p.img} alt={p.title} loading="lazy" />
                 <div className="pj-grid__hover">
-                  <span className="pj-grid__label">{p.label}</span>
+                  <span className="pj-grid__label">
+                    {p.label === 'Obra Terminada' ? t.filterDone : p.label === 'En Desarrollo' ? t.filterDev : p.label}
+                  </span>
                   <h3 className="pj-grid__title">{p.title}</h3>
                   <div className="pj-grid__meta">
                     <span>{p.loc}</span>

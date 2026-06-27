@@ -30,6 +30,7 @@ const FEATURED_PROJECTS = ALL_PROJECTS.slice(0, 6)
 export default function Home() {
   const { lang } = useLanguage()
   const t = translations[lang].home
+  const projTrans = translations[lang].proyectos
 
   const wrapRef    = useRef(null)
   const stickyRef  = useRef(null)
@@ -290,8 +291,8 @@ export default function Home() {
   return (
     <main className="home">
       <SEO
-        title="Estudio Levinton — Arquitectos"
-        description="Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte."
+        title={t.seoTitle}
+        description={t.seoDesc}
         url="https://estudiolevinton.com/"
       />
 
@@ -354,9 +355,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════ */}
       <div className="s-marquee">
         <div className="s-marquee__track" ref={marRef}>
-          {Array.from({ length: 6 }).flatMap(() =>
-            ['LEVINTON','·','NAPOLEONE','·','ARQUITECTOS','·','DESDE 1974','·','BUENOS AIRES','·']
-          ).map((w, i) => (
+          {Array.from({ length: 6 }).flatMap(() => t.marqueeWords).map((w, i) => (
             <span key={i} className={w === '·' ? 's-marquee__dot' : 's-marquee__word'}>{w}</span>
           ))}
         </div>
@@ -398,7 +397,7 @@ export default function Home() {
           STATS
       ═══════════════════════════════════════════════════ */}
       <section className="s3-stats" ref={statsRef}>
-        <div className="s3-stats__bg-text scrub-x" data-dir="left">LEVINTON ARQUITECTOS</div>
+        <div className="s3-stats__bg-text scrub-x" data-dir="left">{t.bgText}</div>
         <div className="s3-stats__grid container">
           {t.stats.map((s, i) => (
             <div key={i} className="s-stat">
@@ -424,7 +423,9 @@ export default function Home() {
             <Link to={`/proyectos/${p.slug}`} key={i} className="s4-grid__item">
               <img src={p.img} alt={p.title} loading="lazy" />
               <div className="s4-grid__hover">
-                <span className="s4-grid__label">{p.label}</span>
+                <span className="s4-grid__label">
+                  {p.label === 'Obra Terminada' ? projTrans.filterDone : p.label === 'En Desarrollo' ? projTrans.filterDev : p.label}
+                </span>
                 <h3 className="s4-grid__title">{p.title}</h3>
                 <span className="s4-grid__year">{p.year}</span>
               </div>

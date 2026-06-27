@@ -28,14 +28,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  /* FORZAR TEXTO NEGRO CONSTANTE */
-  --text-main: #0c0b0a;
-  --text-alt: #0c0b0a;
-  --warm-gray: #0c0b0a;
-  --bg-main: #0c0b0a;
-  --opacity-50: rgba(12, 11, 10, 0.5);
-  --opacity-10: rgba(12, 11, 10, 0.1);
-  --opacity-15: rgba(12, 11, 10, 0.15);
+
   background: var(--bg-main);     /* empieza negro ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â GSAP lo cambia a blanco */
   will-change: background-color;
   backface-visibility: hidden;
@@ -94,13 +87,13 @@
   display: block;
   font-family: var(--font-display, 'Bebas Neue', sans-serif);
   font-size: clamp(5rem, 14vw, 15rem);
-  color: var(--title-beige);
+  color: #d9d4cc;
   letter-spacing: 0.01em;
   line-height: 0.88;
   will-change: transform;
 }
 .ht-inner--ghost {
-  color: var(--title-beige);
+  color: #d9d4cc;
   font-size: clamp(4rem, 11vw, 12rem);
 }
 
@@ -125,10 +118,13 @@
   display: block;
   font-family: var(--font-display, 'Bebas Neue', sans-serif);
   font-size: clamp(5rem, 14vw, 15rem);
-  color: var(--bg-main);
+  color: #0d0c0a;
   letter-spacing: 0.01em;
   line-height: 0.88;
   will-change: transform;
+}
+[data-theme="light"] .ht2-inner {
+  color: #0d0c0a;
 }
 
 /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ Bottom strip ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ */
@@ -141,9 +137,12 @@
   align-items: flex-end;
   justify-content: space-between;
   padding: 20px var(--gutter, 5vw) 32px;
-  border-top: 1px solid var(--opacity-10);
+  border-top: 1px solid rgba(244, 241, 236, 0.15);
   z-index: 5;
   will-change: opacity;
+}
+.hero-bot .label {
+  color: #ece9e3;
 }
 .hero-bot__scroll {
   display: flex;
@@ -153,7 +152,7 @@
 .hero-bot__line {
   width: 80px;
   height: 1px;
-  background: var(--opacity-15);
+  background: rgba(244, 241, 236, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -247,6 +246,7 @@
   gap: 20px;
   align-items: flex-start;
   margin-top: 60px;
+  
 }
 .s2-words__img {
   width: 100%;
@@ -387,6 +387,8 @@
   will-change: transform;
 }
 .s4-grid__item:hover img { transform: scale(1.07); filter: brightness(0.45); }
+[data-theme="light"] .s4-grid__item:hover img { filter: brightness(0.95); }
+
 .s4-grid__hover {
   position: absolute;
   inset: 0;
@@ -396,28 +398,43 @@
   padding: clamp(20px, 3vw, 40px);
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.45s ease, transform 0.45s ease;
+  transition: opacity 0.45s ease, transform 0.45s ease, background 0.45s ease;
+  background: linear-gradient(to top, rgba(12, 11, 10, 0.88) 0%, rgba(12, 11, 10, 0.35) 65%, transparent 100%);
 }
+[data-theme="light"] .s4-grid__hover {
+  background: linear-gradient(to top, rgba(244, 241, 236, 0.88) 0%, rgba(244, 241, 236, 0.35) 65%, transparent 100%);
+}
+
 .s4-grid__item:hover .s4-grid__hover { opacity: 1; transform: translateY(0); }
 .s4-grid__label {
   display: block;
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: var(--accent, #c9a96e);
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: 8px;
+}
+[data-theme="light"] .s4-grid__label {
+  color: rgba(12, 11, 10, 0.88);
 }
 .s4-grid__title {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.2vw, 2rem);
-  color: var(--title-beige);
-  line-height: 1;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  color: #f4f1ec;
+  line-height: 1.05;
   margin-bottom: 10px;
 }
+[data-theme="light"] .s4-grid__title {
+  color: #181614;
+}
 .s4-grid__year {
-  font-size: 0.62rem;
-  letter-spacing: 0.18em;
-  color: var(--opacity-45);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 241, 236, 0.8);
+  font-weight: 500;
+}
+[data-theme="light"] .s4-grid__year {
+  color: rgba(12, 11, 10, 0.75);
 }
 
 /* ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ S5: APPROACH ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚ÂÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ */
@@ -559,11 +576,50 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  background: var(--bg-main);
+  background: #0c0b0a;
+  
+  /* Force dark theme color variables inside the CTA */
+  --bg-main: #0c0b0a;
+  --bg-alt: #111111;
+  --text-main: #f4f1ec;
+  --text-alt: #ffffff;
+  --accent: #c4a882;
+  --warm-gray: #9a9490;
+  --mid-gray: #5a5652;
+  
+  --opacity-02: rgba(244, 241, 236, 0.02);
+  --opacity-03: rgba(244, 241, 236, 0.03);
+  --opacity-04: rgba(244, 241, 236, 0.04);
+  --opacity-05: rgba(244, 241, 236, 0.05);
+  --opacity-06: rgba(244, 241, 236, 0.06);
+  --opacity-07: rgba(244, 241, 236, 0.07);
+  --opacity-08: rgba(244, 241, 236, 0.08);
+  --opacity-10: rgba(244, 241, 236, 0.1);
+  --opacity-12: rgba(244, 241, 236, 0.12);
+  --opacity-15: rgba(244, 241, 236, 0.15);
+  --opacity-18: rgba(244, 241, 236, 0.18);
+  --opacity-20: rgba(244, 241, 236, 0.2);
+  --opacity-22: rgba(244, 241, 236, 0.22);
+  --opacity-25: rgba(244, 241, 236, 0.25);
+  --opacity-30: rgba(244, 241, 236, 0.3);
+  --opacity-35: rgba(244, 241, 236, 0.35);
+  --opacity-40: rgba(244, 241, 236, 0.4);
+  --opacity-45: rgba(244, 241, 236, 0.45);
+  --opacity-50: rgba(244, 241, 236, 0.5);
+  --opacity-52: rgba(244, 241, 236, 0.52);
+  --opacity-55: rgba(244, 241, 236, 0.55);
+  --opacity-72: rgba(244, 241, 236, 0.72);
+  --opacity-75: rgba(244, 241, 236, 0.75);
+  --opacity-90: rgba(244, 241, 236, 0.9);
 }
 .cta-bg { position: absolute; inset: -20%; will-change: transform; }
 .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
-.s8-cta__overlay { position: absolute; inset: 0; background: var(--opacity-72); display: none; }
+.s8-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 11, 10, 0.7);
+  z-index: 1;
+}
 .s8-cta__content { position: relative; z-index: 2; padding-bottom: clamp(60px, 10vh, 120px); padding-top: 80px; }
 .s8-cta__line {
   font-family: var(--font-display);
@@ -571,7 +627,7 @@
   color: var(--text-main);
   line-height: 0.88;
 }
-.s8-cta__line--italic { color: #4a4642; }
+.s8-cta__line--italic { color: var(--accent); }
 .s8-cta__actions { display: flex; align-items: center; gap: 32px; margin-top: 56px; flex-wrap: wrap; }
 .s8-cta__btn {
   display: inline-flex; align-items: center;

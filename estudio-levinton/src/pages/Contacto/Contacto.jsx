@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from '../../components/SEO/SEO'
@@ -13,12 +14,40 @@ export default function Contacto() {
     nombre: '', email: '', telefono: '', barrio: '', m2: '', mensaje: '', tipo: 'comitente',
   })
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(null)
+  const formRef = useRef(null)
 
   const { lang } = useLanguage()
   const t = translations[lang].contacto
 
+  // Init EmailJS once
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+  }, [])
+
   const handleChange = e => setFormData(p => ({ ...p, [e.target.name]: e.target.value }))
-  const handleSubmit = e => { e.preventDefault(); setSent(true) }
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+    setSending(true)
+    setError(null)
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current
+      )
+      setSent(true)
+    } catch (err) {
+      console.error('EmailJS error:', err)
+      setError(lang === 'en'
+        ? 'Something went wrong. Please try again or contact us directly.'
+        : 'Hubo un error al enviar. Por favor intentá de nuevo o contactanos directamente.')
+    } finally {
+      setSending(false)
+    }
+  }
 
   // Reset tipo default key when language switches (value is language-agnostic)
   useEffect(() => {
@@ -106,7 +135,7 @@ export default function Contacto() {
           <span className="label" style={{ marginBottom: '24px', display: 'block' }}>{t.directContact}</span>
 
           <div className="ct-person">
-            <h3 className="ct-person__name">ARQ. SERGIO LEVINTON</h3>
+            <h3 className="ct-person__name">{t.sergioName}</h3>
             <span className="ct-person__role">{t.sergioRole}</span>
             <div className="ct-person__links">
               <a href="tel:+5491158098681" className="ct-link">+54 9 11 5809 8681</a>
@@ -115,7 +144,7 @@ export default function Contacto() {
           </div>
 
           <div className="ct-person">
-            <h3 className="ct-person__name">ARQ. ADRIANA NAPOLEONE</h3>
+            <h3 className="ct-person__name">{t.adrianaName}</h3>
             <span className="ct-person__role">{t.adrianaRole}</span>
             <div className="ct-person__links">
               <a href="tel:+5491144227758" className="ct-link">+54 9 11 4422 7758</a>
@@ -128,7 +157,10 @@ export default function Contacto() {
               Instagram · @estudio_levinton
             </a>
             <a
-              href="https://wa.me/5491158098681?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20proyectos."
+              href={lang === 'en'
+                ? "https://wa.me/5491158098681?text=Hello,%20I'm%20interested%20in%20learning%20more%20about%20your%20projects."
+                : "https://wa.me/5491158098681?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20proyectos."
+              }
               target="_blank" rel="noreferrer"
               className="ct-wa-btn"
             >
@@ -148,7 +180,7 @@ export default function Contacto() {
               <p>{t.successMsg}</p>
             </div>
           ) : (
-            <form className="ct-form" onSubmit={handleSubmit}>
+            <form ref={formRef} className="ct-form" onSubmit={handleSubmit}>
               <div className="ct-form__tipo">
                 {t.tipo.map(tp => (
                   <label key={tp.val} className={`ct-tipo-btn${formData.tipo === tp.val ? ' is-active' : ''}`}>
@@ -165,7 +197,7 @@ export default function Contacto() {
                 </div>
                 <div className="ct-field">
                   <label className="ct-field__label">{t.fieldEmail}</label>
-                  <input className="ct-field__input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder="tu@email.com" required />
+                  <input className="ct-field__input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder={lang === 'en' ? 'your@email.com' : 'tu@email.com'} required />
                 </div>
                 <div className="ct-field">
                   <label className="ct-field__label">{t.fieldTel}</label>
@@ -186,8 +218,15 @@ export default function Contacto() {
                 <textarea className="ct-field__input ct-field__textarea" name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder={t.placeholderMensaje} rows={5} />
               </div>
 
-              <button type="submit" className="ct-submit">
-                {t.submitBtn} <span>→</span>
+              {error && (
+                <p className="ct-form__error">{error}</p>
+              )}
+
+              <button type="submit" className="ct-submit" disabled={sending}>
+                {sending
+                  ? <span className="ct-submit__spinner" />
+                  : <>{t.submitBtn} <span>→</span></>
+                }
               </button>
             </form>
           )}

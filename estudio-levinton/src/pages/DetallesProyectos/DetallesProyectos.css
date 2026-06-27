@@ -80,32 +80,6 @@
   display: flex;
   align-items: flex-end;
   overflow: hidden;
-  
-  /* FORZAR TEXTO NEGRO CONSTANTE */
-  --text-main: #0c0b0a;
-  --text-alt: #0c0b0a;
-  --warm-gray: #5e5955;
-  --mid-gray: #3b3834;
-  --opacity-02: rgba(12, 11, 10, 0.02);
-  --opacity-03: rgba(12, 11, 10, 0.03);
-  --opacity-04: rgba(12, 11, 10, 0.04);
-  --opacity-05: rgba(12, 11, 10, 0.05);
-  --opacity-06: rgba(12, 11, 10, 0.06);
-  --opacity-07: rgba(12, 11, 10, 0.07);
-  --opacity-08: rgba(12, 11, 10, 0.08);
-  --opacity-10: rgba(12, 11, 10, 0.1);
-  --opacity-12: rgba(12, 11, 10, 0.12);
-  --opacity-15: rgba(12, 11, 10, 0.15);
-  --opacity-18: rgba(12, 11, 10, 0.18);
-  --opacity-20: rgba(12, 11, 10, 0.5);
-  --opacity-22: rgba(12, 11, 10, 0.5);
-  --opacity-25: rgba(12, 11, 10, 0.55);
-  --opacity-30: rgba(12, 11, 10, 0.6);
-  --opacity-35: rgba(12, 11, 10, 0.65);
-  --opacity-40: rgba(12, 11, 10, 0.7);
-  --opacity-45: rgba(12, 11, 10, 0.75);
-  --opacity-50: rgba(12, 11, 10, 0.8);
-  --opacity-90: rgba(12, 11, 10, 0.9);
 }
 
 .dp-hero__bg {
@@ -147,16 +121,16 @@
 .dp-hero-title {
   font-family: var(--font-display);
   font-size: clamp(4rem, 10vw, 12rem);
-  color: var(--title-beige);
+  color: #f4f1ec;
   line-height: 0.88;
   margin-bottom: 20px;
 }
 
 .dp-sub {
-  color: var(--opacity-40);
+  color: rgba(244, 241, 236, 0.8);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ INFO SECTION (SPECS) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ INFO SECTION (SPECS) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .dp-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -173,13 +147,13 @@
 }
 
 .dp-info__title--accent {
-  color: var(--opacity-18);
+  color: var(--opacity-25);
 }
 
 .dp-info__desc {
   margin-top: 40px;
   font-size: 0.95rem;
-  color: var(--opacity-30);
+  color: var(--opacity-40);
   line-height: 1.85;
   max-width: 500px;
 }

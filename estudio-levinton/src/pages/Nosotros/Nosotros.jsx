@@ -116,7 +116,7 @@ export default function Nosotros() {
       <section className="nos-team">
         <div className="nos-team__label container">
           <span className="label">{t.teamLabel}</span>
-          <div className="scrub-x nos-team__bg-text" data-dir="left">ARQUITECTOS</div>
+          <div className="scrub-x nos-team__bg-text" data-dir="left">{t.bgText}</div>
         </div>
 
         <div className="nos-team__grid container">

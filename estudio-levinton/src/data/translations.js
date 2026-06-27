@@ -23,13 +23,17 @@ export const translations = {
 
     // ── HOME ───────────────────────────────────────────────────
     home: {
+      seoTitle: 'Estudio Levinton — Arquitectos',
+      seoDesc: 'Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte.',
+      bgText: 'LEVINTON ARQUITECTOS',
+      marqueeWords: ['LEVINTON','·','NAPOLEONE','·','ARQUITECTOS','·','DESDE 1974','·','BUENOS AIRES','·'],
       // Hero text 1
-      line1: 'PROYECTAMOS',
-      line2: 'CONSTRUIMOS',
-      line3: 'Arquitectura',
+      line1: 'CONSTRUIMOS',
+      line2: 'CREAMOS',
+      line3: 'ZONA NORTE',
       // Hero text 2
-      creamos:  'CREAMOS',
-      espacios: 'ESPACIOS',
+      creamos:  'PROYECTOS',
+      espacios: 'PERSONALIZADOS',
       // Bottom strip
       desde: 'Estudio Levinton · Desde 1974',
       scroll: 'Scroll',
@@ -84,6 +88,7 @@ export const translations = {
 
     // ── SERVICIOS ──────────────────────────────────────────────
     servicios: {
+      bgText: 'PROCESO',
       seoTitle: 'Servicios | Estudio Levinton — Arquitectos',
       seoDesc:  'Construcción llave en mano, diseño, eficiencia energética e inversiones inmobiliarias en barrios cerrados de Zona Norte.',
       heroLabel: 'Estudio Levinton',
@@ -149,6 +154,7 @@ export const translations = {
 
     // ── NOSOTROS ───────────────────────────────────────────────
     nosotros: {
+      bgText: 'ARQUITECTOS',
       seoTitle: 'Nosotros | Estudio Levinton — Arquitectos',
       seoDesc:  'Conoce al Estudio Levinton Napoleone. Más de 40 años proyectando hogares que trascienden generaciones en Buenos Aires y Bariloche.',
       heroLabel: 'Estudio Levinton',
@@ -187,7 +193,9 @@ export const translations = {
       heroSub:   'En 48 horas te respondemos con claridad, sin compromiso.',
       introWords: ['PROYECTAMOS', 'HOGARES', 'QUE', 'TRASCIENDEN', 'GENERACIONES'],
       directContact: 'Contacto directo',
+      sergioName: 'ARQ. SERGIO LEVINTON',
       sergioRole: 'Director Técnico · Proyectos y Construcción',
+      adrianaName: 'ARQ. ADRIANA NAPOLEONE',
       adrianaRole: 'Directora de Proyectos · Diseño e Identidad',
       whatsapp: 'Escribinos por WhatsApp',
       successTitle: 'MENSAJE ENVIADO',
@@ -251,11 +259,15 @@ export const translations = {
 
     // ── HOME ───────────────────────────────────────────────────
     home: {
-      line1: 'WE DESIGN',
-      line2: 'WE BUILD',
-      line3: 'Architecture',
-      creamos:  'WE CREATE',
-      espacios: 'SPACES',
+      seoTitle: 'Estudio Levinton — Architects',
+      seoDesc: 'Estudio Levinton — Architects. 40 years of experience. Over 300 built projects in Nordelta, Puertos, EIDICO. Specialists in homes in gated communities of Zona Norte.',
+      bgText: 'LEVINTON ARCHITECTS',
+      marqueeWords: ['LEVINTON','·','NAPOLEONE','·','ARCHITECTS','·','SINCE 1974','·','BUENOS AIRES','·'],
+      line1: 'WE BUILD',
+      line2: 'WE CREATE',
+      line3: 'NORTH ZONE',
+      creamos:  'WE DESIGN',
+      espacios: 'CUSTOMIZED',
       desde: 'Estudio Levinton · Since 1974',
       scroll: 'Scroll',
       s2Words: ['WE UNITE','ALL','THE','PROCESS','IN','ONE'],
@@ -301,6 +313,7 @@ export const translations = {
 
     // ── SERVICIOS ──────────────────────────────────────────────
     servicios: {
+      bgText: 'PROCESS',
       seoTitle: 'Services | Estudio Levinton — Architects',
       seoDesc:  'Turnkey construction, design, energy efficiency and real estate investments in gated communities of Zona Norte.',
       heroLabel: 'Estudio Levinton',
@@ -356,8 +369,8 @@ export const translations = {
       heroSub:   '300+ homes built in Argentina\'s most exclusive gated communities.',
       filterLabel: 'Projects:',
       filterAll:   'All',
-      filterDev:   'En Desarrollo',
-      filterDone:  'Obra Terminada',
+      filterDev:   'In Development',
+      filterDone:  'Completed',
       filterM2:    'm²↓',
       filterM2Title: 'Sort by area',
       comingSoonTitle: 'Uruguay',
@@ -366,6 +379,7 @@ export const translations = {
 
     // ── NOSOTROS ───────────────────────────────────────────────
     nosotros: {
+      bgText: 'ARCHITECTS',
       seoTitle: 'About | Estudio Levinton — Architects',
       seoDesc:  'Meet Estudio Levinton Napoleone. Over 40 years designing homes that transcend generations in Buenos Aires and Bariloche.',
       heroLabel: 'Estudio Levinton',
@@ -377,11 +391,11 @@ export const translations = {
       introP2: 'We are not just a design studio. We are not just a construction company. We are both in one cohesive entity: the technical strength of Arq. Levinton fused with the creative vision of Arq. Napoleone.',
       teamLabel: 'Founders',
       sergioRole: 'Technical Director · Co-founder',
-      sergioName: 'ARQ. SERGIO\nLEVINTON',
+      sergioName: 'ARCH. SERGIO\nLEVINTON',
       sergioBio1: 'Architect (UBA). Over 40 years of experience: from 14-storey towers in CABA (Av. Santa Fe, Av. Córdoba, Malabia) to the 645 ha masterplan in Cerro Carbón, Bariloche, and over 300 premium homes in Nordelta, Puertos, EIDICO and Hyland Park.',
       sergioBio2: 'Pioneer in residential energy efficiency. Speaker at Reporte Inmobiliario 2020 alongside Mercado Libre Inmuebles on energy labelling and property value.',
       adrianaRole: 'Creative Director · Co-founder',
-      adrianaName: 'ARQ. ADRIANA\nNAPOLEONE',
+      adrianaName: 'ARCH. ADRIANA\nNAPOLEONE',
       adrianaBio1: 'Architect (UBA) and visual artist. Director of Galeria Pueblo Garzon, in Garzon, Uruguay.',
       adrianaBio2: 'Selected for Premio Bancor 2022 (Museo Tamburini, Córdoba). Torcuato Di Tella Artists Programme 2011. Exhibitions in Nordelta, Museo Villa Carmen, Casa de las Culturas, Municipio de Tigre and Bahía Grande — the very territory where she builds.',
       timelineTitle: 'MILESTONES',
@@ -404,7 +418,9 @@ export const translations = {
       heroSub:   'We reply within 48 hours, clearly and without obligation.',
       introWords: ['WE DESIGN', 'HOMES', 'THAT', 'TRANSCEND', 'GENERATIONS'],
       directContact: 'Direct contact',
+      sergioName: 'ARCH. SERGIO LEVINTON',
       sergioRole: 'Technical Director · Projects & Construction',
+      adrianaName: 'ARCH. ADRIANA NAPOLEONE',
       adrianaRole: 'Project Director · Design & Identity',
       whatsapp: 'Message us on WhatsApp',
       successTitle: 'MESSAGE SENT',

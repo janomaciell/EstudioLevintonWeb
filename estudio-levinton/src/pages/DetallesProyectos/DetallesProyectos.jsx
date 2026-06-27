@@ -10,6 +10,28 @@ import './DetallesProyectos.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const translateLocation = (loc, lang) => {
+  if (!loc) return '';
+  if (lang === 'en') {
+    return loc
+      .replace(/Cabecera laguna/g, 'Lagoon front')
+      .replace(/Río/g, 'River')
+      .replace(/Laguna/g, 'Lagoon')
+      .replace(/Lote interno/g, 'Internal lot');
+  }
+  return loc;
+};
+
+const translatePiscina = (val, lang) => {
+  if (!val) return '';
+  if (lang === 'en') {
+    if (val === 'Sí') return 'Yes';
+    if (val === 'Sí, borde infinito') return 'Yes, infinity edge';
+    if (val === 'No') return 'No';
+  }
+  return val;
+};
+
 export default function DetallesProyectos() {
   const { slug } = useParams();
   const navigate = useNavigate();
@@ -81,8 +103,8 @@ export default function DetallesProyectos() {
   return (
     <main className="dp-page">
       <SEO
-        title={`${project.title} | Estudio Levinton — Arquitectos`}
-        description={project.description || `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`}
+        title={`${project.title} | Estudio Levinton — ${lang === 'en' ? 'Architects' : 'Arquitectos'}`}
+        description={(lang === 'en' && project.descriptionEn) ? project.descriptionEn : (project.description || (lang === 'en' ? `Project ${project.title} in ${translateLocation(project.loc, 'en')}. Over 300 built projects in gated communities.` : `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`))}
         url={`https://estudiolevinton.com/proyectos/${slug}`}
       />
       <button
@@ -109,12 +131,14 @@ export default function DetallesProyectos() {
           <div className="dp-hero__overlay" />
         </div>
         <div className="dp-hero__content container">
-          <span className="label" style={{ marginBottom: '20px', display: 'block' }}>{project.label}</span>
+          <span className="label" style={{ marginBottom: '20px', display: 'block' }}>
+            {project.label === 'Obra Terminada' ? translations[lang].proyectos.filterDone : project.label === 'En Desarrollo' ? translations[lang].proyectos.filterDev : project.label}
+          </span>
           <h1 className="dp-hero-title">
             <span className="dp-line"><span className="dp-line-inner">{project.title.toUpperCase()}</span></span>
           </h1>
           <p className="dp-sub" style={{ fontSize: '1.1rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            {project.loc} · {project.year}
+            {translateLocation(project.loc, lang)} · {project.year}
           </p>
         </div>
       </div>
@@ -155,7 +179,7 @@ export default function DetallesProyectos() {
             </div>
             <div className="dp-stat">
               <span className="dp-stat__label">{t.labelPiscina}</span>
-              <span className="dp-stat__val">{project.specs.piscina}</span>
+              <span className="dp-stat__val">{translatePiscina(project.specs.piscina, lang)}</span>
             </div>
             <div className="dp-stat">
               <span className="dp-stat__label">{t.labelAnio}</span>

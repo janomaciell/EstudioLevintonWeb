@@ -9,6 +9,7 @@ import './Navbar.css'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const navRef      = useRef(null)
   const overlayRef  = useRef(null)
   const linksRef    = useRef([])
@@ -18,6 +19,19 @@ export default function Navbar() {
   const t = translations[lang].nav
 
   useEffect(() => { setOpen(false) }, [pathname])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 30) {
+        setScrolled(true)
+      } else {
+        setScrolled(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // entrance after loader
   useEffect(() => {
@@ -60,7 +74,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav ref={navRef} className="nav" style={{ opacity: 0 }}>
+      <nav ref={navRef} className={`nav${scrolled ? ' is-scrolled' : ''}`} style={{ opacity: 0 }}>
         <div className="nav__inner container">
           <Link to="/" className="nav__logo" aria-label="Estudio Levinton Napoleone — Inicio">
             <img src={LOGO} alt="Estudio Levinton Napoleone" className="nav__logo-img" />

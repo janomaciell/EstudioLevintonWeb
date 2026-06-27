@@ -147,7 +147,7 @@ export default function Servicios() {
       <section className="sv-proceso">
         <div className="container">
           <div className="sv-proceso__header">
-            <div className="scrub-x sv-proceso__bg" data-dir="left">PROCESO</div>
+            <div className="scrub-x sv-proceso__bg" data-dir="left">{t.bgText}</div>
             <div className="word-line" style={{ position: 'relative', zIndex: 2 }}>
               <span className="word-reveal sv-proceso__title">{t.procesoTitle}</span>
             </div>

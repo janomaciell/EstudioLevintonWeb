@@ -40,6 +40,7 @@
   --opacity-90: rgba(244, 241, 236, 0.9);
   
   --overlay-dark: rgba(244, 241, 236, 0.85);
+  --nav-scrolled-bg: rgba(12, 11, 10, 0.78);
 
   --font-display: 'Bebas Neue', 'Arial Black', sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
@@ -60,36 +61,38 @@
   --text-alt: #0c0b0a;
   --off-white: #181614;
   --beige: #5a5652;
-  --title-beige: #d9d4cc;
+  --title-beige: #181614;
   --warm-gray: #5e5955;
   --mid-gray: #3b3834;
+  --accent: #967548;
 
-  --opacity-02: rgba(12, 11, 10, 0.02);
-  --opacity-03: rgba(12, 11, 10, 0.03);
-  --opacity-04: rgba(12, 11, 10, 0.04);
-  --opacity-05: rgba(12, 11, 10, 0.05);
-  --opacity-06: rgba(12, 11, 10, 0.06);
-  --opacity-07: rgba(12, 11, 10, 0.07);
-  --opacity-08: rgba(12, 11, 10, 0.08);
-  --opacity-10: rgba(12, 11, 10, 0.1);
-  --opacity-12: rgba(12, 11, 10, 0.12);
-  --opacity-15: rgba(12, 11, 10, 0.15);
-  --opacity-18: rgba(12, 11, 10, 0.18);
+  --opacity-02: rgba(12, 11, 10, 0.03);
+  --opacity-03: rgba(12, 11, 10, 0.05);
+  --opacity-04: rgba(12, 11, 10, 0.06);
+  --opacity-05: rgba(12, 11, 10, 0.07);
+  --opacity-06: rgba(12, 11, 10, 0.12);
+  --opacity-07: rgba(12, 11, 10, 0.14);
+  --opacity-08: rgba(12, 11, 10, 0.16);
+  --opacity-10: rgba(12, 11, 10, 0.20);
+  --opacity-12: rgba(12, 11, 10, 0.25);
+  --opacity-15: rgba(12, 11, 10, 0.30);
+  --opacity-18: rgba(12, 11, 10, 0.35);
 
-  --opacity-20: rgba(12, 11, 10, 0.5);
-  --opacity-22: rgba(12, 11, 10, 0.5);
-  --opacity-25: rgba(12, 11, 10, 0.55);
-  --opacity-30: rgba(12, 11, 10, 0.6);
-  --opacity-35: rgba(12, 11, 10, 0.65);
-  --opacity-40: rgba(12, 11, 10, 0.7);
-  --opacity-45: rgba(12, 11, 10, 0.75);
-  --opacity-50: rgba(12, 11, 10, 0.8);
-  --opacity-52: rgba(12, 11, 10, 0.82);
-  --opacity-55: rgba(12, 11, 10, 0.85);
-  --opacity-72: rgba(12, 11, 10, 0.9);
-  --opacity-75: rgba(12, 11, 10, 0.9);
-  --opacity-90: rgba(12, 11, 10, 0.95);
+  --opacity-20: rgba(12, 11, 10, 0.55);
+  --opacity-22: rgba(12, 11, 10, 0.58);
+  --opacity-25: rgba(12, 11, 10, 0.62);
+  --opacity-30: rgba(12, 11, 10, 0.68);
+  --opacity-35: rgba(12, 11, 10, 0.72);
+  --opacity-40: rgba(12, 11, 10, 0.78);
+  --opacity-45: rgba(12, 11, 10, 0.82);
+  --opacity-50: rgba(12, 11, 10, 0.85);
+  --opacity-52: rgba(12, 11, 10, 0.87);
+  --opacity-55: rgba(12, 11, 10, 0.88);
+  --opacity-72: rgba(12, 11, 10, 0.92);
+  --opacity-75: rgba(12, 11, 10, 0.94);
+  --opacity-90: rgba(12, 11, 10, 0.96);
   --overlay-dark: rgba(12, 11, 10, 0.85);
+  --nav-scrolled-bg: rgba(244, 241, 236, 0.82);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -203,6 +206,9 @@ ul { list-style: none; }
   max-width: min(200px, 50vw);
   object-fit: contain;
   opacity: 0;
+}
+[data-theme="light"] .page-loader__logo {
+  filter: invert(1);
 }
 .page-loader__bar-wrap {
   width: 100px; height: 1px;

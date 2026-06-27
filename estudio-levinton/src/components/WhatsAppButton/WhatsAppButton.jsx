@@ -1,14 +1,21 @@
 import { createPortal } from 'react-dom'
+import { useLanguage } from '../../context/LanguageContext'
 import './WhatsAppButton.css'
 
 export default function WhatsAppButton() {
+  const { lang } = useLanguage()
+
+  const waText = lang === 'en'
+    ? "Hi! I come from the Estudio Levinton website and would like to make an enquiry."
+    : "Hola! Vengo de la web de Estudio Levinton y me gustaría realizar una consulta."
+
   return createPortal(
     <a
-      href="https://wa.me/5491158098681?text=Hola!%20Vengo%20de%20la%20web%20de%20Estudio%20Levinton%20y%20me%20gustar%C3%ADa%20realizar%20una%20consulta." 
+      href={`https://wa.me/5491158098681?text=${encodeURIComponent(waText)}`}
       target="_blank"
       rel="noopener noreferrer"
       className="floating-wa"
-      aria-label="Chat en WhatsApp"
+      aria-label={lang === 'en' ? "Chat on WhatsApp" : "Chat en WhatsApp"}
       style={{
         position: 'fixed',
         bottom: '30px',

@@ -24,7 +24,7 @@
 }
 .footer__tagline {
   font-size: 0.8rem;
-  color: var(--opacity-30);
+  color: var(--opacity-40);
   line-height: 1.7;
   max-width: 320px;
 }
@@ -37,7 +37,7 @@
 }
 .footer__link {
   font-size: 0.78rem;
-  color: var(--opacity-35);
+  color: var(--opacity-40);
   letter-spacing: 0.04em;
   transition: color 0.3s;
 }
@@ -52,7 +52,7 @@
   font-size: 0.65rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--opacity-18);
+  color: var(--opacity-30);
 }
 @media (max-width: 760px) {
   .footer__top { grid-template-columns: 1fr; gap: 40px; }
