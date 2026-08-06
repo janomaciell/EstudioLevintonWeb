@@ -9,6 +9,7 @@ import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import { media } from '../../config/media'
 import { SITE_URL } from '../../config/site'
+import Img from '../../components/Img/Img'
 import './Proyectos.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -64,7 +65,7 @@ export default function Proyectos() {
       />
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Carpinchos.png')} alt="Obras de Arquitectura en Zona Norte y Barrios Cerrados — Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
+          <Img src={media('img/portadas/Carpinchos.png')} alt="Obras de Arquitectura en Zona Norte y Barrios Cerrados — Estudio Levinton" priority={true} sizes="100vw" width={1347} height={1167} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -140,7 +141,7 @@ export default function Proyectos() {
           <div className="pj-grid">
             {filtered.map((p, i) => (
               <Link to={`/proyectos/${p.slug}`} key={`${p.title}-${i}`} className="pj-grid__item">
-              <img src={p.img} alt={`Obra de arquitectura ${p.title} en ${p.loc} - Estudio Levinton`} loading="lazy" width={800} height={600} />
+              <Img src={p.img} alt={`Obra de arquitectura ${p.title} en ${p.loc} - Estudio Levinton`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" width={p.width || 800} height={p.height || 600} />
                 <div className="pj-grid__hover">
                   <span className="pj-grid__label">
                     {p.label === 'Obra Terminada' ? t.filterDone : p.label === 'En Desarrollo' ? t.filterDev : p.label}

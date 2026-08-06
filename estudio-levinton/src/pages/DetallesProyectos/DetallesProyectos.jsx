@@ -8,6 +8,7 @@ import { buildProjectSchema, buildBreadcrumbSchema } from '../../components/SEO/
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import { SITE_URL } from '../../config/site';
+import Img from '../../components/Img/Img';
 import './DetallesProyectos.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -145,7 +146,7 @@ export default function DetallesProyectos() {
       {/* HERO */}
       <div className="dp-hero">
         <div className="dp-hero__bg">
-          <img src={project.img} alt={`Obra de arquitectura ${project.title} en ${project.loc} por Estudio Levinton`} fetchPriority="high" decoding="async" width={1920} height={1080} />
+          <Img src={project.img} alt={`Obra de arquitectura ${project.title} en ${project.loc} por Estudio Levinton`} priority={true} sizes="100vw" width={project.width || 1920} height={project.height || 1080} />
           <div className="dp-hero__overlay" />
         </div>
         <div className="dp-hero__content container">
@@ -215,7 +216,7 @@ export default function DetallesProyectos() {
         <div className="dp-gallery__grid">
           {project.gallery.map((imgSrc, i) => (
             <div key={i} className="dp-gallery__item">
-              <img src={imgSrc} alt={t.imgAlt(project.title, i) + ` en ${project.loc}`} loading="lazy" width={800} height={600} />
+              <Img src={imgSrc} alt={t.imgAlt(project.title, i) + ` en ${project.loc}`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" width={800} height={600} />
             </div>
           ))}
         </div>

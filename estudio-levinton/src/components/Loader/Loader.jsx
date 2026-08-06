@@ -55,6 +55,8 @@ export default function Loader() {
           alt="Estudio Levinton Napoleone"
           className="page-loader__logo"
           ref={nameRef}
+          width={96}
+          height={96}
         />
         <div className="page-loader__bar-wrap">
           <div className="page-loader__bar" ref={barRef} />

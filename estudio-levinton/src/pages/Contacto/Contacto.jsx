@@ -8,6 +8,7 @@ import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import { media } from '../../config/media'
 import { SITE_URL } from '../../config/site'
+import Img from '../../components/Img/Img'
 import './Contacto.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -114,7 +115,7 @@ export default function Contacto() {
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Marinas.png')} alt="Contacto Estudio Levinton - Arquitectura de Casas" fetchPriority="high" decoding="async" width={1920} height={1080} />
+          <Img src={media('img/portadas/Marinas.png')} alt="Contacto Estudio Levinton - Arquitectura de Casas" priority={true} sizes="100vw" width={1448} height={1086} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">

@@ -8,23 +8,24 @@ import SEO from '../../components/SEO/SEO'
 import { buildServicesSchema, buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
+import Img from '../../components/Img/Img'
 import './Servicios.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 const IMGS = [
-  media('img/portadas/Azurra.png'),
-  media('img/portadas/SIL 645.png'),
-  media('img/portadas/Sustentabilidad 02.png'),
-  media('img/portadas/Marinas.png'),
-  media('img/portadas/SIL 71.png'),
+  { src: media('img/portadas/Azurra.png'), width: 1448, height: 1086 },
+  { src: media('img/portadas/casa-san-isidro-labrador-laguna.png'), width: 1536, height: 1024 },
+  { src: media('img/portadas/sustentabilidad-02.png'), width: 1448, height: 1086 },
+  { src: media('img/portadas/Marinas.png'), width: 1448, height: 1086 },
+  { src: media('img/portadas/sil-71.png'), width: 1451, height: 1084 },
 ]
 
 export default function Servicios() {
   const { lang } = useLanguage()
   const t = translations[lang].servicios
 
-  const SERVICES = t.services.map((s, i) => ({ ...s, img: IMGS[i] }))
+  const SERVICES = t.services.map((s, i) => ({ ...s, ...IMGS[i] }))
   const PROCESO  = t.proceso
 
   useEffect(() => {
@@ -89,7 +90,7 @@ export default function Servicios() {
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Sustentabilidad 01.png')} alt="Servicios de Arquitectura y Construcción de Residencias en Zona Norte por Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
+          <Img src={media('img/portadas/sustentabilidad-01.png')} alt="Servicios de Arquitectura y Construcción de Residencias en Zona Norte por Estudio Levinton" priority={true} sizes="100vw" width={1184} height={864} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -121,7 +122,7 @@ export default function Servicios() {
         {SERVICES.map((s, i) => (
           <div key={i} className={`sv-row${i % 2 !== 0 ? ' sv-row--reverse' : ''}`}>
             <div className="sv-row__img">
-              <img src={s.img} alt={`Servicio de ${s.title} en Zona Norte - Estudio Levinton`} loading="lazy" width={800} height={600} />
+              <Img src={s.src} alt={`Servicio de ${s.title} en Zona Norte - Estudio Levinton`} sizes="(max-width: 768px) 100vw, 50vw" width={s.width} height={s.height} />
             </div>
             <div className="sv-row__text">
               <span className="sv-row__num sv-row__fade">{s.num}</span>

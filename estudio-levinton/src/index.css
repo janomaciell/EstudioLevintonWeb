@@ -327,3 +327,10 @@ ul { list-style: none; }
   transition: border-color 0.3s, color 0.3s; cursor: default;
 }
 .ct-barrio:hover { border-color: var(--opacity-25); color: var(--text-main); }
+
+/* Responsive Image Optimizations */
+img {
+  max-width: 100%;
+  height: auto;
+}
+

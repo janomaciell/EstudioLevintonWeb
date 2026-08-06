@@ -8,6 +8,7 @@ import SEO from '../../components/SEO/SEO'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import { SITE_URL } from '../../config/site'
+import Img from '../../components/Img/Img'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -17,13 +18,13 @@ const IMGS = {
   proj1:   media('img/portadas/Azurra.png'),
   proj2:   media('img/portadas/Carpinchos.png'),
   proj3:   media('img/portadas/Marinas.png'),
-  proj4:   media('img/portadas/SIL 71.png'),
-  proj5:   media('img/portadas/SIL 645.png'),
+  proj4:   media('img/portadas/sil-71.png'),
+  proj5:   media('img/portadas/casa-san-isidro-labrador-laguna.png'),
   detail2: media('img/Obras-estudio-Levinton/jardin-botanico.png'),
-  detail3: media('img/portadas/SIL 645.png'),
+  detail3: media('img/portadas/casa-san-isidro-labrador-laguna.png'),
   team1:   media('img/Obras-estudio-Levinton/sergio.JPG'),
   team2:   media('img/Obras-estudio-Levinton/adriana.JPG'),
-  cta:     media('img/portadas/Talar de Pacheco.png'),
+  cta:     media('img/portadas/talar-de-pacheco.png'),
 }
 
 const FEATURED_PROJECTS = ALL_PROJECTS.slice(0, 6)
@@ -307,7 +308,7 @@ export default function Home() {
         <div className="hero-sticky" ref={stickyRef}>
 
           <div className="hero-img-wrap" ref={imgWrapRef}>
-            <img src={IMGS.hero} alt="Estudio de Arquitectura en Zona Norte — Estudio Levinton" ref={imgRef} fetchPriority="high" decoding="async" width={1920} height={1080} />
+            <Img src={IMGS.hero} alt="Estudio de Arquitectura en Zona Norte — Estudio Levinton" ref={imgRef} priority={true} sizes="100vw" width={1920} height={1080} />
             <div className="hero-img-overlay" />
           </div>
 
@@ -386,7 +387,7 @@ export default function Home() {
             </div>
             <div className="s2-words__meta">
               <div className="img-reveal s2-words__img">
-                <img src={IMGS.detail2} alt="Detalle de diseño y construcción en Zona Norte por Estudio Levinton" loading="lazy" decoding="async" width={800} height={600} />
+                <Img src={IMGS.detail2} alt="Detalle de diseño y construcción en Zona Norte por Estudio Levinton" sizes="(max-width: 640px) 100vw, 400px" width={1433} height={1098} />
               </div>
               <div className="s2-words__since">
                 <span className="s2-words__since-num">1974</span>
@@ -425,7 +426,7 @@ export default function Home() {
         <div className="s4-grid">
           {FEATURED_PROJECTS.map((p, i) => (
             <Link to={`/proyectos/${p.slug}`} key={i} className="s4-grid__item">
-              <img src={p.img} alt={`Obra ${p.title} en ${p.loc} - Estudio Levinton`} loading="lazy" decoding="async" width={800} height={600} />
+              <Img src={p.img} alt={`Obra ${p.title} en ${p.loc} - Estudio Levinton`} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" width={p.width || 800} height={p.height || 600} />
               <div className="s4-grid__hover">
                 <span className="s4-grid__label">
                   {p.label === 'Obra Terminada' ? projTrans.filterDone : p.label === 'En Desarrollo' ? projTrans.filterDev : p.label}
@@ -453,7 +454,7 @@ export default function Home() {
           </div>
           <div className="s5-approach__img-col">
             <div className="img-reveal s5-approach__img">
-              <img src={IMGS.detail3} alt="Proceso de obra y construcción residencial en Zona Norte por Estudio Levinton" loading="lazy" decoding="async" width={800} height={600} />
+              <Img src={IMGS.detail3} alt="Proceso de obra y construcción residencial en Zona Norte por Estudio Levinton" sizes="(max-width: 640px) 100vw, 500px" width={1536} height={1024} />
             </div>
           </div>
         </div>
@@ -466,14 +467,14 @@ export default function Home() {
           </div>
           <div className="s5-approach__team">
             <div className="img-reveal s5-approach__img-b">
-              <img src={IMGS.team1} alt="Arq. Sergio Levinton - Fundador de Estudio de Arquitectura en Zona Norte" loading="lazy" decoding="async" width={400} height={500} />
+              <Img src={IMGS.team1} alt="Arq. Sergio Levinton - Fundador de Estudio de Arquitectura en Zona Norte" sizes="(max-width: 640px) 50vw, 300px" width={3872} height={2592} />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Sergio Levinton</strong>
                 <span>{t.director}</span>
               </div>
             </div>
             <div className="img-reveal s5-approach__img-b">
-              <img src={IMGS.team2} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" loading="lazy" decoding="async" width={400} height={500} />
+              <Img src={IMGS.team2} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" sizes="(max-width: 640px) 50vw, 300px" width={943} height={953} />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Adriana Napoleone</strong>
                 <span>{t.directoraProyectos}</span>
@@ -538,7 +539,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════ */}
       <section className="s8-cta">
         <div className="cta-bg">
-          <img src={IMGS.cta} alt="Arquitectura y construcción de residencias exclusivas por Estudio Levinton" loading="lazy" decoding="async" width={1920} height={1080} />
+          <Img src={IMGS.cta} alt="Arquitectura y construcción de residencias exclusivas por Estudio Levinton" sizes="100vw" width={1184} height={864} />
           <div className="s8-cta__overlay" />
         </div>
         <div className="s8-cta__content container">

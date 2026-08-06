@@ -8,6 +8,7 @@ import SEO from '../../components/SEO/SEO'
 import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
+import Img from '../../components/Img/Img'
 import './Nosotros.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -92,7 +93,7 @@ export default function Nosotros() {
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Azurra.png')} alt="Estudio de Arquitectura en Zona Norte con 40 años de Trayectoria — Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
+          <Img src={media('img/portadas/Azurra.png')} alt="Estudio de Arquitectura en Zona Norte con 40 años de Trayectoria — Estudio Levinton" priority={true} sizes="100vw" width={1448} height={1086} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -132,7 +133,7 @@ export default function Nosotros() {
         <div className="nos-team__grid container">
           <div className="nos-team__member">
             <div className="img-reveal nos-team__img">
-              <img src={media('img/Obras-estudio-Levinton/sergio.JPG')} alt="Arq. Sergio Levinton - Fundador de Estudio de de Arquitectura en Zona Norte" width={400} height={500} />
+              <Img src={media('img/Obras-estudio-Levinton/sergio.JPG')} alt="Arq. Sergio Levinton - Fundador de Estudio de de Arquitectura en Zona Norte" sizes="(max-width: 640px) 50vw, 300px" width={3872} height={2592} />
             </div>
             <div className="nos-team__info">
               <span className="label" style={{ marginBottom: '12px', display: 'block' }}>{t.sergioRole}</span>
@@ -149,7 +150,7 @@ export default function Nosotros() {
 
           <div className="nos-team__member">
             <div className="img-reveal nos-team__img">
-              <img src={media('img/Obras-estudio-Levinton/adriana.JPG')} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" width={400} height={500} />
+              <Img src={media('img/Obras-estudio-Levinton/adriana.JPG')} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" sizes="(max-width: 640px) 50vw, 300px" width={943} height={953} />
             </div>
             <div className="nos-team__info">
               <span className="label" style={{ marginBottom: '12px', display: 'block' }}>{t.adrianaRole}</span>

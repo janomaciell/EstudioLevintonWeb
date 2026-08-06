@@ -10,6 +10,8 @@ export const ALL_PROJECTS = [
     m2: '340',
     year: '2025',
     img: media('img/portadas/Azurra.png'),
+    width: 1448,
+    height: 1086,
     description: 'Residencia de diseño toscano ubicada en el barrio Azzurra, en Tortugas. Destaca por sus amplios ventanales que integran el paisaje exterior con los cálidos y sus detalles de resolución artesanal y de estilo. Construida con estándares de alta eficiencia energética como bomba de calor, tanto para agua sanitaria como para calefacción.',
     descriptionEn: 'Tuscan design residence located in the Azzurra neighbourhood, Tortugas. It stands out for its large windows that integrate the exterior landscape with its warm interiors and its artisanal and stylish details. Built with high energy efficiency standards such as a heat pump, for both sanitary water and heating.',
     specs: {
@@ -38,6 +40,8 @@ export const ALL_PROJECTS = [
     m2: '300',
     year: '2023',
     img: media('img/portadas/Carpinchos.png'),
+    width: 1347,
+    height: 1167,
     description: 'Casa de estilo racionalista con volúmenes puros y materiales que aportan textura y elegancia. El diseño prioriza la luz natural y la conexión fluida del espacio en la doble altura del living comedor, la escalera y el área de trabajo superior.',
     descriptionEn: 'Rationalist style house with pure volumes and materials that bring texture and elegance. The design prioritises natural light and the fluid connection of space in the double height of the living room, the staircase and the upper workspace.',
     specs: {
@@ -75,6 +79,8 @@ export const ALL_PROJECTS = [
     m2: '350',
     year: '2022',
     img: media('img/portadas/Marinas.png'),
+    width: 1448,
+    height: 1086,
     description: 'Imponente propiedad con vistas panorámicas a la laguna. Un proyecto donde cada detalle fue pensado para maximizar el confort y la elegancia. Aporte de color y estructuras que flexibilizan las diferentes áreas de la planta.',
     descriptionEn: 'Imposing property with panoramic views of the lagoon. A project where every detail was thought out to maximise comfort and elegance. A touch of colour and structures that make the different areas of the floor plan flexible.',
     specs: {
@@ -103,7 +109,9 @@ export const ALL_PROJECTS = [
     loc: 'Cabecera laguna, Tigre',
     m2: '320',
     year: '2013',
-    img: media('img/portadas/SIL 328.png'),
+    img: media('img/portadas/sil-328.png'),
+    width: 1537,
+    height: 1023,
     description: 'Vivienda unifamiliar desarrollada en 3 niveles y el uso del agua que conecta los dos volúmenes de la casa. El empleo de la piedra crea un equilibrio perfecto entre lo rústico y lo moderno. Orientación estratégica para aprovechar el sol de la tarde en la zona de esparcimiento exterior.',
     descriptionEn: 'Single-family home developed on 3 levels with the use of water connecting the two volumes of the house. The use of stone creates a perfect balance between the rustic and the modern. Strategic orientation to take advantage of the afternoon sun in the outdoor recreation area.',
     specs: {
@@ -137,7 +145,9 @@ export const ALL_PROJECTS = [
     loc: 'Río, Tigre',
     m2: '370',
     year: '2015',
-    img: media('img/portadas/SIL 71.png'),
+    img: media('img/portadas/sil-71.png'),
+    width: 1451,
+    height: 1084,
     description: 'Un refugio de diseño exclusivo y líneas geométricas, con detalles de madera que aportan texturas. Pensada con detalles constructivos que mejoran la eficiencia energética como revoques termoaislantes, techo ventilado, recolección de agua de lluvia, agua sanitaria calefaccionada por energía solar.',
     descriptionEn: 'An exclusive design refuge with geometric lines, featuring wooden details that add textures. Designed with constructive details that improve energy efficiency such as thermal insulating plasters, ventilated roof, rainwater harvesting, and sanitary water heated by solar energy.',
     specs: {
@@ -163,6 +173,8 @@ export const ALL_PROJECTS = [
     m2: '280',
     year: '2018',
     img: media('img/portadas/SIL 577.jpg'),
+    width: 1195,
+    height: 896,
     description: 'Empleo de la espacialidad en la doble altura, las áreas de usos múltiples, los ventanales en ángulo que priorizan las vistas y el uso de materiales nobles que caracterizan nuestro compromiso con la calidad y la belleza atemporal.',
     descriptionEn: 'Use of spatiality in the double height, multi-purpose areas, angled windows that prioritise the views, and the use of noble materials that characterise our commitment to quality and timeless beauty.',
     specs: {
@@ -191,7 +203,9 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '320',
     year: '2016',
-    img: media('img/portadas/SIL 645.png'),
+    img: media('img/portadas/casa-san-isidro-labrador-laguna.png'),
+    width: 1536,
+    height: 1024,
     description: 'Juego de volúmenes y texturas en esta casa se interrelacionan para generar los espacios necesarios de una familia ensamblada donde es posible tanto la privacidad como la vida en común.',
     descriptionEn: 'A play of volumes and textures in this house interrelate to generate the necessary spaces for a blended family where both privacy and communal life are possible.',
     specs: {
@@ -218,7 +232,9 @@ export const ALL_PROJECTS = [
     loc: 'Lote interno, Tigre',
     m2: '200',
     year: '2010',
-    img: media('img/portadas/SIL 202.png'),
+    img: media('img/portadas/sil-202.png'),
+    width: 1448,
+    height: 1086,
     description: 'Diseño racional con una alta presencia de la doble altura, donde el bosque del entorno se filtra en el interior de la casa. Hormigón, piedra y madera conviven equilibradamente.',
     descriptionEn: 'Rational design with a strong presence of double height, where the surrounding forest filters into the interior of the house. Concrete, stone, and wood coexist in perfect balance.',
     specs: {
@@ -255,7 +271,9 @@ export const ALL_PROJECTS = [
     loc: 'Laguna, Tigre',
     m2: '300',
     year: '2018',
-    img: media('img/portadas/Santa Catalina 304.png'),
+    img: media('img/portadas/santa-catalina-304.png'),
+    width: 1535,
+    height: 1024,
     description: 'Proyecto donde confluyen las paletas cálidas y la espacialidad. Se buscó un diseño especial a ciertas áreas de confort distintivas y la selección de acabados nobles confieren a esta casa una elegancia indiscutible.',
     descriptionEn: 'A project where warm palettes and spatiality converge. A special design was sought for certain distinctive comfort areas, and the selection of noble finishes gives this house indisputable elegance.',
     specs: {
@@ -283,6 +301,8 @@ export const ALL_PROJECTS = [
     m2: '310',
     year: '2022',
     img: media('img/portadas/SantaCatalina577.png'),
+    width: 1165,
+    height: 1350,
     description: 'Armonía y balance definen esta obra. Desde el paisajismo hasta la distribución interior, todo ha sido cuidadosamente articulado para brindar una experiencia de vida excepcional.',
     descriptionEn: 'Harmony and balance define this work. From the landscaping to the interior layout, everything has been carefully articulated to provide an exceptional living experience.',
     specs: {
@@ -307,6 +327,8 @@ export const ALL_PROJECTS = [
     m2: '220',
     year: '2019',
     img: media('img/portadas/vistas226.png'),
+    width: 1192,
+    height: 1320,
     description: 'Esta casa construida con ladrillos de hormigón alveolar y con estándares de sustentabilidad para lograr eficiencia energética sin costos elevados.',
     descriptionEn: 'This house is built with aerated concrete blocks and sustainability standards to achieve energy efficiency without high costs.',
     specs: {
@@ -337,7 +359,9 @@ export const ALL_PROJECTS = [
     loc: 'Tigre',
     m2: '430',
     year: '2015',
-    img: media('img/portadas/Talar de Pacheco.png'),
+    img: media('img/portadas/talar-de-pacheco.png'),
+    width: 1184,
+    height: 864,
     description: 'Clásica y majestuosa. Esta residencia combina elementos tradicionales de la arquitectura francesa con las necesidades modernas de la familia actual. Excelente carpintería y detalles de herrería forjada.',
     descriptionEn: 'Classic and majestic. This residence combines traditional elements of French architecture with the modern needs of today\'s family. Excellent carpentry and forged ironwork details.',
     specs: {
@@ -363,7 +387,9 @@ export const ALL_PROJECTS = [
     loc: 'Tigre',
     m2: '350',
     year: '2024',
-    img: media('img/portadas/Reforma SIL.png'),
+    img: media('img/portadas/reforma-sil.png'),
+    width: 1448,
+    height: 1086,
     description: 'Renovación completa de una propiedad existente, adaptándola a un lenguaje arquitectónico más limpio y luminoso. Se maximizaron los espacios abiertos y se modernizaron todas las instalaciones, además de generar otra suite principal.',
     descriptionEn: 'Complete renovation of an existing property, adapting it to a cleaner and brighter architectural language. Open spaces were maximised and all facilities were modernised, in addition to creating another master suite.',
     specs: {
@@ -387,7 +413,9 @@ export const ALL_PROJECTS = [
     loc: 'Tigre',
     m2: '300',
     year: '2021',
-    img: media('img/portadas/Sustentabilidad 01.png'),
+    img: media('img/portadas/sustentabilidad-01.png'),
+    width: 1184,
+    height: 864,
     description: 'Una respuesta innovadora a la arquitectura sustentable. Incorpora paneles solares, aislación térmica y orientación bioclimática, logrando máxima eficiencia, además de detalles personalizados.',
     descriptionEn: 'An innovative response to sustainable architecture. It incorporates solar panels, thermal insulation, and bioclimatic orientation, achieving maximum efficiency, in addition to personalised details.',
     specs: {
@@ -417,6 +445,8 @@ export const ALL_PROJECTS = [
     m2: '360',
     year: '2013',
     img: media('img/portadas/Santacatalina382.png'),
+    width: 1561,
+    height: 1008,
     description: 'Una casa donde el hormigón, el techo verde y los espacios interiores se unifican con el exterior circundante.',
     descriptionEn: 'A house where the concrete, the green roof, and the interior spaces unify with the surrounding exterior.',
     specs: {
