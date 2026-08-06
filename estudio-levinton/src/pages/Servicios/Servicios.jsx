@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
+import { SITE_URL } from '../../config/site'
 import SEO from '../../components/SEO/SEO'
 import { buildServicesSchema, buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
@@ -68,8 +69,8 @@ export default function Servicios() {
 
   const servicesSchema = buildServicesSchema();
   const breadcrumbsSchema = buildBreadcrumbSchema([
-    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
-    { name: lang === 'en' ? 'Services' : 'Servicios', url: 'https://estudiolevinton.com/servicios' }
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: `${SITE_URL}/` },
+    { name: lang === 'en' ? 'Services' : 'Servicios', url: `${SITE_URL}/servicios` }
   ]);
   const combinedSchema = {
     '@context': 'https://schema.org',
@@ -81,14 +82,14 @@ export default function Servicios() {
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
-        url="https://estudiolevinton.com/servicios"
+        url="/servicios"
         schemaData={combinedSchema}
         lang={lang}
       />
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Sustentabilidad 01.png')} alt="Servicios de Arquitectura y Construcción de Residencias por Estudio Levinton" fetchPriority="high" decoding="async" />
+          <img src={media('img/portadas/Sustentabilidad 01.png')} alt="Servicios de Arquitectura y Construcción de Residencias en Zona Norte por Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -120,7 +121,7 @@ export default function Servicios() {
         {SERVICES.map((s, i) => (
           <div key={i} className={`sv-row${i % 2 !== 0 ? ' sv-row--reverse' : ''}`}>
             <div className="sv-row__img">
-              <img src={s.img} alt={s.title} loading="lazy" />
+              <img src={s.img} alt={`Servicio de ${s.title} en Zona Norte - Estudio Levinton`} loading="lazy" width={800} height={600} />
             </div>
             <div className="sv-row__text">
               <span className="sv-row__num sv-row__fade">{s.num}</span>

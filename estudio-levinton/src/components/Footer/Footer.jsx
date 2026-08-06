@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="footer__top container">
         <div className="footer__brand">
           <Link to="/" className="footer__logo-link">
-            <img src={LOGO} alt="Estudio Levinton Napoleone" className="footer__logo-img" />
+            <img src={LOGO} alt="Estudio Levinton Napoleone" className="footer__logo-img" width={64} height={64} />
           </Link>
           <p className="footer__tagline">
             {t.footer.tagline}

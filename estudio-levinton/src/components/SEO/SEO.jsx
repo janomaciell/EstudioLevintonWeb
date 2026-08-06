@@ -1,20 +1,25 @@
 import { Helmet } from 'react-helmet-async';
 import Schema from './Schema';
+import { SITE_URL } from '../../config/site';
 
 export default function SEO({
   title = 'Estudio Levinton — Arquitectos',
   description = 'Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte.',
   keywords = 'Arquitectos, Estudio de Arquitectura, Casas en barrios cerrados, Nordelta, Puertos, EIDICO, Diseño de casas, Zona Norte, Buenos Aires, Estudio Levinton',
-  url = 'https://estudiolevinton.com/',
-  image = 'https://estudiolevinton.com/logo-estudio-levinton.png',
+  url = '/',
+  image = '/logo-estudio-levinton.png',
   type = 'website',
   noindex = false,
   schemaData = null,
   schemaType = null,
   lang = 'es'
 }) {
-  const fullUrl = url.startsWith('http') ? url : `https://estudiolevinton.com${url.startsWith('/') ? '' : '/'}${url}`;
-  const fullImage = image.startsWith('http') ? image : `https://estudiolevinton.com${image.startsWith('/') ? '' : '/'}${image}`;
+  const fullUrl = url.startsWith('http') 
+    ? url.replace('https://estudiolevinton.com', SITE_URL) 
+    : `${SITE_URL}${url.startsWith('/') ? '' : '/'}${url}`;
+  const fullImage = image.startsWith('http') 
+    ? image.replace('https://estudiolevinton.com', SITE_URL) 
+    : `${SITE_URL}${image.startsWith('/') ? '' : '/'}${image}`;
   const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   return (

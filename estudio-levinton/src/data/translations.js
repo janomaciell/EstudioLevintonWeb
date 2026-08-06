@@ -23,8 +23,8 @@ export const translations = {
 
     // ── HOME ───────────────────────────────────────────────────
     home: {
-      seoTitle: 'Estudio Levinton — Arquitectos',
-      seoDesc: 'Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte.',
+      seoTitle: 'Estudio de Arquitectura en Zona Norte | 40 años, +300 obras — Estudio Levinton',
+      seoDesc: 'Estudio de arquitectura en Zona Norte de Buenos Aires. Casas llave en mano en Nordelta, Tigre, San Isidro, Escobar y Pilar. 40 años de trayectoria y más de 300 obras.',
       bgText: 'LEVINTON ARQUITECTOS',
       marqueeWords: ['LEVINTON','·','NAPOLEONE','·','ARQUITECTOS','·','DESDE 1974','·','BUENOS AIRES','·'],
       // Hero text 1
@@ -89,7 +89,7 @@ export const translations = {
     // ── SERVICIOS ──────────────────────────────────────────────
     servicios: {
       bgText: 'PROCESO',
-      seoTitle: 'Servicios | Estudio Levinton — Arquitectos',
+      seoTitle: 'Construcción llave en mano en Zona Norte | Estudio Levinton',
       seoDesc:  'Construcción llave en mano, diseño, eficiencia energética e inversiones inmobiliarias en barrios cerrados de Zona Norte.',
       heroLabel: 'Estudio Levinton',
       heroLine1: 'NUESTROS',
@@ -136,7 +136,7 @@ export const translations = {
 
     // ── PROYECTOS ──────────────────────────────────────────────
     proyectos: {
-      seoTitle: 'Proyectos | Estudio Levinton — Arquitectos',
+      seoTitle: 'Obras y proyectos en Zona Norte | Estudio Levinton',
       seoDesc:  'Explora nuestro portfolio de arquitectura. Más de 300 obras construidas en los barrios cerrados más exclusivos de Argentina.',
       heroLabel: 'Portfolio',
       heroLine1: 'PROYECTOS',
@@ -155,7 +155,7 @@ export const translations = {
     // ── NOSOTROS ───────────────────────────────────────────────
     nosotros: {
       bgText: 'ARQUITECTOS',
-      seoTitle: 'Nosotros | Estudio Levinton — Arquitectos',
+      seoTitle: 'Estudio de arquitectura con 40 años en Zona Norte | Levinton',
       seoDesc:  'Conoce al Estudio Levinton Napoleone. Más de 40 años proyectando hogares que trascienden generaciones en Buenos Aires y Bariloche.',
       heroLabel: 'Estudio Levinton',
       heroLine1: 'QUIÉNES',
@@ -185,7 +185,7 @@ export const translations = {
 
     // ── CONTACTO ───────────────────────────────────────────────
     contacto: {
-      seoTitle: 'Contacto | Estudio Levinton — Arquitectos',
+      seoTitle: 'Contacto — Arquitectos en Zona Norte | Estudio Levinton',
       seoDesc:  'Contáctanos para proyectar tu hogar en barrios cerrados o explorar oportunidades de inversión inmobiliaria. En 48 horas te respondemos.',
       heroLabel: 'Estudio Levinton',
       heroLine1: 'HABLEMOS',
@@ -259,8 +259,8 @@ export const translations = {
 
     // ── HOME ───────────────────────────────────────────────────
     home: {
-      seoTitle: 'Estudio Levinton — Architects',
-      seoDesc: 'Estudio Levinton — Architects. 40 years of experience. Over 300 built projects in Nordelta, Puertos, EIDICO. Specialists in homes in gated communities of Zona Norte.',
+      seoTitle: 'Architecture Studio in Zona Norte | 40 years, +300 projects — Estudio Levinton',
+      seoDesc: 'Architecture studio in Zona Norte, Buenos Aires. Turnkey houses in Nordelta, Tigre, San Isidro, Escobar and Pilar. 40 years of experience and over 300 projects.',
       bgText: 'LEVINTON ARCHITECTS',
       marqueeWords: ['LEVINTON','·','NAPOLEONE','·','ARCHITECTS','·','SINCE 1974','·','BUENOS AIRES','·'],
       line1: 'WE BUILD',
@@ -314,7 +314,7 @@ export const translations = {
     // ── SERVICIOS ──────────────────────────────────────────────
     servicios: {
       bgText: 'PROCESS',
-      seoTitle: 'Services | Estudio Levinton — Architects',
+      seoTitle: 'Turnkey Construction in Zona Norte | Estudio Levinton',
       seoDesc:  'Turnkey construction, design, energy efficiency and real estate investments in gated communities of Zona Norte.',
       heroLabel: 'Estudio Levinton',
       heroLine1: 'OUR',
@@ -361,7 +361,7 @@ export const translations = {
 
     // ── PROYECTOS ──────────────────────────────────────────────
     proyectos: {
-      seoTitle: 'Projects | Estudio Levinton — Architects',
+      seoTitle: 'Projects and Works in Zona Norte | Estudio Levinton',
       seoDesc:  'Explore our architecture portfolio. Over 300 homes built in Argentina\'s most exclusive gated communities.',
       heroLabel: 'Portfolio',
       heroLine1: 'SELECTED',
@@ -380,7 +380,7 @@ export const translations = {
     // ── NOSOTROS ───────────────────────────────────────────────
     nosotros: {
       bgText: 'ARCHITECTS',
-      seoTitle: 'About | Estudio Levinton — Architects',
+      seoTitle: 'Architecture Studio with 40 Years in Zona Norte | Levinton',
       seoDesc:  'Meet Estudio Levinton Napoleone. Over 40 years designing homes that transcend generations in Buenos Aires and Bariloche.',
       heroLabel: 'Estudio Levinton',
       heroLine1: 'WHO',
@@ -410,7 +410,7 @@ export const translations = {
 
     // ── CONTACTO ───────────────────────────────────────────────
     contacto: {
-      seoTitle: 'Contact | Estudio Levinton — Architects',
+      seoTitle: 'Contact — Architects in Zona Norte | Estudio Levinton',
       seoDesc:  'Contact us to design your home in gated communities or explore real estate investment opportunities. We reply within 48 hours.',
       heroLabel: 'Estudio Levinton',
       heroLine1: "LET'S TALK",

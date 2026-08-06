@@ -7,6 +7,7 @@ import SEO from '../../components/SEO/SEO';
 import { buildProjectSchema, buildBreadcrumbSchema } from '../../components/SEO/Schema';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
+import { SITE_URL } from '../../config/site';
 import './DetallesProyectos.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -104,9 +105,9 @@ export default function DetallesProyectos() {
 
   const projectSchema = buildProjectSchema(project);
   const breadcrumbsSchema = buildBreadcrumbSchema([
-    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
-    { name: lang === 'en' ? 'Projects' : 'Obras', url: 'https://estudiolevinton.com/proyectos' },
-    { name: project.title, url: `https://estudiolevinton.com/proyectos/${slug}` }
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: `${SITE_URL}/` },
+    { name: lang === 'en' ? 'Projects' : 'Obras', url: `${SITE_URL}/proyectos` },
+    { name: project.title, url: `${SITE_URL}/proyectos/${slug}` }
   ]);
   const combinedSchema = {
     '@context': 'https://schema.org',
@@ -118,7 +119,7 @@ export default function DetallesProyectos() {
       <SEO
         title={`${project.title} | Estudio Levinton — ${lang === 'en' ? 'Architects' : 'Arquitectos'}`}
         description={(lang === 'en' && project.descriptionEn) ? project.descriptionEn : (project.description || (lang === 'en' ? `Project ${project.title} in ${translateLocation(project.loc, 'en')}. Over 300 built projects in gated communities.` : `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`))}
-        url={`https://estudiolevinton.com/proyectos/${slug}`}
+        url={`/proyectos/${slug}`}
         image={project.img}
         type="article"
         schemaData={combinedSchema}
@@ -144,7 +145,7 @@ export default function DetallesProyectos() {
       {/* HERO */}
       <div className="dp-hero">
         <div className="dp-hero__bg">
-          <img src={project.img} alt={`Obra de arquitectura ${project.title} en ${project.loc} - Estudio Levinton`} fetchPriority="high" decoding="async" />
+          <img src={project.img} alt={`Obra de arquitectura ${project.title} en ${project.loc} por Estudio Levinton`} fetchPriority="high" decoding="async" width={1920} height={1080} />
           <div className="dp-hero__overlay" />
         </div>
         <div className="dp-hero__content container">
@@ -214,7 +215,7 @@ export default function DetallesProyectos() {
         <div className="dp-gallery__grid">
           {project.gallery.map((imgSrc, i) => (
             <div key={i} className="dp-gallery__item">
-              <img src={imgSrc} alt={t.imgAlt(project.title, i)} loading="lazy" />
+              <img src={imgSrc} alt={t.imgAlt(project.title, i) + ` en ${project.loc}`} loading="lazy" width={800} height={600} />
             </div>
           ))}
         </div>

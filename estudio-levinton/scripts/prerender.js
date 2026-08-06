@@ -85,10 +85,11 @@ async function prerender() {
 
     // Replace primary meta tags & title in template head with route-specific head tags
     if (routeHead) {
-      // Remove existing title tag from template to prevent duplicates
-      finalHtml = finalHtml.replace(/<title>.*?<\/title>/s, '');
-      // Insert helmet head elements before </head>
-      finalHtml = finalHtml.replace('</head>', `${routeHead}\n</head>`);
+      if (finalHtml.includes('<!--app-head-->')) {
+        finalHtml = finalHtml.replace('<!--app-head-->', routeHead);
+      } else {
+        finalHtml = finalHtml.replace('</head>', `${routeHead}\n</head>`);
+      }
     }
 
     // Inject rendered app HTML into #root
@@ -125,7 +126,7 @@ async function prerender() {
 
 function generateSitemap() {
   const currentDate = new Date().toISOString().split('T')[0];
-  const baseUrl = 'https://estudiolevinton.com';
+  const baseUrl = 'https://www.estudiolevinton.com';
 
   const staticEntries = [
     { url: '/', priority: '1.0', changefreq: 'weekly' },
@@ -164,7 +165,7 @@ function generateRobots() {
   const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://estudiolevinton.com/sitemap.xml
+Sitemap: https://www.estudiolevinton.com/sitemap.xml
 `;
 
   fs.writeFileSync(path.resolve(distDir, 'robots.txt'), robots, 'utf-8');

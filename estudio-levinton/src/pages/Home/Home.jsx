@@ -7,6 +7,7 @@ import { ALL_PROJECTS } from '../../data/projects'
 import SEO from '../../components/SEO/SEO'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
+import { SITE_URL } from '../../config/site'
 import './Home.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -293,11 +294,11 @@ export default function Home() {
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
-        url="https://estudiolevinton.com/"
+        url="/"
         schemaType="Organization"
       />
 
-      <h1 className="sr-only">Estudio Levinton — Arquitectura y Diseño de Casas de Alta Gama en Barrios Cerrados</h1>
+      <h1 className="sr-only">Estudio de arquitectura en Zona Norte — 40 años, más de 300 obras</h1>
 
       {/* ═══════════════════════════════════════════════════
           HERO — 400vh wrapper + sticky panel
@@ -306,7 +307,7 @@ export default function Home() {
         <div className="hero-sticky" ref={stickyRef}>
 
           <div className="hero-img-wrap" ref={imgWrapRef}>
-            <img src={IMGS.hero} alt="Estudio Levinton - Arquitectura de Casas en Barrios Cerrados" ref={imgRef} fetchPriority="high" decoding="async" />
+            <img src={IMGS.hero} alt="Estudio de Arquitectura en Zona Norte — Estudio Levinton" ref={imgRef} fetchPriority="high" decoding="async" width={1920} height={1080} />
             <div className="hero-img-overlay" />
           </div>
 
@@ -385,7 +386,7 @@ export default function Home() {
             </div>
             <div className="s2-words__meta">
               <div className="img-reveal s2-words__img">
-                <img src={IMGS.detail2} alt="Detalle de diseño y construcción por Estudio Levinton" loading="lazy" decoding="async" />
+                <img src={IMGS.detail2} alt="Detalle de diseño y construcción en Zona Norte por Estudio Levinton" loading="lazy" decoding="async" width={800} height={600} />
               </div>
               <div className="s2-words__since">
                 <span className="s2-words__since-num">1974</span>
@@ -424,7 +425,7 @@ export default function Home() {
         <div className="s4-grid">
           {FEATURED_PROJECTS.map((p, i) => (
             <Link to={`/proyectos/${p.slug}`} key={i} className="s4-grid__item">
-              <img src={p.img} alt={`Obra ${p.title} - Estudio Levinton`} loading="lazy" decoding="async" />
+              <img src={p.img} alt={`Obra ${p.title} en ${p.loc} - Estudio Levinton`} loading="lazy" decoding="async" width={800} height={600} />
               <div className="s4-grid__hover">
                 <span className="s4-grid__label">
                   {p.label === 'Obra Terminada' ? projTrans.filterDone : p.label === 'En Desarrollo' ? projTrans.filterDev : p.label}
@@ -452,7 +453,7 @@ export default function Home() {
           </div>
           <div className="s5-approach__img-col">
             <div className="img-reveal s5-approach__img">
-              <img src={IMGS.detail3} alt="Proceso de obra y construcción residencial" loading="lazy" decoding="async" />
+              <img src={IMGS.detail3} alt="Proceso de obra y construcción residencial en Zona Norte por Estudio Levinton" loading="lazy" decoding="async" width={800} height={600} />
             </div>
           </div>
         </div>
@@ -465,14 +466,14 @@ export default function Home() {
           </div>
           <div className="s5-approach__team">
             <div className="img-reveal s5-approach__img-b">
-              <img src={IMGS.team1} alt="Arq. Sergio Levinton - Fundador Estudio Levinton" loading="lazy" decoding="async" />
+              <img src={IMGS.team1} alt="Arq. Sergio Levinton - Fundador de Estudio de Arquitectura en Zona Norte" loading="lazy" decoding="async" width={400} height={500} />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Sergio Levinton</strong>
                 <span>{t.director}</span>
               </div>
             </div>
             <div className="img-reveal s5-approach__img-b">
-              <img src={IMGS.team2} alt="Arq. Adriana Napoleone - Directora de Proyectos" loading="lazy" decoding="async" />
+              <img src={IMGS.team2} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" loading="lazy" decoding="async" width={400} height={500} />
               <div className="s5-approach__img-cap">
                 <strong>Arq. Adriana Napoleone</strong>
                 <span>{t.directoraProyectos}</span>
@@ -494,19 +495,41 @@ export default function Home() {
           SERVICES
       ═══════════════════════════════════════════════════ */}
       <section className="s7-services container">
-        <div className="s7-services__header">
-          <div className="word-line"><span className="word-reveal s7-services__title">{t.nuestrosServicios1}</span></div>
-          <div className="word-line"><span className="word-reveal s7-services__title s7-services__title--accent">{t.nuestrosServicios2}</span></div>
-        </div>
+        <h2 className="s7-services__header">
+          <span className="word-line" style={{ display: 'block' }}><span className="word-reveal s7-services__title">{t.nuestrosServicios1}</span></span>
+          <span className="word-line" style={{ display: 'block' }}><span className="word-reveal s7-services__title s7-services__title--accent">{t.nuestrosServicios2}</span></span>
+        </h2>
         <div className="s7-services__list">
           {t.services.map((s, i) => (
             <div key={i} className="s7-serv-row proj-item">
               <span className="s7-serv-row__num">{s.num}</span>
               <h3 className="s7-serv-row__title">{s.title}</h3>
               <p className="s7-serv-row__desc">{s.desc}</p>
-              <Link to="/servicios" className="s7-serv-row__arrow">→</Link>
+              <Link to="/servicios" className="s7-serv-row__arrow" aria-label={`Ver más sobre servicio: ${s.title}`}>→</Link>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════
+          DÓNDE CONSTRUIMOS (BARRIOS)
+      ═══════════════════════════════════════════════════ */}
+      <section className="ct-barrios">
+        <div className="container">
+          <h2 className="ct-barrios__title" style={{ marginBottom: '40px' }}>
+            {lang === 'en' ? 'WHERE WE BUILD' : 'DÓNDE CONSTRUIMOS'}
+          </h2>
+          <div className="ct-barrios__list">
+            {[
+              'San Isidro Labrador', 'Santa Catalina', 'Nordelta Carpinchos', 'Nordelta Glorietas',
+              'Vistas Puertos', 'El Lauquen', 'La Martona', 'Highland Park', 'Pilar del Este',
+              'San Diego', 'Marinas Puertos', 'Santa Clara', 'Nordelta Los Sauces', 'Puertos Muelles',
+              'Campos de Roca', 'San Andrés', 'San Matías', 'Santa Bárbara', 'Santa Maria de Tigre',
+              'Talar de Pacheco', 'El Naudir', 'Talar del Lago', 'Azzurra', 'Maschwitz Privado',
+            ].map(b => (
+              <span key={b} className="ct-barrio">{b}</span>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -515,7 +538,7 @@ export default function Home() {
       ═══════════════════════════════════════════════════ */}
       <section className="s8-cta">
         <div className="cta-bg">
-          <img src={IMGS.cta} alt="Arquitectura y construcción de residencias exclusivas por Estudio Levinton" loading="lazy" decoding="async" />
+          <img src={IMGS.cta} alt="Arquitectura y construcción de residencias exclusivas por Estudio Levinton" loading="lazy" decoding="async" width={1920} height={1080} />
           <div className="s8-cta__overlay" />
         </div>
         <div className="s8-cta__content container">

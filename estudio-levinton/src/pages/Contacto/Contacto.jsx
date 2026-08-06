@@ -6,6 +6,8 @@ import SEO from '../../components/SEO/SEO'
 import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
+import { media } from '../../config/media'
+import { SITE_URL } from '../../config/site'
 import './Contacto.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -95,8 +97,8 @@ export default function Contacto() {
   }, [lang])
 
   const breadcrumbsSchema = buildBreadcrumbSchema([
-    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
-    { name: lang === 'en' ? 'Contact' : 'Contacto', url: 'https://estudiolevinton.com/contacto' }
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: `${SITE_URL}/` },
+    { name: lang === 'en' ? 'Contact' : 'Contacto', url: `${SITE_URL}/contacto` }
   ]);
 
   return (
@@ -104,7 +106,7 @@ export default function Contacto() {
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
-        url="https://estudiolevinton.com/contacto"
+        url="/contacto"
         schemaType="LocalBusiness"
         schemaData={breadcrumbsSchema}
         lang={lang}
@@ -112,7 +114,7 @@ export default function Contacto() {
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Marinas.png" alt="Contacto Estudio Levinton - Arquitectura de Casas" fetchPriority="high" decoding="async" />
+          <img src={media('img/portadas/Marinas.png')} alt="Contacto Estudio Levinton - Arquitectura de Casas" fetchPriority="high" decoding="async" width={1920} height={1080} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">

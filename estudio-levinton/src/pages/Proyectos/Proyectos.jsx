@@ -7,6 +7,8 @@ import SEO from '../../components/SEO/SEO'
 import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
+import { media } from '../../config/media'
+import { SITE_URL } from '../../config/site'
 import './Proyectos.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -47,8 +49,8 @@ export default function Proyectos() {
   }, [])
 
   const breadcrumbsSchema = buildBreadcrumbSchema([
-    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
-    { name: lang === 'en' ? 'Projects' : 'Obras', url: 'https://estudiolevinton.com/proyectos' }
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: `${SITE_URL}/` },
+    { name: lang === 'en' ? 'Projects' : 'Obras', url: `${SITE_URL}/proyectos` }
   ])
 
   return (
@@ -56,13 +58,13 @@ export default function Proyectos() {
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
-        url="https://estudiolevinton.com/proyectos"
+        url="/proyectos"
         schemaData={breadcrumbsSchema}
         lang={lang}
       />
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Carpinchos.png" alt="Obras de Arquitectura por Estudio Levinton" fetchPriority="high" decoding="async" />
+          <img src={media('img/portadas/Carpinchos.png')} alt="Obras de Arquitectura en Zona Norte y Barrios Cerrados — Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -138,7 +140,7 @@ export default function Proyectos() {
           <div className="pj-grid">
             {filtered.map((p, i) => (
               <Link to={`/proyectos/${p.slug}`} key={`${p.title}-${i}`} className="pj-grid__item">
-                <img src={p.img} alt={p.title} loading="lazy" />
+              <img src={p.img} alt={`Obra de arquitectura ${p.title} en ${p.loc} - Estudio Levinton`} loading="lazy" width={800} height={600} />
                 <div className="pj-grid__hover">
                   <span className="pj-grid__label">
                     {p.label === 'Obra Terminada' ? t.filterDone : p.label === 'En Desarrollo' ? t.filterDev : p.label}

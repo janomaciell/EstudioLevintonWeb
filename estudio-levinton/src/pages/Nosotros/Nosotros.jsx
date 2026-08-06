@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
+import { SITE_URL } from '../../config/site'
 import SEO from '../../components/SEO/SEO'
 import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
@@ -74,8 +75,8 @@ export default function Nosotros() {
   }, [lang])
 
   const breadcrumbsSchema = buildBreadcrumbSchema([
-    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
-    { name: lang === 'en' ? 'About Us' : 'Nosotros', url: 'https://estudiolevinton.com/nosotros' }
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: `${SITE_URL}/` },
+    { name: lang === 'en' ? 'About Us' : 'Nosotros', url: `${SITE_URL}/nosotros` }
   ]);
 
   return (
@@ -83,7 +84,7 @@ export default function Nosotros() {
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
-        url="https://estudiolevinton.com/nosotros"
+        url="/nosotros"
         schemaType="Organization"
         schemaData={breadcrumbsSchema}
         lang={lang}
@@ -91,7 +92,7 @@ export default function Nosotros() {
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Azurra.png" alt="Estudio Levinton - Trayectoria de 40 años en Arquitectura" fetchPriority="high" decoding="async" />
+          <img src={media('img/portadas/Azurra.png')} alt="Estudio de Arquitectura en Zona Norte con 40 años de Trayectoria — Estudio Levinton" fetchPriority="high" decoding="async" width={1920} height={1080} />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -131,7 +132,7 @@ export default function Nosotros() {
         <div className="nos-team__grid container">
           <div className="nos-team__member">
             <div className="img-reveal nos-team__img">
-              <img src={media('img/Obras-estudio-Levinton/sergio.JPG')} alt="Arq. Sergio Levinton" />
+              <img src={media('img/Obras-estudio-Levinton/sergio.JPG')} alt="Arq. Sergio Levinton - Fundador de Estudio de de Arquitectura en Zona Norte" width={400} height={500} />
             </div>
             <div className="nos-team__info">
               <span className="label" style={{ marginBottom: '12px', display: 'block' }}>{t.sergioRole}</span>
@@ -148,7 +149,7 @@ export default function Nosotros() {
 
           <div className="nos-team__member">
             <div className="img-reveal nos-team__img">
-              <img src={media('img/Obras-estudio-Levinton/adriana.JPG')} alt="Arq. Adriana Napoleone" />
+              <img src={media('img/Obras-estudio-Levinton/adriana.JPG')} alt="Arq. Adriana Napoleone - Directora de Proyectos de Diseño en Zona Norte" width={400} height={500} />
             </div>
             <div className="nos-team__info">
               <span className="label" style={{ marginBottom: '12px', display: 'block' }}>{t.adrianaRole}</span>

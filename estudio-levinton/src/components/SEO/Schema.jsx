@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { SITE_URL } from '../../config/site';
 
 /**
  * Component to inject structured data (JSON-LD) into the document head
@@ -13,13 +14,14 @@ export default function Schema({ type, data }) {
   } else if (type === 'Organization') {
     schemaData = {
       '@context': 'https://schema.org',
-      '@type': 'ArchitecturalFirm',
-      '@id': 'https://estudiolevinton.com/#organization',
+      '@type': 'ProfessionalService',
+      'additionalType': 'https://www.wikidata.org/wiki/Q4110240',
+      '@id': `${SITE_URL}/#organization`,
       name: 'Estudio Levinton',
       legalName: 'Estudio Levinton — Arquitectos',
-      url: 'https://estudiolevinton.com/',
-      logo: 'https://estudiolevinton.com/logo-estudio-levinton.png',
-      image: 'https://estudiolevinton.com/logo-estudio-levinton.png',
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/logo-estudio-levinton.png`,
+      image: `${SITE_URL}/logo-estudio-levinton.png`,
       description: 'Estudio de Arquitectura especializado en viviendas unifamiliares en barrios cerrados de Zona Norte (Nordelta, Puertos, EIDICO, Tortugas). Más de 40 años de trayectoria y 300 obras construidas.',
       founders: [
         {
@@ -42,7 +44,6 @@ export default function Schema({ type, data }) {
         addressLocality: 'Buenos Aires',
         addressRegion: 'Buenos Aires',
         addressCountry: 'AR',
-        // TODO: cliente - Agregar calle y altura si corresponde
         streetAddress: 'Zona Norte, Buenos Aires'
       },
       contactPoint: [
@@ -63,10 +64,10 @@ export default function Schema({ type, data }) {
     schemaData = {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      '@id': 'https://estudiolevinton.com/#localbusiness',
+      '@id': `${SITE_URL}/#localbusiness`,
       name: 'Estudio Levinton — Arquitectos',
-      image: 'https://estudiolevinton.com/logo-estudio-levinton.png',
-      url: 'https://estudiolevinton.com/',
+      image: `${SITE_URL}/logo-estudio-levinton.png`,
+      url: `${SITE_URL}/`,
       telephone: '+5491158098681',
       priceRange: '$$$$',
       address: {
@@ -74,12 +75,10 @@ export default function Schema({ type, data }) {
         addressLocality: 'Buenos Aires',
         addressRegion: 'Buenos Aires',
         addressCountry: 'AR',
-        // TODO: cliente - Dirección física del cliente
         streetAddress: 'Zona Norte, Buenos Aires'
       },
       geo: {
         '@type': 'GeoCoordinates',
-        // TODO: cliente - Coordenadas GPS exactas si aplica
         latitude: -34.425,
         longitude: -58.579
       },
@@ -124,10 +123,10 @@ export function buildBreadcrumbSchema(items) {
  */
 export function buildProjectSchema(project) {
   if (!project) return null;
-  const fullUrl = `https://estudiolevinton.com/proyectos/${project.slug}`;
+  const fullUrl = `${SITE_URL}/proyectos/${project.slug}`;
   const imageUrl = project.img?.startsWith('http')
     ? project.img
-    : `https://estudiolevinton.com${project.img?.startsWith('/') ? '' : '/'}${project.img || ''}`;
+    : `${SITE_URL}${project.img?.startsWith('/') ? '' : '/'}${project.img || ''}`;
 
   return {
     '@context': 'https://schema.org',
@@ -149,9 +148,10 @@ export function buildProjectSchema(project) {
     numberOfRooms: project.specs?.habitaciones ? Number(project.specs.habitaciones) : undefined,
     numberOfBathroomsTotal: project.specs?.banos ? Number(project.specs.banos) : undefined,
     creator: {
-      '@type': 'Organization',
+      '@type': 'ProfessionalService',
+      'additionalType': 'https://www.wikidata.org/wiki/Q4110240',
       name: 'Estudio Levinton',
-      url: 'https://estudiolevinton.com/'
+      url: `${SITE_URL}/`
     }
   };
 }
@@ -165,9 +165,10 @@ export function buildServicesSchema() {
     '@type': 'Service',
     serviceType: 'Architectural Design and Construction',
     provider: {
-      '@type': 'ArchitecturalFirm',
+      '@type': 'ProfessionalService',
+      'additionalType': 'https://www.wikidata.org/wiki/Q4110240',
       name: 'Estudio Levinton',
-      url: 'https://estudiolevinton.com/'
+      url: `${SITE_URL}/`
     },
     areaServed: {
       '@type': 'AdministrativeArea',

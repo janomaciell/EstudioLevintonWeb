@@ -81,7 +81,7 @@ export default function Navbar() {
       <nav ref={navRef} className={`nav${scrolled ? ' is-scrolled' : ''}`} style={{ opacity: 0 }}>
         <div className="nav__inner container">
           <Link to="/" className="nav__logo" aria-label="Estudio Levinton Napoleone — Inicio">
-            <img src={LOGO} alt="Estudio Levinton Napoleone" className="nav__logo-img" />
+            <img src={LOGO} alt="Estudio Levinton Napoleone" className="nav__logo-img" width={44} height={44} />
           </Link>
           <div className="nav__actions">
             <button className="nav__theme-toggle" onClick={toggleTheme} aria-label={t.toggleTheme}>
