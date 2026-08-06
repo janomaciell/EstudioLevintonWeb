@@ -18,7 +18,11 @@ export default function Navbar() {
   const { lang, toggleLang } = useLanguage()
   const t = translations[lang].nav
 
-  useEffect(() => { setOpen(false) }, [pathname])
+  const [prevPathname, setPrevPathname] = useState(pathname)
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
+    setOpen(false)
+  }
 
   useEffect(() => {
     const handleScroll = () => {

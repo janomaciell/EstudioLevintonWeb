@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
 import SEO from '../../components/SEO/SEO'
+import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import './Nosotros.css'
@@ -72,17 +73,25 @@ export default function Nosotros() {
     return () => ctx.revert()
   }, [lang])
 
+  const breadcrumbsSchema = buildBreadcrumbSchema([
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
+    { name: lang === 'en' ? 'About Us' : 'Nosotros', url: 'https://estudiolevinton.com/nosotros' }
+  ]);
+
   return (
     <main className="nos-page">
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
         url="https://estudiolevinton.com/nosotros"
+        schemaType="Organization"
+        schemaData={breadcrumbsSchema}
+        lang={lang}
       />
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Azurra.png" alt="Obra Estudio Levinton" />
+          <img src="/img/portadas/Azurra.png" alt="Estudio Levinton - Trayectoria de 40 años en Arquitectura" fetchPriority="high" decoding="async" />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">

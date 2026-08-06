@@ -3,23 +3,28 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  // Inicializar leyendo localStorage o por defecto 'dark' (que es el default del plan)
+  // Inicializar leyendo localStorage o por defecto 'light' de forma segura para SSR
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('app-theme') || 'light';
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      return localStorage.getItem('app-theme') || 'light';
+    }
+    return 'light';
   });
 
   useEffect(() => {
-    // Almacenar preferencia
-    localStorage.setItem('app-theme', theme);
-    // Aplicar clase al body para el ruteo CSS global
-    if (theme === 'light') {
-      document.body.setAttribute('data-theme', 'light');
-    } else {
-      document.body.removeAttribute('data-theme');
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      localStorage.setItem('app-theme', theme);
+      if (theme === 'light') {
+        document.body.setAttribute('data-theme', 'light');
+      } else {
+        document.body.removeAttribute('data-theme');
+      }
     }
   }, [theme]);
 
   const toggleTheme = (e) => {
+    if (typeof window === 'undefined') return;
+
     const isDark = theme === 'dark';
     const nextTheme = isDark ? 'light' : 'dark';
 

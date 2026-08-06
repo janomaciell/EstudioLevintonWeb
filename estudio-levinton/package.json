@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-server && node scripts/prerender.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "upload:r2": "node scripts/upload-to-r2.js",
@@ -17,6 +17,7 @@
     "heic-convert": "^2.1.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
+    "react-helmet-async": "^3.0.0",
     "react-router-dom": "^7.14.1"
   },
   "devDependencies": {

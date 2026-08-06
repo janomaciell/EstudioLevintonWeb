@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { media } from '../../config/media'
 import SEO from '../../components/SEO/SEO'
+import { buildServicesSchema, buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import './Servicios.css'
@@ -27,39 +28,17 @@ export default function Servicios() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // hero
       const lines = document.querySelectorAll('.ph-line-inner')
       gsap.to(lines, { y: '0%', stagger: 0.1, duration: 1.0, ease: 'power4.out', delay: 0.2 })
       const sub = document.querySelector('.ph-sub')
       if (sub) gsap.to(sub, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', delay: 0.5 })
+
       const bg = document.querySelector('.page-hero .page-hero__bg')
       if (bg) gsap.to(bg, {
         yPercent: 22, ease: 'none',
         scrollTrigger: { trigger: '.page-hero', start: 'top top', end: 'bottom top', scrub: true }
       })
 
-      // service rows: image clipPath + text fade
-      gsap.utils.toArray('.sv-row').forEach((row) => {
-        const img = row.querySelector('.sv-row__img')
-        if (img) {
-          gsap.fromTo(img,
-            { clipPath: 'inset(100% 0% 0% 0%)' },
-            { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'power4.inOut',
-              scrollTrigger: { trigger: row, start: 'top 80%' } }
-          )
-          gsap.from(img.querySelector('img'), {
-            scale: 1.1, duration: 1.6, ease: 'power4.out',
-            scrollTrigger: { trigger: row, start: 'top 80%' }
-          })
-        }
-        gsap.fromTo(row.querySelectorAll('.sv-row__fade'),
-          { opacity: 0, y: 28 },
-          { opacity: 1, y: 0, stagger: 0.1, duration: 0.85, ease: 'power3.out',
-            scrollTrigger: { trigger: row, start: 'top 82%' } }
-        )
-      })
-
-      // word reveals
       gsap.utils.toArray('.word-reveal').forEach(el => {
         gsap.fromTo(el, { y: '105%', opacity: 0 }, {
           y: '0%', opacity: 1, duration: 0.9, ease: 'power4.out',
@@ -67,16 +46,17 @@ export default function Servicios() {
         })
       })
 
-      // proceso steps
-      gsap.fromTo('.sv-step',
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
-          scrollTrigger: { trigger: '.sv-proceso__grid', start: 'top 82%' } }
-      )
+      gsap.utils.toArray('.sv-row').forEach(row => {
+        const fades = row.querySelectorAll('.sv-row__fade')
+        gsap.fromTo(fades,
+          { opacity: 0, y: 30 },
+          { opacity: 1, y: 0, stagger: 0.1, duration: 0.8, ease: 'power3.out',
+            scrollTrigger: { trigger: row, start: 'top 78%' } }
+        )
+      })
 
-      // scrub x
       gsap.utils.toArray('.scrub-x').forEach(el => {
-        const dir = el.dataset.dir === 'right' ? 60 : -60
+        const dir = el.dataset.dir === 'right' ? -60 : 60
         gsap.fromTo(el, { x: -dir }, {
           x: dir, ease: 'none',
           scrollTrigger: { trigger: el.closest('section') || el, start: 'top bottom', end: 'bottom top', scrub: true }
@@ -86,17 +66,29 @@ export default function Servicios() {
     return () => ctx.revert()
   }, [lang])
 
+  const servicesSchema = buildServicesSchema();
+  const breadcrumbsSchema = buildBreadcrumbSchema([
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
+    { name: lang === 'en' ? 'Services' : 'Servicios', url: 'https://estudiolevinton.com/servicios' }
+  ]);
+  const combinedSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [servicesSchema, breadcrumbsSchema]
+  };
+
   return (
     <main className="sv-page">
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
         url="https://estudiolevinton.com/servicios"
+        schemaData={combinedSchema}
+        lang={lang}
       />
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src={media('img/portadas/Sustentabilidad 01.png')} alt="Residencias de Alta Gama" />
+          <img src={media('img/portadas/Sustentabilidad 01.png')} alt="Servicios de Arquitectura y Construcción de Residencias por Estudio Levinton" fetchPriority="high" decoding="async" />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">

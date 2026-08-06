@@ -4,12 +4,17 @@ const LanguageContext = createContext();
 
 export function LanguageProvider({ children }) {
   const [lang, setLang] = useState(() => {
-    return localStorage.getItem('app-lang') || 'es';
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      return localStorage.getItem('app-lang') || 'es';
+    }
+    return 'es';
   });
 
   const toggleLang = () => {
     const next = lang === 'es' ? 'en' : 'es';
-    localStorage.setItem('app-lang', next);
+    if (typeof window !== 'undefined' && typeof localStorage !== 'undefined') {
+      localStorage.setItem('app-lang', next);
+    }
     setLang(next);
   };
 

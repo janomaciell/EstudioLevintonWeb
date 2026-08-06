@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { getProjectBySlug } from '../../data/projects';
 import SEO from '../../components/SEO/SEO';
+import { buildProjectSchema, buildBreadcrumbSchema } from '../../components/SEO/Schema';
 import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../data/translations';
 import './DetallesProyectos.css';
@@ -35,15 +36,15 @@ const translatePiscina = (val, lang) => {
 export default function DetallesProyectos() {
   const { slug } = useParams();
   const navigate = useNavigate();
-  const [project, setProject] = useState(null);
+  const project = getProjectBySlug(slug);
 
   const { lang } = useLanguage();
   const t = translations[lang].detalles;
 
   useEffect(() => {
-    const proj = getProjectBySlug(slug);
-    setProject(proj);
-    window.scrollTo(0, 0);
+    if (typeof window !== 'undefined') {
+      window.scrollTo(0, 0);
+    }
   }, [slug]);
 
   useEffect(() => {
@@ -92,6 +93,7 @@ export default function DetallesProyectos() {
   if (!project) {
     return (
       <main className="dp-page dp-not-found">
+        <SEO title="404 - Obra no encontrada | Estudio Levinton" noindex={true} />
         <div className="container">
           <h2>{t.notFound}</h2>
           <Link to="/proyectos" className="dp-btn-back">{t.backBtn}</Link>
@@ -100,12 +102,27 @@ export default function DetallesProyectos() {
     );
   }
 
+  const projectSchema = buildProjectSchema(project);
+  const breadcrumbsSchema = buildBreadcrumbSchema([
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
+    { name: lang === 'en' ? 'Projects' : 'Obras', url: 'https://estudiolevinton.com/proyectos' },
+    { name: project.title, url: `https://estudiolevinton.com/proyectos/${slug}` }
+  ]);
+  const combinedSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [projectSchema, breadcrumbsSchema]
+  };
+
   return (
     <main className="dp-page">
       <SEO
         title={`${project.title} | Estudio Levinton — ${lang === 'en' ? 'Architects' : 'Arquitectos'}`}
         description={(lang === 'en' && project.descriptionEn) ? project.descriptionEn : (project.description || (lang === 'en' ? `Project ${project.title} in ${translateLocation(project.loc, 'en')}. Over 300 built projects in gated communities.` : `Proyecto ${project.title} en ${project.loc}. Más de 300 obras construidas en barrios cerrados.`))}
         url={`https://estudiolevinton.com/proyectos/${slug}`}
+        image={project.img}
+        type="article"
+        schemaData={combinedSchema}
+        lang={lang}
       />
       <button
         onClick={() => {
@@ -127,7 +144,7 @@ export default function DetallesProyectos() {
       {/* HERO */}
       <div className="dp-hero">
         <div className="dp-hero__bg">
-          <img src={project.img} alt={project.title} />
+          <img src={project.img} alt={`Obra de arquitectura ${project.title} en ${project.loc} - Estudio Levinton`} fetchPriority="high" decoding="async" />
           <div className="dp-hero__overlay" />
         </div>
         <div className="dp-hero__content container">

@@ -1,42 +1,56 @@
-import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
+import Schema from './Schema';
 
-export default function SEO({ title, description, keywords, url }) {
-  useEffect(() => {
-    // Update Title
-    if (title) {
-      document.title = title;
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) ogTitle.setAttribute('content', title);
-      const twitterTitle = document.querySelector('meta[property="twitter:title"]');
-      if (twitterTitle) twitterTitle.setAttribute('content', title);
-    }
+export default function SEO({
+  title = 'Estudio Levinton — Arquitectos',
+  description = 'Estudio Levinton — Arquitectos. 40 años de trayectoria. Más de 300 obras construidas en Nordelta, Puertos, EIDICO. Especialistas en casas en barrios cerrados de zona norte.',
+  keywords = 'Arquitectos, Estudio de Arquitectura, Casas en barrios cerrados, Nordelta, Puertos, EIDICO, Diseño de casas, Zona Norte, Buenos Aires, Estudio Levinton',
+  url = 'https://estudiolevinton.com/',
+  image = 'https://estudiolevinton.com/logo-estudio-levinton.png',
+  type = 'website',
+  noindex = false,
+  schemaData = null,
+  schemaType = null,
+  lang = 'es'
+}) {
+  const fullUrl = url.startsWith('http') ? url : `https://estudiolevinton.com${url.startsWith('/') ? '' : '/'}${url}`;
+  const fullImage = image.startsWith('http') ? image : `https://estudiolevinton.com${image.startsWith('/') ? '' : '/'}${image}`;
+  const robotsContent = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
-    // Update Description
-    if (description) {
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute('content', description);
-      const ogDesc = document.querySelector('meta[property="og:description"]');
-      if (ogDesc) ogDesc.setAttribute('content', description);
-      const twitterDesc = document.querySelector('meta[property="twitter:description"]');
-      if (twitterDesc) twitterDesc.setAttribute('content', description);
-    }
+  return (
+    <>
+      <Helmet htmlAttributes={{ lang }}>
+        {/* Basic Meta Tags */}
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        {keywords && <meta name="keywords" content={keywords} />}
+        <meta name="author" content="Estudio Levinton" />
+        <meta name="robots" content={robotsContent} />
 
-    // Update Keywords
-    if (keywords) {
-      const metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) metaKeywords.setAttribute('content', keywords);
-    }
+        {/* Canonical */}
+        <link rel="canonical" href={fullUrl} />
 
-    // Update URL (Canonical & Open Graph)
-    if (url) {
-      const canonical = document.querySelector('link[rel="canonical"]');
-      if (canonical) canonical.setAttribute('href', url);
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl) ogUrl.setAttribute('content', url);
-      const twitterUrl = document.querySelector('meta[property="twitter:url"]');
-      if (twitterUrl) twitterUrl.setAttribute('content', url);
-    }
-  }, [title, description, keywords, url]);
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={fullUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={fullImage} />
+        <meta property="og:site_name" content="Estudio Levinton" />
+        <meta property="og:locale" content={lang === 'en' ? 'en_US' : 'es_AR'} />
 
-  return null; // This component does not render any UI
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={fullUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={fullImage} />
+      </Helmet>
+
+      {/* Structured Data (Schema.org) */}
+      {(schemaType || schemaData) && (
+        <Schema type={schemaType} data={schemaData} />
+      )}
+    </>
+  );
 }

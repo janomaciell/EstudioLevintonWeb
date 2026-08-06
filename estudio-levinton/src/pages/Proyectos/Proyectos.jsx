@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ALL_PROJECTS } from '../../data/projects'
 import SEO from '../../components/SEO/SEO'
+import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import './Proyectos.css'
@@ -45,16 +46,23 @@ export default function Proyectos() {
     return () => ctx.revert()
   }, [])
 
+  const breadcrumbsSchema = buildBreadcrumbSchema([
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
+    { name: lang === 'en' ? 'Projects' : 'Obras', url: 'https://estudiolevinton.com/proyectos' }
+  ])
+
   return (
     <main className="pj-page">
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
         url="https://estudiolevinton.com/proyectos"
+        schemaData={breadcrumbsSchema}
+        lang={lang}
       />
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Carpinchos.png" alt="Obra Estudio Levinton" />
+          <img src="/img/portadas/Carpinchos.png" alt="Obras de Arquitectura por Estudio Levinton" fetchPriority="high" decoding="async" />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">

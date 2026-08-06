@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SEO from '../../components/SEO/SEO'
+import { buildBreadcrumbSchema } from '../../components/SEO/Schema'
 import { useLanguage } from '../../context/LanguageContext'
 import { translations } from '../../data/translations'
 import './Contacto.css'
@@ -93,17 +94,25 @@ export default function Contacto() {
     return () => ctx.revert()
   }, [lang])
 
+  const breadcrumbsSchema = buildBreadcrumbSchema([
+    { name: lang === 'en' ? 'Home' : 'Inicio', url: 'https://estudiolevinton.com/' },
+    { name: lang === 'en' ? 'Contact' : 'Contacto', url: 'https://estudiolevinton.com/contacto' }
+  ]);
+
   return (
     <main className="ct-page">
       <SEO
         title={t.seoTitle}
         description={t.seoDesc}
         url="https://estudiolevinton.com/contacto"
+        schemaType="LocalBusiness"
+        schemaData={breadcrumbsSchema}
+        lang={lang}
       />
 
       <div className="page-hero">
         <div className="page-hero__bg">
-          <img src="/img/portadas/Marinas.png" alt="Obra Estudio Levinton" />
+          <img src="/img/portadas/Marinas.png" alt="Contacto Estudio Levinton - Arquitectura de Casas" fetchPriority="high" decoding="async" />
           <div className="page-hero__overlay" />
         </div>
         <div className="page-hero__content">
@@ -192,30 +201,30 @@ export default function Contacto() {
 
               <div className="ct-form__grid">
                 <div className="ct-field">
-                  <label className="ct-field__label">{t.fieldNombre}</label>
-                  <input className="ct-field__input" type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder={t.placeholderNombre} required />
+                  <label htmlFor="ct-nombre" className="ct-field__label">{t.fieldNombre}</label>
+                  <input id="ct-nombre" className="ct-field__input" type="text" name="nombre" value={formData.nombre} onChange={handleChange} placeholder={t.placeholderNombre} required />
                 </div>
                 <div className="ct-field">
-                  <label className="ct-field__label">{t.fieldEmail}</label>
-                  <input className="ct-field__input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder={lang === 'en' ? 'your@email.com' : 'tu@email.com'} required />
+                  <label htmlFor="ct-email" className="ct-field__label">{t.fieldEmail}</label>
+                  <input id="ct-email" className="ct-field__input" type="email" name="email" value={formData.email} onChange={handleChange} placeholder={lang === 'en' ? 'your@email.com' : 'tu@email.com'} required />
                 </div>
                 <div className="ct-field">
-                  <label className="ct-field__label">{t.fieldTel}</label>
-                  <input className="ct-field__input" type="tel" name="telefono" value={formData.telefono} onChange={handleChange} placeholder="+54 9 11..." />
+                  <label htmlFor="ct-telefono" className="ct-field__label">{t.fieldTel}</label>
+                  <input id="ct-telefono" className="ct-field__input" type="tel" name="telefono" value={formData.telefono} onChange={handleChange} placeholder="+54 9 11..." />
                 </div>
                 <div className="ct-field">
-                  <label className="ct-field__label">{t.fieldBarrio}</label>
-                  <input className="ct-field__input" type="text" name="barrio" value={formData.barrio} onChange={handleChange} placeholder={t.placeholderBarrio} />
+                  <label htmlFor="ct-barrio" className="ct-field__label">{t.fieldBarrio}</label>
+                  <input id="ct-barrio" className="ct-field__input" type="text" name="barrio" value={formData.barrio} onChange={handleChange} placeholder={t.placeholderBarrio} />
                 </div>
                 <div className="ct-field">
-                  <label className="ct-field__label">{t.fieldM2}</label>
-                  <input className="ct-field__input" type="text" name="m2" value={formData.m2} onChange={handleChange} placeholder={t.placeholderM2} />
+                  <label htmlFor="ct-m2" className="ct-field__label">{t.fieldM2}</label>
+                  <input id="ct-m2" className="ct-field__input" type="text" name="m2" value={formData.m2} onChange={handleChange} placeholder={t.placeholderM2} />
                 </div>
               </div>
 
               <div className="ct-field ct-field--full">
-                <label className="ct-field__label">{t.fieldMensaje}</label>
-                <textarea className="ct-field__input ct-field__textarea" name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder={t.placeholderMensaje} rows={5} />
+                <label htmlFor="ct-mensaje" className="ct-field__label">{t.fieldMensaje}</label>
+                <textarea id="ct-mensaje" className="ct-field__input ct-field__textarea" name="mensaje" value={formData.mensaje} onChange={handleChange} placeholder={t.placeholderMensaje} rows={5} />
               </div>
 
               {error && (
