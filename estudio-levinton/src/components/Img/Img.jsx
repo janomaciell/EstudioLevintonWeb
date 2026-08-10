@@ -1,15 +1,11 @@
 import React from 'react';
-import { R2_URL } from '../../config/media';
+import { R2_URL, media } from '../../config/media';
 
-const CDN_BASE = 'https://img.estudiolevinton.com';
-const CDN_PREFIX = `${CDN_BASE}/cdn-cgi/image`;
 const ANCHOS = [400, 800, 1200, 1920];
+const USE_CDN_TRANSFORMS = import.meta.env.VITE_USE_CDN_TRANSFORMS === 'true';
 
 export function Img({ src, width, height, alt, sizes, priority = false, ...rest }) {
   if (!src) return null;
-
-  // Si no hay R2_URL configurado (desarrollo local sin R2), servimos la imagen local sin transformaciones de Cloudflare
-  const useLocal = !R2_URL;
 
   let cleanPath = src;
   let isCdnEligible = false;
@@ -19,14 +15,30 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
       const urlObj = new URL(cleanPath);
       cleanPath = urlObj.pathname.replace(/^\//, '');
       isCdnEligible = true;
+    } else {
+      // Imagen externa de otro dominio
+      return (
+        <img
+          src={src}
+          width={width}
+          height={height}
+          alt={alt}
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'auto'}
+          decoding="async"
+          {...rest}
+        />
+      );
     }
   } else {
     cleanPath = cleanPath.replace(/^\//, '');
     isCdnEligible = true;
   }
 
-  if (isCdnEligible && !useLocal) {
-    const buildUrl = (w) => `${CDN_PREFIX}/width=${w},format=auto,quality=80/${cleanPath}`;
+  // Si las transformaciones de Cloudflare en el borde están explícitamente activadas
+  if (isCdnEligible && USE_CDN_TRANSFORMS && R2_URL) {
+    const cdnPrefix = `${R2_URL.replace(/\/$/, '')}/cdn-cgi/image`;
+    const buildUrl = (w) => `${cdnPrefix}/width=${w},format=auto,quality=80/${cleanPath}`;
     return (
       <img
         src={buildUrl(1200)}
@@ -43,8 +55,8 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
     );
   }
 
-  // Fallback para local o externas
-  const finalSrc = src.startsWith('http') ? src : `/${cleanPath}`;
+  // Modo directo desde R2 o local
+  const finalSrc = media(cleanPath);
   return (
     <img
       src={finalSrc}
@@ -52,6 +64,7 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
       height={height}
       alt={alt}
       loading={priority ? 'eager' : 'lazy'}
+      fetchPriority={priority ? 'high' : 'auto'}
       decoding="async"
       {...rest}
     />
@@ -59,3 +72,4 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
 }
 
 export default Img;
+

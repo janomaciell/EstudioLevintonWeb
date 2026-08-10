@@ -1,15 +1,8 @@
 /**
- * Media URL helper — sirve imágenes desde R2 o fallback local.
- *
- * - Si VITE_R2_URL está seteado → usa R2 (producción)
- * - Si no → usa path local (desarrollo)
+ * Media URL helper — sirve imágenes desde R2 (vía VITE_R2_URL) o fallback local.
  */
 
-let R2_BASE = import.meta.env.VITE_R2_URL || '';
-if (R2_BASE && (R2_BASE.includes('r2.dev') || R2_BASE.includes('estudiolevinton.com'))) {
-  R2_BASE = 'https://img.estudiolevinton.com';
-}
-
+export const R2_URL = import.meta.env.VITE_R2_URL || '';
 
 /**
  * Genera la URL de un asset.
@@ -21,20 +14,16 @@ export function media(path) {
   // Normalizamos: si viene con "/" al inicio la sacamos
   const clean = path.startsWith('/') ? path.slice(1) : path;
 
-  if (R2_BASE) {
-    // R2: base URL + path
-    return `${R2_BASE}/${clean}`;
+  if (R2_URL) {
+    return `${R2_URL.replace(/\/$/, '')}/${clean}`;
   }
 
   // Local: devolvemos con "/" para que Vite lo sirva desde /public
   return `/${clean}`;
 }
 
-/**
- * URL base de R2 (para debug o uso directo)
- */
-export const R2_URL = R2_BASE;
 
 /** Logo del estudio (public/) */
 export const LOGO = '/logo-estudio-levinton-96.png';
+
 
