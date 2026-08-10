@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { media } from '../../config/media';
 
 /**
  * Componente de imagen optimizado.
  * Sirve imágenes desde R2 (usando VITE_R2_URL) o desde /public en local.
+ * Soporta forwardRef para animaciones GSAP.
  * NO usa cdn-cgi ni transformaciones de Cloudflare Edge.
  */
-export function Img({ src, width, height, alt, sizes, priority = false, ...rest }) {
+export const Img = forwardRef(function Img(
+  { src, width, height, alt, sizes, priority = false, ...rest },
+  ref
+) {
   if (!src) return null;
 
-  // Si es una URL externa (no es R2 ni r2.dev), la devolvemos tal cual
+  // URL externa (no R2) → devolver tal cual
   if (src.startsWith('http') && !src.includes('r2.dev')) {
     return (
       <img
+        ref={ref}
         src={src}
         width={width}
         height={height}
@@ -25,7 +30,7 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
     );
   }
 
-  // Si ya es una URL de R2, extraemos solo el path
+  // URL de R2 completa → extraer solo el path
   let cleanPath = src;
   if (src.startsWith('http')) {
     const urlObj = new URL(src);
@@ -38,6 +43,7 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
 
   return (
     <img
+      ref={ref}
       src={finalSrc}
       width={width}
       height={height}
@@ -48,6 +54,6 @@ export function Img({ src, width, height, alt, sizes, priority = false, ...rest 
       {...rest}
     />
   );
-}
+});
 
 export default Img;

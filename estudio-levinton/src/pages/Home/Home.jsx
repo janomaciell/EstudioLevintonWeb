@@ -34,6 +34,16 @@ export default function Home() {
   const t = translations[lang].home
   const projTrans = translations[lang].proyectos
 
+  // Preload hero image dynamically using the correct R2 URL
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = IMGS.hero
+    document.head.appendChild(link)
+    return () => { document.head.removeChild(link) }
+  }, [])
+
   const wrapRef    = useRef(null)
   const stickyRef  = useRef(null)
   const imgWrapRef = useRef(null)
