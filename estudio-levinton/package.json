@@ -21,7 +21,7 @@
     "react-router-dom": "^7.14.1"
   },
   "devDependencies": {
-    "@aws-sdk/client-s3": "^3.1045.0",
+    "@aws-sdk/client-s3": "^3.1107.0",
     "@eslint/js": "^9.39.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
